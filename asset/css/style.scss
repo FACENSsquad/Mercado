@@ -1,4 +1,34 @@
+@import 'variaveis';
+
 *{
     margin:0;
     box-sizing: border-box;
+}
+.pada{
+    width: 100px;
+    height: 100px;
+    padding: 1rem;
+}
+
+.um{background: var(--cor-logo1);}
+div:nth-child(2){
+    background-color: var(--cor-logo2);
+}
+div:nth-child(3){
+    background-color: var(--cor-logo3);
+}
+div:nth-child(4){
+    background-color: var(--cor-logo4);
+}
+
+section{
+    .t1{
+        font-size: var(--font-G);
+    }
+    .t2{
+        font-size: var(--font-M);
+    }
+    .t3{
+        font-size: var(--font-P);
+    }
 }

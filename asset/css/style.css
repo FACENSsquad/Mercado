@@ -1,4 +1,48 @@
+:root {
+  --set-cor-principal: 140;
+  --cor-logo1: hsl(var(--set-cor-principal),70%,20%);
+  --cor-logo2: hsl(var(--set-cor-principal),70%,27%);
+  --cor-logo3: hsl(var(--set-cor-principal),70%,33%);
+  --cor-logo4: hsl(var(--set-cor-principal),70%,40%);
+  --cor-d:#bd1616;
+  --font-G: 22px;
+  --font-M: 16px;
+  --font-P: 12px;
+}
+
 * {
   margin: 0;
   box-sizing: border-box;
+}
+
+.pada {
+  width: 100px;
+  height: 100px;
+  padding: 1rem;
+}
+
+.um {
+  background: var(--cor-logo1);
+}
+
+div:nth-child(2) {
+  background-color: var(--cor-logo2);
+}
+
+div:nth-child(3) {
+  background-color: var(--cor-logo3);
+}
+
+div:nth-child(4) {
+  background-color: var(--cor-logo4);
+}
+
+section .t1 {
+  font-size: var(--font-G);
+}
+section .t2 {
+  font-size: var(--font-M);
+}
+section .t3 {
+  font-size: var(--font-P);
 }/*# sourceMappingURL=style.css.map */
