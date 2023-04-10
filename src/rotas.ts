@@ -5,7 +5,7 @@ const rotas = Router();
 
 rotas.post('/user', userControler.create);
 
-rotas.post('/',(req, res) => {
+rotas.post('/home',(req, res) => {
     res.sendFile(__dirname +'index.html');
 });
 
