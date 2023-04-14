@@ -3,6 +3,21 @@ import User from "../src/database/user";
 
 class userController {
 
+    async find(request: Request, response: Response){
+
+        try{
+
+            const users = await User.find();
+            return response.json(users);
+
+        }catch(error){
+            return response.status(500).json({
+                error: 'Something wrong happened, try again',
+                message: error,
+            })
+        }
+    }
+
     async create(request: Request, response: Response){
         const {name, email, password} = request.body;
 
