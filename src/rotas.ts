@@ -6,10 +6,8 @@ const rotas = Router();
 rotas.get('/users', userControler.find);
 rotas.post('/user', userControler.create);
 
-
-rotas.post('/home',(req, res) => {
-    res.sendFile(__dirname +'index.html');
-});
-
+rotas.get('/', (req, res) => {
+    res.sendFile(__dirname +'/html/index.html');
+})
 
 export default rotas;
