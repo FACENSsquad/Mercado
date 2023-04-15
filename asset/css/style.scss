@@ -3,25 +3,113 @@
 *{
     margin:0;
     box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
 }
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .pada{
     width: 100px;
     height: 100px;
     padding: 1rem;
 }
 
-.um{background: var(--cor-logo1);}
-div:nth-child(2){
-    background-color: var(--cor-logo2);
-}
-div:nth-child(3){
-    background-color: var(--cor-logo3);
-}
-div:nth-child(4){
-    background-color: var(--cor-logo4);
+
+
+
+nav{
+    width: 100%;
+    @include container--centro;
+    
+    .nav{
+        @include container__desktop;
+        @include flex--row;
+        
+        height: 140px;
+        align-items: center;
+
+        .nav--logo{
+            @include border-5px;
+            @include WH-100;
+
+            overflow: hidden;
+            background: #000;
+            
+            img{
+                @include img-100;
+            }
+        }
+
+        .nav--cupons{
+            height: 100px;;
+            flex-grow: 1;
+            margin: 0 1rem;
+            @include border-5px;
+            background: var(--cor-cupon-f);
+
+            a{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 0 var(--padd-P);
+                align-items: center;
+                height: 100%;
+                color: #000;
+                font-family: Arial, Helvetica, sans-serif;
+                
+                .cupons--descrition1{
+                    display: flex;
+                    align-items: center;
+                    height: 100%;
+
+                    div{
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        font-size: 14px;
+                        span{
+                            background: var(--cor-d);
+                            padding: 0.5rem;
+                            border-radius: 5px;
+                            text-transform: uppercase
+                        }
+                    }
+                }
+
+                .cupons--descrition2{
+                    color: var(--cor-d);
+                    display: flex;
+                    align-items: center;
+                    font-size: 14px;
+                    img{
+                        width: 25px;
+                    }
+                }
+                
+            }
+
+        }
+
+        .nav--menu{
+            @include WH-100;
+
+            img{
+                width: 25px;
+            }
+        }
+    }
 }
 
+
 section{
+    @include container__desktop;
+    background: #000;
+
     .t1{
         font-size: var(--font-G);
     }
