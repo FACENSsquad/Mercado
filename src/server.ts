@@ -1,5 +1,5 @@
 const MongoClient = require('mongodb').MongoClient;
-const url = 'mongodb://localhost:27017';
+const url = 'mongodb://127.0.0.1:27017';
 const dbName = 'lineup';
 
 MongoClient.connect(url, function(err, client) {
@@ -26,7 +26,7 @@ import rotas from './rotas';
 
 const app = express();        //Esta linha cria um novo objeto de aplicativo do Express. O objeto do aplicativo é a base para qualquer aplicativo Express e é usado para configurar rotas e outras funcionalidades.
 
-mongoose.connect('mongodb://localhost/LineUp');
+mongoose.connect('mongodb://127.0.0.1/LineUp');
 
 app.use(express.json());
 
