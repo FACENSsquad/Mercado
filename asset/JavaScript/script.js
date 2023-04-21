@@ -9,6 +9,6 @@ if(diaSemana == 6){ //sabado
     let span = document.querySelector(".nav--menu span").innerHTML = "07:00 as 21:00"
 }else if(diaSemana == 7){//domingo
     let span = document.querySelector(".nav--menu span").innerHTML = "07:00 as 21:00"
-}else{
+}else{ //dias da semana 
     let span = document.querySelector(".nav--menu span").innerHTML = "07:00 as 22:00"
 };

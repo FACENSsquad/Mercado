@@ -1,4 +1,6 @@
 :root {
+  --font-padrao: Arial, Helvetica, sans-serif;
+  --px-p: 14px;
   --set-cor-principal: 140;
   --cor-logo1: hsl(var(--set-cor-principal),70%,20%);
   --cor-logo2: hsl(var(--set-cor-principal),70%,27%);
@@ -6,6 +8,7 @@
   --cor-logo4: hsl(var(--set-cor-principal),70%,40%);
   --cor-d:#bd1616;
   --cor-border:#c5c1c1;
+  --cor-padrao-f:#D9D9D9;
   --cor-cupon-f:#D9D9D9;
   --font-G: 22px;
   --font-M: 16px;
@@ -89,7 +92,7 @@ nav .nav .nav--cupons a .cupons--descrition1 div {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 14px;
+  font-size: var(--px-p);
 }
 nav .nav .nav--cupons a .cupons--descrition1 div span {
   background: var(--cor-d);
@@ -170,14 +173,32 @@ section .section--banner {
 }
 section .section--banner .categoria--info {
   height: 2rem;
-  background: #000;
+  display: flex;
+  padding: 0 var(--padd-P);
+  font-family: var(--font-padrao);
+  font-size: var(--px-p);
+}
+section .section--banner .categoria--info .categoria {
+  width: 200px;
+  background: var(--cor-padrao-f);
+  margin-right: 1rem;
+}
+section .section--banner .categoria--info .info {
+  background: var(--cor-padrao-f);
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  padding: 0 var(--padd-P);
+}
+section .section--banner .categoria--info .info li {
+  padding: 0 var(--padd-P);
 }
 section .section--banner .banner {
   flex-grow: 1;
   background: var(--cor-logo1);
   border: solid var(--cor-border) 1px;
   border-radius: var(--border-10);
-  padding: 1.5rem;
+  padding: var(--padd-P);
 }
 section .section--banner .banner .banner--slides {
   border-radius: var(--border-5);

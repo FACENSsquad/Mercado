@@ -71,7 +71,7 @@ nav{
                         display: flex;
                         align-items: center;
                         gap: 10px;
-                        font-size: 14px;
+                        font-size: var(--px-p);
                         span{
                             background: var(--cor-d);
                             padding: 0.5rem;
@@ -162,14 +162,35 @@ section{
 
         .categoria--info{
             height: 2rem;
-            background: #000;
+            display: flex;
+            padding:0 var(--padd-P);
+            font-family: var(--font-padrao);
+            font-size: var(--px-p);
+
+            .categoria{
+                width: 200px;
+                background: var(--cor-padrao-f);
+                margin-right: 1rem;
+            }
+
+            .info{
+                background: var(--cor-padrao-f);
+                flex-grow: 1;
+                display: flex;
+                align-items: center;
+                padding: 0 var(--padd-P);
+
+                li{
+                    padding: 0 var(--padd-P);
+                }
+            }
         }
 
         .banner{
             flex-grow: 1;
             background: var(--cor-logo1);
             @include border-10px;
-            padding: 1.5rem;
+            padding: var(--padd-P);
 
             .banner--slides{
                 border-radius: var(--border-5);
