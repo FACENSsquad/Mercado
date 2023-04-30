@@ -12,3 +12,4 @@ if(diaSemana == 6){ //sabado
 }else{ //dias da semana 
     let span = document.querySelector(".nav--menu span").innerHTML = "07:00 as 22:00"
 };
+
