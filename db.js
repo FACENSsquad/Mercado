@@ -1,4 +1,4 @@
-const mongoose = require('./node_modules/mogoose'); //Mongoose é uma biblioteca do Node.js que facilita a interação com bancos de dados MongoDB. Ele fornece um conjunto de ferramentas para modelagem de dados, validação, consultas e gerenciamento de relacionamentos, tornando o processo de interação com o MongoDB mais simples e intuitivo.
+const mongoose = require('mongoose'); //Mongoose é uma biblioteca do Node.js que facilita a interação com bancos de dados MongoDB. Ele fornece um conjunto de ferramentas para modelagem de dados, validação, consultas e gerenciamento de relacionamentos, tornando o processo de interação com o MongoDB mais simples e intuitivo.
 
 const connectDB = async () =>{
 
