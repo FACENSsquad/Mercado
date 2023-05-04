@@ -2,7 +2,7 @@
 const express = require('express');
 const connectDB = require('./db');
 
-let porta = 3000;
+let porta = 4000;
 
 const app = express();
 
