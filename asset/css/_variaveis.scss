@@ -1,5 +1,11 @@
 :root{
 
+    // __________________ FONT __________________
+    --font-padrao: Arial, Helvetica, sans-serif;
+
+    // tamanhos 
+    --px-p: 14px;
+
     // __________________ CORES __________________
     --set-cor-principal: 140;
 
@@ -11,7 +17,9 @@
     // - destaque  
     --cor-d:#bd1616;
     --cor-border:#c5c1c1;
+    --cor-menu:#545353;
 
+    --cor-padrao-f:#D9D9D9;
     --cor-cupon-f:#D9D9D9;
 
     // __________________ MOBILE __________________

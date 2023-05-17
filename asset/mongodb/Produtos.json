@@ -1,0 +1,43 @@
+[{
+  "_id": {
+    "$oid": "6440823121e37b34a0070577"
+  },
+  "Descrição": "Coca Cola",
+  "Valor": 7.5,
+  "Quantidade": 10
+},{
+  "_id": {
+    "$oid": "6440823121e37b34a0070576"
+  },
+  "Descrição": "Omo",
+  "Valor": 24.4,
+  "Quantidade": 50
+},{
+  "_id": {  
+    "$oid": "6440823121e37b34a0070575"
+  },
+  "Descrição": "Agua",
+  "Valor": 2.5,
+  "Quantidade": 50
+},{
+  "_id": {
+    "$oid": "6440823121e37b34a0070574"
+  },
+  "Descrição": "Agua de Coco",
+  "Valor": 8,
+  "Quantidade": 25
+},{
+  "_id": {
+    "$oid": "6440823121e37b34a0070573"
+  },
+  "Descrição": "Guarana",
+  "Valor": 7,
+  "Quantidade": 30
+},{
+  "_id": {
+    "$oid": "6440823121e37b34a0070572"
+  },
+  "Descrição": "Chocolate",
+  "Valor": 4.58,
+  "Quantidade": 47
+}]
