@@ -4,7 +4,7 @@ const dbName = 'lineup';
 
 MongoClient.connect(url, function(err, client) {
   if (err) throw err;
-  console.log('Conectado com sucesso ao servidor MongoDB');
+  console.log('Conectado com sucesso ao servidor MongoDB.');
 
   const db = client.db(dbName);
 
