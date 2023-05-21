@@ -7,12 +7,13 @@
     --px-p: 14px;
 
     // __________________ CORES __________________
-    --set-cor-principal: 140;
+    --set-cor-principal:0;
 
     --cor-logo1: hsl(var(--set-cor-principal),70%,20%);
     --cor-logo2: hsl(var(--set-cor-principal),70%,27%);
     --cor-logo3: hsl(var(--set-cor-principal),70%,33%);
-    --cor-logo4: hsl(var(--set-cor-principal),70%,40%);
+    --cor-line: hsl(var(--set-cor-principal),3%,60%);
+    --cor-footer: hsl(var(--set-cor-principal),0%,14%);
 
     // - destaque  
     --cor-d:#bd1616;
@@ -42,6 +43,9 @@
     // __________________ BORDE __________________ 
     --border-5: 5px;
     --border-10: 10px;
+
+    // __________________ FOOTER __________________ 
+    --pad-desk: 2rem;
 }
 
 @mixin container__desktop{
