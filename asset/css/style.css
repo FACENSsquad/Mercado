@@ -28,6 +28,7 @@
   box-sizing: border-box;
   list-style: none;
   text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -331,6 +332,9 @@ main #produtos--container .main--produto .produto .prd--icon--padrao {
   background: var(--cor-cupon-f);
   border-radius: var(--gap-p-imgprod);
 }
+main #produtos--container .main--produto .produto .produto--img {
+  padding-bottom: 1rem;
+}
 main #produtos--container .main--produto .produto .produto--img .img--top {
   display: flex;
   flex-direction: row;
@@ -339,6 +343,7 @@ main #produtos--container .main--produto .produto .produto--img .img--top {
 main #produtos--container .main--produto .produto .produto--img .img--top .emo--qtd .favorit {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 main #produtos--container .main--produto .produto .produto--img .imagem img {
   width: 100%;
@@ -363,4 +368,30 @@ main #produtos--container .main--produto .produto .produto--img .valor .valor--r
   color: #000;
   padding-left: 5px;
   padding-right: 3px;
+}
+main #produtos--container .main--produto .produto .economia {
+  width: 100%;
+  display: flex;
+  justify-content: baseline;
+  color: #f70000;
+}
+main #produtos--container .main--produto .produto .economia .eco--descricao {
+  border: 2px solid #f70000;
+  padding: 0 1rem;
+  border-radius: 5px;
+  font-size: 13px;
+}
+main #produtos--container .main--produto .produto .economia .eco--descricao span::before {
+  content: "R$";
+  padding-right: 3px;
+}
+main #produtos--container .main--produto .produto .info--preco {
+  color: #8f8f8f;
+  font-size: 13px;
+}
+main #produtos--container .main--produto .produto .produto--descricao .informativo {
+  font-size: 13px;
+}
+main #produtos--container .main--produto .produto .produto--descricao .descri--prod {
+  padding: 5px 0;
 }/*# sourceMappingURL=style.css.map */
