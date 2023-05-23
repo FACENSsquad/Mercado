@@ -22,30 +22,19 @@ class produtosController {
     async create(request: Request, response: Response){
         const {name, price} = request.body;
 
-        try {
-            const vereficacao = await produtos.findOne({ name, price});
-
-            if (!name){
-                return response.status(400).json({
-                    error: "Os campos são obrigatórios"
-                });
-            }
 
 
-            const Produto = await produtos.create({
+            const produtos = await Produto.create({
                 name,
                 price
             });
             return  response.json(produtos);
 
             
-        } catch (error) {
-                return response.status(500).send({ 
-                     error: 'Registration failed',
-                     message: error
-            });
+        
+            };
             }
-        }
-    }
+        
+    
 
 export default new produtosController;
