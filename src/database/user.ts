@@ -30,4 +30,4 @@ USER.pre('save',async function(next) {
     next();
 })
 
-export default mongoose.model("User", USER);
+export default mongoose.model("User", USER); //Essa linha de código exporta o modelo de usuário criado usando o Mongoose.
