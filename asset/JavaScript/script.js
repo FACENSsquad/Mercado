@@ -57,8 +57,14 @@ function goToSlide(index) {
 }
 
 // ----------------- Slides botões
-const btnAnterior = document.querySelector('.anterior');
-const btnProximo = document.querySelector('.proximo');
+// const btnAnterior = document.querySelector('.anterior');
+// const btnProximo = document.querySelector('.proximo');
+// // btnAnterior.addEventListener('click', prevSlide);
+// // btnProximo.addEventListener('click', nextSlide);
 
-btnAnterior.addEventListener('click', prevSlide);
-btnProximo.addEventListener('click', nextSlide);
+
+// Sticky 
+window.addEventListener("scroll", function(){
+  let nav = document.querySelector('nav');
+  nav.classList.toggle("sticky", window.scrollY > 0);
+})
