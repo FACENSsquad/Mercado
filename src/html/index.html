@@ -8,6 +8,9 @@
     <!-- Style -->
     <link rel="stylesheet" href="/asset/css/style.css">
 
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+
+
     <title>Motion</title>
 
 </head>
@@ -54,7 +57,7 @@
         </div>
 
         <div class="pesquisa">
-            <input type="search" id="pesquisa" name="pesquisa" placeholder="Pesquisar">
+            <input type="search" id="pesquisa" name="pesquisa" placeholder="Pesquisar...">
             <a href="">
                 <img src="/asset/img/search.svg" alt="">
             </a>
@@ -74,7 +77,7 @@
                     <input type="button" value="Categorias">
                 </div>
                 <div class="info">
-                    <li>Pedido minimo: <span> 20,00</span></li>
+                    <li class="first">Pedido minimo: <span> 20,00</span></li>
                     <li>Endereço: <span>Rod Roque Pantojo</span></li>
                     <li>texto: <span>Alternativo</span></li>
                 </div>
@@ -83,73 +86,71 @@
             <div class="banner">
                 <div class="banner--slides">
                     <div class="banner--cat">
-                
-                        <a href="">Limpeza</a>
-                        <a href="">Casa</a>
-                        <a href="">Carnes</a>
-                        <a href="">Sobremesa</a>
-                        <a href="">Sobremesa</a>
-                        <a href="">Sobremesa</a>
-                        <a href="">Sobremesa</a>
-                        <a href="">Sobremesa</a>
-                        <a href="">Sobremesa</a>
                         
-                    
+                        <div class="banner--categoria">
+
+                            <a href="">Limpeza</a>
+                            <a href="">Casa</a>
+                            <a href="">Carnes</a>
+                            <a href="">Sobremesa</a>
+                            <a href="">Sobremesa</a>
+                            <a href="">Sobremesa</a>
+                            <a href="">Sobremesa</a>
+                            <a href="">Sobremesa</a>
+                            <a href="">Sobremesa</a>
+                            
+                        </div>
+
+                        <div class="banner--cat--inf">
+                            <span>INFO</span>
+                            As categorias é baseada conforme lista de compras dos clientes 
+                        </div>
                     </div>
 
-                    </div>
                     <div class="slides--container">
                         
                         <!-- Slides -->
                         <div class="slides">
-                            <!-- Botoes -->
-                            <input type="radio" name="radio-btn" id="radio1">
-                            <input type="radio" name="radio-btn" id="radio2">
-                            <input type="radio" name="radio-btn" id="radio3">
-                            <input type="radio" name="radio-btn" id="radio4">
-
-
+                            <!-- Slides IMG -->
                             <div class="slide btn--1">
                                 <img src="/asset/img/heineken-banner-1_Edited.jpg" alt="">
-                                <span>dsadsa</span>
+                                <div class="sl--title">
+                                    <div class="sl--text">
+                                        Heineken sempre com voce!
+                                    </div>
+                                </div>
                             </div>
                             <div class="slide btn--2">
                                 <img src="/asset/img/heineken-banner-1_Edited.jpg" alt="">
-                                <span>dsadsa</span>
+                                <div class="sl--title">
+                                    <div class="sl--text">
+                                        Heineken sempre com voce!
+                                    </div>
+                                </div>
                             </div>
                             <div class="slide btn--3">
                                 <img src="/asset/img/heineken-banner-1_Edited.jpg" alt="">
-                                <span>dsadsa</span>
+                                <div class="sl--title">
+                                    <div class="sl--text">
+                                        Heineken sempre com voce!
+                                    </div>
+                                </div>
                             </div>
                             <div class="slide btn--4">
                                 <img src="/asset/img/heineken-banner-1_Edited.jpg" alt="">
-                                <span>dsadsa</span>
+                                <div class="sl--title">
+                                    <div class="sl--text">
+                                        Heineken sempre com voce!
+                                    </div>
+                                </div>
                             </div>
 
-
-                            <div class="navigation-auto">
-                                <div class="auto-btn1"></div>
-                                <div class="auto-btn2"></div>
-                                <div class="auto-btn3"></div>
-                                <div class="auto-btn4"></div>
-                            </div>
                         </div>
 
-                        <div class="manual-navegation">
-                            <label for="radio1" class="manual-btn"></label>
-                            <label for="radio2" class="manual-btn"></label>
-                            <label for="radio3" class="manual-btn"></label>
-                            <label for="radio4" class="manual-btn"></label>
-                        </div>
-                            <img src="/asset/img/heineken-banner-1_Edited.jpg" alt="">
-                        </div>
+                        <div class="btn anterior"><i class="uil uil-angle-left-b btn--icon"></i></div>
+                        <div class="btn proximo"><i class="uil uil-angle-right-b btn--icon"></i></div>
 
-                        <div class="slides--botons">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -161,7 +162,7 @@
             <div class="atalho--sub">
 
                 <div class="atalhos--descricao">
-                    Para você
+                    <i class="uil uil-plus-circle"></i> Para você
                 </div>
     
                 <div class="atalhos--slides">
@@ -174,7 +175,6 @@
 
                             </div>
                         </div>
-
                         <div class="slide">
                             <div class="slide--descricao">
                                 Meus Favorito
