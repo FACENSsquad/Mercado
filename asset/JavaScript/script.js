@@ -15,8 +15,8 @@ if(diaSemana == 6){ //sabado
 
 
 // SLIDES
-const slides = document.querySelector('.slides');
-const slide = document.querySelectorAll('.slide');
+const slides = document.querySelector('.slides--container .slides');
+const slide = document.querySelectorAll('.slides--container .slides .slide');
 const intervalTime = 2000; // tempo em milissegundos
 
 let slideInterval = setInterval(nextSlide, intervalTime);
@@ -28,7 +28,7 @@ function nextSlide() {
   });
 
   if (slides.scrollLeft + slides.offsetWidth >= slides.scrollWidth) {
-    slides.scroll({
+    slides.scrollTo({
       left: 0,
       behavior: 'smooth'
     });
@@ -42,7 +42,7 @@ function prevSlide() {
   });
 
   if (slides.scrollLeft === 0) {
-    slides.scroll({
+    slides.scrollTo({
       left: slides.scrollWidth,
       behavior: 'smooth'
     });

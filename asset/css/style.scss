@@ -188,12 +188,7 @@ section{
                     display: flex;
                     flex-direction: column;
                     justify-content: space-evenly;
-                    .line--menu{
-                        width: 80%;
-                        height: 3px;
-                        background: var(--cor-menu);
-
-                    }
+                    font-size: 24px;
                 }
 
                 input{
@@ -358,6 +353,11 @@ main{
                 padding: 0.5rem 5rem;
                 background: var(--cor-padrao-f);
                 
+                span{
+                    font-weight: 400;
+                    text-transform: uppercase;
+                    font-size: 14px;
+                }
             }
             
             .atalhos--slides{
@@ -374,15 +374,46 @@ main{
                     display: flex;
                     flex-direction: row;
                     gap:var(--gap-p);
+
+                    cursor: pointer;
                     .slide{
                         background: #fff;
                         width: 100%;
                         height: 100%;
                         border-radius: 5px;
                         border-left: var(--cor-logo1) solid 4px;
+                        padding: 1rem;
+                        display: flex;
+                        flex-direction: column-reverse;
+                        justify-content: center;
+                        position: relative;
+
+                        .icon{  
+                            font-size: 25px;
+                        }
 
                         .slide--descricao{
-                            text-align: center;
+                            padding: 7px 0;
+                            
+                            span{
+                                color: #474747;
+                                font-size: 14px;
+                                text-transform:uppercase;
+                                font-weight: 600;
+                            }
+
+                            p{
+                                font-size: 12px;
+                                text-transform: lowercase;
+                                padding-top: 5px;
+                            }
+                        }
+
+                        .favorit--salv{
+                            position: absolute;
+                            font-size: 24px;
+                            top: -3px;
+                            right: 0;
                         }
                     }
                 }
