@@ -157,106 +157,117 @@ nav{
         }
     }
 }
+
+
 .sticky{
     background: #fff;
-    height: 120px;
+    height: 120px !important;
     overflow: hidden;
 
-    .nav--logo{
-        height: 50px;
-        width: 50px;
-
-        overflow: hidden;
-        background: #000;
+    .nav{
+        @include container__desktop;
+        @include flex--row;
         
-        img{
-            @include img-100;
-        }
-    }
-
-    .nav--cupons{
-        flex-grow: 1;
-        @include border-5px;
-        background: var(--cor-cupon-f);
-
-        a{
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            padding: 0 var(--padd-P);
-            align-items: center;
-            height: 100%;
-            color: #000;
-            font-family: Arial, Helvetica, sans-serif;
+        height: 70px !important;
+        align-items: center;
+    
+        .nav--logo {
+            height: 50px !important;
+            width: 50px !important;
+    
+            overflow: hidden;
+            background: #000;
             
-            .cupons--descrition1{
+            img{
+                @include img-100;
+            }
+        }
+    
+        .nav--cupons{
+            flex-grow: 1;
+            height: 50px !important;
+            background: var(--cor-cupon-f);
+    
+            a{
                 display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 0 var(--padd-P);
                 align-items: center;
                 height: 100%;
-
-                div{
+                color: #000;
+                font-family: Arial, Helvetica, sans-serif;
+                
+                .cupons--descrition1{
                     display: flex;
                     align-items: center;
-                    gap: 10px;
-                    font-size: var(--px-p);
-                    span{
-                        background: var(--cor-logo1);
-                        padding: 0.5rem;
-                        border-radius: 5px;
-                        text-transform: uppercase
+                    height: 100%;
+    
+                    div{
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        font-size: var(--px-p);
+                        span{
+                            background: var(--cor-logo1);
+                            padding: 0.5rem;
+                            border-radius: 5px;
+                            text-transform: uppercase
+                        }
                     }
                 }
-            }
-
-            .cupons--descrition2{
-                color: #000;
-                display: flex;
-                align-items: center;
-                font-size: 14px;
-                img{
-                    width: 25px;
+    
+                .cupons--descrition2{
+                    color: #000;
+                    display: flex;
+                    align-items: center;
+                    font-size: 14px;
+                    img{
+                        width: 25px;
+                    }
                 }
+                
             }
-            
+    
         }
-
-    }
-
-    .nav--menu{
-        @include WH-100;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
-
-        img{
-            width: var(--icon-desktop);
-            background: #fff
-        }
-
-        .menu--date{
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 12px;
-            background: #000000;
-            padding: 8px;
-            border-radius: 5px;
-            color: #ffffff;
-        }
-        .menu--icon{
-            width: 100%;
+    
+        .nav--menu{
+            @include WH-100;
             display: flex;
-            flex-direction: row;
-            justify-content: space-between;  
-            align-items: center; 
-            position: relative;
-
-            &::after{
-                content: "";
-                width: 3px;
-                height: 100%;
-                background: var(--cor-border);
-                position: absolute;
-                left: 50%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+    
+            img{
+                width: var(--icon-desktop);
+                background: #fff
+            }
+    
+            .menu--date{
+                display: none !important;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 12px;
+                background: #000000;
+                padding: 8px;
+                border-radius: 5px;
+                color: #ffffff;
+            }
+            .menu--icon{
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;  
+                align-items: center; 
+                position: relative;
+    
+                &::after{
+                    content: "";
+                    width: 3px;
+                    height: 100%;
+                    background: var(--cor-border);
+                    position: absolute;
+                    left: 50%;
+                }
             }
         }
     }

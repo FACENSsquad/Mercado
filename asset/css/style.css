@@ -179,26 +179,34 @@ nav .pesquisa input {
 
 .sticky {
   background: #fff;
-  height: 120px;
+  height: 120px !important;
   overflow: hidden;
 }
-.sticky .nav--logo {
-  height: 50px;
-  width: 50px;
+.sticky .nav {
+  width: 1280px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: var(--padd-P);
+  height: 70px !important;
+  align-items: center;
+}
+.sticky .nav .nav--logo {
+  height: 50px !important;
+  width: 50px !important;
   overflow: hidden;
   background: #000;
 }
-.sticky .nav--logo img {
+.sticky .nav .nav--logo img {
   width: 100%;
   height: 100%;
 }
-.sticky .nav--cupons {
+.sticky .nav .nav--cupons {
   flex-grow: 1;
-  border: solid var(--cor-border) 1px;
-  border-radius: var(--border-5);
+  height: 50px !important;
   background: var(--cor-cupon-f);
 }
-.sticky .nav--cupons a {
+.sticky .nav .nav--cupons a {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -208,33 +216,33 @@ nav .pesquisa input {
   color: #000;
   font-family: Arial, Helvetica, sans-serif;
 }
-.sticky .nav--cupons a .cupons--descrition1 {
+.sticky .nav .nav--cupons a .cupons--descrition1 {
   display: flex;
   align-items: center;
   height: 100%;
 }
-.sticky .nav--cupons a .cupons--descrition1 div {
+.sticky .nav .nav--cupons a .cupons--descrition1 div {
   display: flex;
   align-items: center;
   gap: 10px;
   font-size: var(--px-p);
 }
-.sticky .nav--cupons a .cupons--descrition1 div span {
+.sticky .nav .nav--cupons a .cupons--descrition1 div span {
   background: var(--cor-logo1);
   padding: 0.5rem;
   border-radius: 5px;
   text-transform: uppercase;
 }
-.sticky .nav--cupons a .cupons--descrition2 {
+.sticky .nav .nav--cupons a .cupons--descrition2 {
   color: #000;
   display: flex;
   align-items: center;
   font-size: 14px;
 }
-.sticky .nav--cupons a .cupons--descrition2 img {
+.sticky .nav .nav--cupons a .cupons--descrition2 img {
   width: 25px;
 }
-.sticky .nav--menu {
+.sticky .nav .nav--menu {
   width: 100px;
   height: 100px;
   display: flex;
@@ -242,11 +250,12 @@ nav .pesquisa input {
   align-items: center;
   justify-content: space-around;
 }
-.sticky .nav--menu img {
+.sticky .nav .nav--menu img {
   width: var(--icon-desktop);
   background: #fff;
 }
-.sticky .nav--menu .menu--date {
+.sticky .nav .nav--menu .menu--date {
+  display: none !important;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
   background: #000000;
@@ -254,7 +263,7 @@ nav .pesquisa input {
   border-radius: 5px;
   color: #ffffff;
 }
-.sticky .nav--menu .menu--icon {
+.sticky .nav .nav--menu .menu--icon {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -262,7 +271,7 @@ nav .pesquisa input {
   align-items: center;
   position: relative;
 }
-.sticky .nav--menu .menu--icon::after {
+.sticky .nav .nav--menu .menu--icon::after {
   content: "";
   width: 3px;
   height: 100%;
