@@ -68,3 +68,22 @@ window.addEventListener("scroll", function(){
   let nav = document.querySelector('nav');
   nav.classList.toggle("sticky", window.scrollY > 0);
 })
+
+
+// adicionar item
+const produtos = document.querySelectorAll('.produto');
+
+// Percorra cada div de produto
+produtos.forEach((produto, index) => {
+    // Obtenha o input de quantidade do produto atual
+    const quantidadeInput = produto.querySelector('input[type="number"]');
+
+    // Obtenha a div produto--qtd do produto atual
+    const produtoQtd = produto.querySelector('.produto--qtd');
+
+    // Adicione um ouvinte de evento de mudança ao input de quantidade
+    quantidadeInput.addEventListener('change', () => {
+        const quantidade = quantidadeInput.value;
+        produtoQtd.textContent = quantidade > 0 ? quantidade : '';
+    });
+});

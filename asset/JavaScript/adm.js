@@ -1,37 +1,21 @@
-$(document).ready(function() {
-    // Função para carregar o conteúdo do HTML e atualizar a div
-    function carregarConteudo(url) {
-      $('.container--conteudo').load(url);
+function carregarConteudo(url, element) {
+
+    // Remove a classe 'active' de todos os links
+    var links = document.querySelectorAll('.menu--list a');
+    links.forEach(function(link) {
+        link.classList.remove('active');
+    });
+
+    // Adiciona a classe 'active' ao link clicado
+    element.classList.add('active');
+
+    // Carrega o conteúdo do HTML na div 'container--conteudo'
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+        document.querySelector('.container--conteudo').innerHTML = xhr.responseText;
     }
-
-    // Lidar com o clique nos links
-    $('#link-dashboard').click(function(e) {
-      e.preventDefault(); // Impede o comportamento padrão do link
-      var url = 'teste.html'; // URL do HTML do Dashboard
-      carregarConteudo(url); // Carrega o conteúdo do HTML
-    });
-
-    $('#link-produtos').click(function(e) {
-      e.preventDefault();
-      var url = 'produtos.html';
-      carregarConteudo(url);
-    });
-
-    $('#link-cadastro').click(function(e) {
-      e.preventDefault();
-      var url = 'cadastro.html';
-      carregarConteudo(url);
-    });
-
-    $('#link-banner').click(function(e) {
-      e.preventDefault();
-      var url = 'banner.html';
-      carregarConteudo(url);
-    });
-
-    $('#link-informativo').click(function(e) {
-      e.preventDefault();
-      var url = 'informativo.html';
-      carregarConteudo(url);
-    });
-  });
+    };
+    xhr.send();
+}

@@ -17,11 +17,12 @@
             <div class="container--menu">
                 <div class="menu--logo">LineUp</div>
                 <div class="menu--list">
-                    <a href="#" id="link-dashboard" onclick="carregarConteudo('dashboard.html')"><i class="uil uil-create-dashboard cons"></i> Dashbord</a>
-                    <a href="#" id="link-produtos" onclick="carregarConteudo('produtos.html')"><i class="uil uil-clipboard-notes cons"></i> Produtos</a>
-                    <a href="#" id="link-cadastro" onclick="carregarConteudo('cadastro.html')"><i class="uil uil-exposure-alt cons"></i> Cadastro</a>
-                    <a href="#" id="link-banner" onclick="carregarConteudo('banner.html')"><i class="uil uil-picture cons"></i> Banner</a>
-                    <a href="#" id="link-informativo" onclick="carregarConteudo('informativo.html')"><i class="uil uil-comment-info-alt cons"></i> informativo</a>
+                    <a href="#" id="link-dashboard" onclick="carregarConteudo('dashboard.html', this)"><i class="uil uil-create-dashboard cons"></i> Dashbord</a>
+                    <a href="#" id="link-produtos" onclick="carregarConteudo('produtos.html', this)"><i class="uil uil-clipboard-notes cons"></i> Produtos</a>
+                    <a href="#" id="link-produtos" onclick="carregarConteudo('pedidos.html', this)"><i class="uil uil-clipboard-notes cons"></i> Pedidos</a>
+                    <a href="#" id="link-cadastro" onclick="carregarConteudo('cadastro.html', this)"><i class="uil uil-exposure-alt cons"></i> Cadastro</a>
+                    <a href="#" id="link-banner" onclick="carregarConteudo('banner.html', this)"><i class="uil uil-picture cons"></i> Banner</a>
+                    <a href="#" id="link-informativo" onclick="carregarConteudo('informativo.html', this)"><i class="uil uil-comment-info-alt cons"></i> informativo</a>
                 </div>
                 <div class="menu--confi">
                     <a href="#"> <i class="uil uil-setting cons"></i> Configuração</a>
@@ -35,17 +36,6 @@
         </div>
     </section>
 
-    <script>
-        function carregarConteudo(url) {
-            var xhr = new XMLHttpRequest();
-            xhr.open('GET', url, true);
-            xhr.onreadystatechange = function() {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                document.querySelector('.container--conteudo').innerHTML = xhr.responseText;
-            }
-            };
-            xhr.send();
-        }
-    </script>
+    <script src="/asset/JavaScript/adm.js"></script>
 </body>
 </html>

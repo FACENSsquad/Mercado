@@ -648,6 +648,12 @@ main{
                     }
                 }
 
+                .comprar{
+                    overflow: hidden;
+                    display: flex;
+                    width: 100%;
+                }
+
                 .info--preco{
                     color: #8f8f8f;
                     font-size: 13px;
@@ -714,3 +720,29 @@ footer{
         }
     }
 }
+
+.add-button {
+    background-color: #4CAF50; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    border: none; /* Remover a borda */
+    padding: 10px 20px; /* Espaçamento interno */
+    text-align: center; /* Alinhamento do texto */
+    text-decoration: none; /* Remover sublinhado */
+    display: inline-block; /* Exibir como um bloco */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor de mouse como ponteiro */
+    border-radius: 4px; /* Bordas arredondadas */
+  }
+  
+  .add-button:hover {
+    background-color: #45a049; /* Cor de fundo ao passar o mouse */
+  }
+  
+  .add-button:active {
+    background-color: #3e8e41; /* Cor de fundo ao clicar */
+  }
+  
+  .quantity-input {
+    width: 40px; /* Largura do campo de entrada */
+    padding: 5px; /* Espaçamento interno */
+  }
