@@ -348,6 +348,10 @@ section .section--banner .banner .banner--slides .banner--cat {
   display: grid;
   grid-template-rows: 4fr 1fr;
   gap: var(--gap-p);
+  background: #fff;
+  border-radius: 10px 0px 0 10px;
+  overflow: hidden;
+  padding: 0.5rem;
 }
 section .section--banner .banner .banner--slides .banner--cat .banner--categoria {
   height: 100%;
@@ -355,13 +359,12 @@ section .section--banner .banner .banner--slides .banner--cat .banner--categoria
 section .section--banner .banner .banner--slides .banner--cat .banner--categoria a {
   display: block;
   padding: 1rem;
-  border-bottom: rgba(255, 255, 255, 0.1176470588) solid 1px;
-  color: #ffffff;
+  color: #535353;
 }
 section .section--banner .banner .banner--slides .banner--cat .banner--cat--inf {
-  background: rgba(83, 83, 83, 0.4509803922);
+  background: rgba(53, 53, 53, 0.5882352941);
   border-radius: 10px;
-  color: #ccc9c9;
+  color: #fff;
   padding: 1rem;
   font-size: 13px;
 }
@@ -380,8 +383,8 @@ section .section--banner .banner .banner--slides .slides--container .slides {
   height: 100%;
   display: flex;
   overflow: hidden;
-  border-radius: 10px;
   border: 1px solid #cfcfcf;
+  border-radius: 0px 10px 10px 0px;
 }
 section .section--banner .banner .banner--slides .slides--container .slides .slide {
   min-width: 100%;
