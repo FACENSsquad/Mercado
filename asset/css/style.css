@@ -1,22 +1,23 @@
 :root {
   --font-padrao: Arial, Helvetica, sans-serif;
   --px-p: 14px;
-  --set-cor-principal:100;
-  --cor-logo1: hsl(var(--set-cor-principal),70%,20%);
-  --cor-logo2: hsl(var(--set-cor-principal),70%,27%);
-  --cor-logo3: hsl(var(--set-cor-principal),70%,33%);
+  --set-cor-principal:59;
+  --cor-logo1: hsl(var(--set-cor-principal),100%,45%);
+  --cor-logo2: hsl(var(--set-cor-principal),80%,30%);
+  --cor-logo3: hsl(var(--set-cor-principal),80%,33%);
   --cor-line: hsl(var(--set-cor-principal),3%,60%);
-  --cor-footer: hsl(var(--set-cor-principal),0%,14%);
+  --cor-footer: hsl(var(--set-cor-principal),0%,30%);
   --cor-d:#bd1616;
   --cor-border:#c5c1c1;
   --cor-menu:#545353;
+  --cor-btnDest:#0083FF;
   --cor-padrao-f:#ebebeb;
   --cor-padrao-prod:#f1f1f1;
   --cor-cupon-f:#ebebeb;
   --font-G: 22px;
   --font-M: 16px;
   --font-P: 12px;
-  --icon-desktop: 30px;
+  --icon-desktop: 25px;
   --gap-p: 0.3rem;
   --gap-p-imgprod: 0.2rem;
   --padd-P:1rem;
@@ -73,7 +74,6 @@ nav .nav .nav--logo {
   width: 100px;
   height: 100px;
   overflow: hidden;
-  background: #000;
 }
 nav .nav .nav--logo img {
   width: 100%;
@@ -151,11 +151,15 @@ nav .nav .nav--menu .menu--icon {
   align-items: center;
   position: relative;
 }
+nav .nav .nav--menu .menu--icon a i {
+  font-size: 25px;
+  color: var(--cor-footer);
+}
 nav .nav .nav--menu .menu--icon::after {
   content: "";
   width: 3px;
   height: 100%;
-  background: var(--cor-border);
+  background: var(--cor-cupon-f);
   position: absolute;
   left: 50%;
 }
@@ -167,7 +171,10 @@ nav .pesquisa {
   display: flex;
   align-items: center;
 }
-nav .pesquisa img {
+nav .pesquisa a {
+  padding: 0 0.5rem;
+}
+nav .pesquisa a img {
   width: var(--icon-desktop);
 }
 nav .pesquisa input {
@@ -265,14 +272,6 @@ nav .pesquisa input {
   align-items: center;
   position: relative;
 }
-.sticky .nav .nav--menu .menu--icon::after {
-  content: "";
-  width: 3px;
-  height: 100%;
-  background: var(--cor-border);
-  position: absolute;
-  left: 50%;
-}
 
 section {
   margin-top: 180px;
@@ -327,12 +326,11 @@ section .section--banner .categoria--info .info li {
   padding: 5px var(--padd-P);
 }
 section .section--banner .categoria--info .info .first {
-  background: #000;
+  background: var(--cor-footer);
   color: #ccc9c9;
   border-radius: 5px;
 }
 section .section--banner .banner {
-  background: var(--cor-logo1);
   border: solid var(--cor-border) 1px;
   border-radius: var(--border-10);
   padding: var(--padd-P);
@@ -356,14 +354,22 @@ section .section--banner .banner .banner--slides .banner--cat {
 section .section--banner .banner .banner--slides .banner--cat .banner--categoria {
   height: 100%;
 }
+section .section--banner .banner .banner--slides .banner--cat .banner--categoria .cat--todosP {
+  background: var(--cor-btnDest);
+  border-radius: var(--border-10);
+}
+section .section--banner .banner .banner--slides .banner--cat .banner--categoria .cat--todosP a {
+  color: #fff;
+  text-transform: capitalize;
+}
 section .section--banner .banner .banner--slides .banner--cat .banner--categoria a {
   display: block;
   padding: 1rem;
   color: #535353;
 }
 section .section--banner .banner .banner--slides .banner--cat .banner--cat--inf {
-  background: rgba(53, 53, 53, 0.5882352941);
-  border-radius: 10px;
+  background: var(--cor-footer);
+  border-radius: var(--border-10);
   color: #fff;
   padding: 1rem;
   font-size: 13px;
@@ -371,6 +377,8 @@ section .section--banner .banner .banner--slides .banner--cat .banner--cat--inf 
 section .section--banner .banner .banner--slides .banner--cat .banner--cat--inf span {
   display: block;
   margin-bottom: 7px;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 section .section--banner .banner .banner--slides .slides--container {
   width: 100%;
@@ -478,6 +486,7 @@ main .atalhos--container .atalho--sub {
 main .atalhos--container .atalho--sub .atalhos--descricao {
   padding: 0.5rem 5rem;
   background: var(--cor-padrao-f);
+  border-radius: 10px 10px 0 0;
 }
 main .atalhos--container .atalho--sub .atalhos--descricao span {
   font-weight: 400;
@@ -581,11 +590,14 @@ main #produtos--container .main--produto .produto .produto--img .img--top .emo--
 }
 main #produtos--container .main--produto .produto .produto--img .img--top .emo--qtd .produto--qtd {
   position: absolute;
-  background: #0083FF;
+  background: var(--cor-btnDest);
   text-align: center;
   color: #fff;
   padding: var(--gap-p-imgprod);
   width: 1.7rem;
+}
+main #produtos--container .main--produto .produto .produto--img .imagem {
+  cursor: pointer;
 }
 main #produtos--container .main--produto .produto .produto--img .imagem img {
   width: 100%;
@@ -668,6 +680,37 @@ main #produtos--container .main--produto .produto .produto--descricao .informati
 }
 main #produtos--container .main--produto .produto .produto--descricao .descri--prod {
   padding: 5px 0;
+}
+
+#modal {
+  display: none;
+  position: absolute;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  padding: 4rem;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+#modal .modal--main {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  background: #cfcfcf;
+  -o-object-fit: cover;
+     object-fit: cover;
+  overflow-y: scroll;
+}
+#modal #modal-close {
+  cursor: pointer;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  padding: 1rem;
 }
 
 footer {

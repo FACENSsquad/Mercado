@@ -44,7 +44,6 @@ nav{
             @include WH-100;
 
             overflow: hidden;
-            background: #000;
             
             img{
                 @include img-100;
@@ -129,11 +128,17 @@ nav{
                 align-items: center; 
                 position: relative;
 
+                a{
+                    i{
+                        font-size: 25px;
+                        color: var(--cor-footer);
+                    }
+                }
                 &::after{
                     content: "";
                     width: 3px;
                     height: 100%;
-                    background: var(--cor-border);
+                    background: var(--cor-cupon-f);
                     position: absolute;
                     left: 50%;
                 }
@@ -146,14 +151,18 @@ nav{
         margin: 0 2rem;
         display: flex;
         align-items: center;
-        img{
-            width: var(--icon-desktop);
+        a{
+            padding: 0 0.5rem;
+            img{
+                width: var(--icon-desktop);
+            }
         }
         input{
             height: 2.5rem;
             width: 100%;
             border: none;
             padding: 0 1rem;
+
         }
     }
 }
@@ -253,15 +262,6 @@ nav{
                 justify-content: space-between;  
                 align-items: center; 
                 position: relative;
-    
-                &::after{
-                    content: "";
-                    width: 3px;
-                    height: 100%;
-                    background: var(--cor-border);
-                    position: absolute;
-                    left: 50%;
-                }
             }
         }
     }
@@ -323,7 +323,7 @@ section{
                 }
 
                 .first{
-                    background: #000;
+                    background: var(--cor-footer);
                     color: #ccc9c9;
                     border-radius: 5px;
                 }
@@ -331,7 +331,6 @@ section{
         }
 
         .banner{
-            background: var(--cor-logo1);
             @include border-10px;
             padding: var(--padd-P);
 
@@ -352,7 +351,15 @@ section{
                     padding: 0.5rem;
                     .banner--categoria{
                         height: 100%;
-                        
+                        .cat--todosP{
+                            background: var(--cor-btnDest);
+                            border-radius: var(--border-10);
+                            a{
+                                color: #fff;
+                                text-transform: capitalize;
+                            }
+                        }
+
                         a{
                             display: block;
                             padding: 1rem;
@@ -360,8 +367,8 @@ section{
                         }
                     }
                     .banner--cat--inf{
-                        background: #35353596;
-                        border-radius: 10px;
+                        background: var(--cor-footer);
+                        border-radius: var(--border-10);
                         color: #fff;
                         padding: 1rem;
                         font-size: 13px;
@@ -369,6 +376,8 @@ section{
                         span{
                             display: block;
                             margin-bottom: 7px;
+                            text-transform: uppercase;
+                            font-weight: 700;
                         }
                     }
                 }
@@ -485,7 +494,7 @@ main{
             .atalhos--descricao{
                 padding: 0.5rem 5rem;
                 background: var(--cor-padrao-f);
-                
+                border-radius: 10px 10px 0 0 ;
                 span{
                     font-weight: 400;
                     text-transform: uppercase;
@@ -602,7 +611,7 @@ main{
                             }
                             .produto--qtd{
                             position: absolute;
-                            background: #0083FF;
+                            background: var(--cor-btnDest);
                             text-align: center;
                             color: #fff;
                             padding: var(--gap-p-imgprod);
@@ -611,6 +620,7 @@ main{
                         }
                     }
                     .imagem{
+                        cursor: pointer;
                         img{
                             width: 100%;
                         }
@@ -714,6 +724,41 @@ main{
         }
     }
 }
+
+// modal
+#modal{
+    display: none;
+    position: absolute;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    padding: 4rem;
+    backdrop-filter: blur(5px);
+
+    .modal--main{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        background: #cfcfcf;
+        object-fit: cover;
+        overflow-y: scroll;
+    }
+
+    #modal-close{
+        cursor: pointer;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        padding: 1rem;
+    }
+}
+
+
+
 
 footer{
     @include container--centro;

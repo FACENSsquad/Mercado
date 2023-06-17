@@ -56,13 +56,6 @@ function goToSlide(index) {
   });
 }
 
-// ----------------- Slides botões
-// const btnAnterior = document.querySelector('.anterior');
-// const btnProximo = document.querySelector('.proximo');
-// // btnAnterior.addEventListener('click', prevSlide);
-// // btnProximo.addEventListener('click', nextSlide);
-
-
 // Sticky 
 window.addEventListener("scroll", function(){
   let nav = document.querySelector('nav');
@@ -86,4 +79,51 @@ produtos.forEach((produto, index) => {
         const quantidade = quantidadeInput.value;
         produtoQtd.textContent = quantidade > 0 ? quantidade : '';
     });
+});
+
+
+// ----------------------------------------- MODAL -----------------------------------------
+// chave
+const options = {
+method: 'GET',
+headers: {
+    accept: 'application/json',
+    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1N2Q0ZThjNjJmMmMzZDUyOTM4YmNhYjM4NDUwZmVjNCIsInN1YiI6IjY0OGE0ZjUzN2ViNWYyMDBhZTZhYWNlZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.kZ6bJ25v6Rda7BlfQ2kcT5Yz0F5bg7Xfin_GrJTteRw'
+}
+};
+
+// Função para carregar as informações da API
+function carregarInformacoesAPI(divId) {
+// Chame a API usando o divId ou qualquer outra informação relacionada
+// Exemplo de chamada da API usando o fetch:
+fetch('https://api.themoviedb.org/3/tv/197588/images', options)
+    .then(response => response.json())
+    .then(response => {
+    // Exiba as informações no modal
+    const modalContent = document.getElementById('modal-content');
+    modalContent.textContent = JSON.stringify(response); // Apenas para fins de exemplo, você pode exibir as informações de acordo com a estrutura do objeto retornado pela API
+
+    // Abra o modal
+    const modal = document.getElementById('modal');
+    modal.style.display = 'block';
+    })
+    .catch(err => console.error(err));
+}
+
+// Adicione o evento de clique a cada div clicável
+const divsClicaveis = document.getElementsByClassName('imagem');
+for (let i = 0; i < divsClicaveis.length; i++) {
+divsClicaveis[i].addEventListener('click', function() {
+    const divId = this.id;
+    carregarInformacoesAPI(divId);
+});
+}
+
+// Feche o modal ao clicar fora dele ou no botão de fechamento
+const modal = document.getElementById('modal');
+const modalCloseButton = document.getElementById('modal-close');
+modal.addEventListener('click', function(event) {
+if (event.target === modal || event.target === modalCloseButton) {
+    modal.style.display = 'none';
+}
 });

@@ -7,19 +7,19 @@
     --px-p: 14px;
 
     // __________________ CORES __________________
-    --set-cor-principal:100;
+    --set-cor-principal:59;
 
-    --cor-logo1: hsl(var(--set-cor-principal),70%,20%);
-    --cor-logo2: hsl(var(--set-cor-principal),70%,27%);
-    --cor-logo3: hsl(var(--set-cor-principal),70%,33%);
+    --cor-logo1: hsl(var(--set-cor-principal),100%,45%);
+    --cor-logo2: hsl(var(--set-cor-principal),80%,30%);
+    --cor-logo3: hsl(var(--set-cor-principal),80%,33%);
     --cor-line: hsl(var(--set-cor-principal),3%,60%);
-    --cor-footer: hsl(var(--set-cor-principal),0%,14%);
+    --cor-footer: hsl(var(--set-cor-principal),0%,30%);
 
     // - destaque  
     --cor-d:#bd1616;
     --cor-border:#c5c1c1;
     --cor-menu:#545353;
-
+    --cor-btnDest:#0083FF;
     --cor-padrao-f:#ebebeb;
     --cor-padrao-prod:#f1f1f1;
     --cor-cupon-f:#ebebeb;
@@ -34,7 +34,7 @@
 
 
     // __________________ DESKTOP __________________ 
-    --icon-desktop: 30px;
+    --icon-desktop: 25px;
     --gap-p: 0.3rem;
     --gap-p-imgprod: 0.2rem;
 
