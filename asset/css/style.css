@@ -695,22 +695,39 @@ main #produtos--container .main--produto .produto .produto--descricao .descri--p
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
 }
+#modal .iicon {
+  font-size: 35px;
+}
 #modal .modal--main {
   width: 100%;
   height: 100%;
   position: relative;
   overflow: hidden;
-  background: #cfcfcf;
+  background: #fff;
   -o-object-fit: cover;
      object-fit: cover;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+}
+#modal .modal--main #modal-content {
+  width: 100%;
+  height: 100%;
   overflow-y: scroll;
+  background: transparent;
+}
+#modal .modal--main button {
+  background: none;
+  border: none;
+}
+#modal .modal--nav {
+  height: 5rem;
 }
 #modal #modal-close {
   cursor: pointer;
   position: absolute;
-  right: 0px;
-  top: 0px;
-  padding: 1rem;
+  right: 2rem;
+  top: 1rem;
 }
 
 footer {
