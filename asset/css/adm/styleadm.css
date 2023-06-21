@@ -98,6 +98,7 @@ section #container .container--conteudo {
   justify-content: space-between;
   align-items: center;
   padding: 0 0.5rem;
+  text-transform: capitalize;
 }
 #container--produtos #section--produtos table thead tr th span i {
   font-size: 25px;
