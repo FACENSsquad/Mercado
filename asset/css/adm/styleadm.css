@@ -64,15 +64,53 @@ section #container .container--conteudo {
 #container--produtos {
   width: 100%;
   height: 100vh;
-  padding: 1rem;
+  padding: 0 1rem;
   display: flex;
   flex-direction: column;
 }
 #container--produtos #nav--produtos {
-  background: #979797;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+#container--produtos #nav--produtos .produtos--pesq {
+  width: 50%;
+}
+#container--produtos #nav--produtos .produtos--pesq input {
+  width: 100%;
+  line-height: 2rem;
+  border-radius: 5px;
+}
+#container--produtos #section--produtos {
+  height: 100%;
+  padding: 0.5rem 0;
+}
+#container--produtos #section--produtos table {
+  width: 100%;
+}
+#container--produtos #section--produtos table thead {
+  background: #cfcfcf;
+  height: 2.5rem;
+}
+#container--produtos #section--produtos table thead tr th span {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.5rem;
+}
+#container--produtos #section--produtos table thead tr th span i {
+  font-size: 25px;
+}
+#container--produtos #section--produtos table tbody {
+  overflow-y: auto;
+  height: 100%;
+}
+#container--produtos #section--produtos table tbody tr td {
+  padding: 0.5rem 0;
+}
+#container--produtos #section--produtos table tbody tr td span {
+  padding: 0 0.5rem;
 }
 
 .menu--list a.active {
