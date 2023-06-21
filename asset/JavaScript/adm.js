@@ -28,9 +28,12 @@ async function getProdutos() {
       const response = await fetch('http://localhost:3000/produtos');
       const produtos = await response.json();
       
-      console.log(produtos)
-
+      // console.log(produtos.length)
+      
       const produtosList = document.querySelector('table tbody');
+      let produtos_pesq_qtd = document.querySelector('.produtos--pesq--qtd span');
+      console.log(produtos_pesq_qtd)
+      produtos_pesq_qtd.textContent = produtos.length;
       
       produtos.forEach(produto => {
         const row = document.createElement('tr');

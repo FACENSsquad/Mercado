@@ -74,19 +74,30 @@ section #container .container--conteudo {
   justify-content: center;
 }
 #container--produtos #nav--produtos .produtos--pesq {
-  width: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+#container--produtos #nav--produtos .produtos--pesq .produtos--pesq--qtd {
+  background: #cfcfcf;
+  padding: 0.5rem;
+  border-radius: 5px;
 }
 #container--produtos #nav--produtos .produtos--pesq input {
-  width: 100%;
+  width: 50%;
   line-height: 2rem;
   border-radius: 5px;
 }
 #container--produtos #section--produtos {
   height: 100%;
   padding: 0.5rem 0;
+  overflow-y: scroll;
 }
 #container--produtos #section--produtos table {
   width: 100%;
+  height: 100%;
 }
 #container--produtos #section--produtos table thead {
   background: #cfcfcf;

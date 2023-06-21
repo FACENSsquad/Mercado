@@ -85,9 +85,21 @@ section{
         align-items: center;
         justify-content: center;
         .produtos--pesq{
-            width: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 1rem;
+
+            
+            .produtos--pesq--qtd{
+                background: #cfcfcf;
+                padding: 0.5rem;
+                border-radius: 5px;
+
+            }
             input{
-                width: 100%;
+                width: 50%;
                 line-height: 2rem;
                 border-radius: 5px;
             }
@@ -97,8 +109,10 @@ section{
     #section--produtos{
         height: 100%;
         padding: 0.5rem 0;
+        overflow-y: scroll;
         table{
             width: 100%;
+            height: 100%;
             thead{
                 background: #cfcfcf;
                 height: 2.5rem;
@@ -119,7 +133,7 @@ section{
                 }
             }
             tbody{
-                overflow-y:auto ;
+                overflow-y:auto;
                 height: 100%;
                 tr{
                     td{
@@ -130,6 +144,7 @@ section{
                     }
                 }
             }
+        
         }
     }
 }
