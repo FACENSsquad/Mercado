@@ -8,6 +8,7 @@ const uri = 'mongodb://127.0.0.1:27017/LINEUP';
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 app.use(cors());
+app.use(express.json());//configurar o middleware express.json()
 
 //select collection
 app.get('/produtos', async (req, res) => {

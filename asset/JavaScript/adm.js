@@ -32,8 +32,8 @@ async function getProdutos() {
       
       const produtosList = document.querySelector('table tbody');
       let produtos_pesq_qtd = document.querySelector('.produtos--pesq--qtd span');
-      console.log(produtos_pesq_qtd)
       produtos_pesq_qtd.textContent = produtos.length;
+      console.log(produtos)
       
       produtos.forEach(produto => {
         const row = document.createElement('tr');
@@ -117,22 +117,13 @@ function cadastrarProduto() {
   const valorPromo = document.getElementById('input-valorPromo').value;
   const promocao = document.getElementById('meuCheckbox').checked;
 
-  const data = {
-    descricao: descricao,
-    valor: valor,
-    marca: marca,
-    embalagem: embalagem,
-    valorPromo: valorPromo,
-    promocao: promocao
-  };
-
   const documento = {
-    "Descrição": data.descricao,
-    "Valor": data.valor,
-    "Marca": data.marca,
-    "Embalagem": data.embalagem,
-    "Valor promocional": data.valorPromo,
-    "Promoção": data.promocao
+    "Descrição": descricao,
+    "Valor": valor,
+    "Marca": marca,
+    "Embalagem": embalagem,
+    "Valor promocional": valorPromo,
+    "Promoção": promocao
   };
 
   console.log(documento);
