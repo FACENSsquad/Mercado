@@ -3,10 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cadastro</title>
 </head>
 <body>
-    olaaa
-    <h1>cadastro</h1>
+    
+    <div id="cadastro--container">
+        <div class="cadastro--main">
+            <div class="nav--cadastro">
+
+            </div>
+            <div class="main--cadastro">
+                <form action="">
+                    <label for="">Descrição</label>
+                    <input type="text" id="descricao">
+
+                    <label for="">Valor</label>
+                    <input type="text" name="valor" id="input-valor" placeholder="Digite o valor">
+                    
+                    <label for="">Marca</label>
+                    <input type="text" id="marca">
+
+                    <label for="embalagem">Embalagem</label>
+                    <input type="text" maxlength="6" id="embalagem">
+
+                    <label for="valorPromo">Valor Promocional</label>
+                    <input type="text" name="valorPromo" id="input-valorPromo" placeholder="Digite o valor">
+
+                    <label for="promocao">Promoção</label>
+                    <input type="checkbox" name="opcao" id="meuCheckbox" value="valor" >
+
+                    <div class="enviar" onclick="cadastrarProduto()">
+                        <span>Enviar</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
+<script src="/asset/JavaScript/adm.js"></script>
 </html>

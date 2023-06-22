@@ -21,7 +21,7 @@ function carregarConteudo(url, element) {
     xhr.send();
 }
 
-// MONBO ABAIXO
+// MONGO ABAIXO -------------------- PRODUTOS -------------------- 
 
 async function getProdutos() {
     try {
@@ -70,3 +70,91 @@ async function getProdutos() {
   }
 
   getProdutos();
+
+// -------------------- CADASTRO --------------------
+const inputValor = document.getElementById('input-valor');
+const inputValorPromo = document.getElementById('input-valorPromo');
+
+
+function formatt(params) {
+  params.addEventListener('input', () => {
+    const value = params.value.replace(/[^\d,]/g, '');
+    const parts = value.split(',');
+  
+    let formattedValue = '';
+  
+    if (parts.length > 0) {
+      const integerPart = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+      formattedValue = integerPart;
+  
+      if (parts.length > 1) {
+        const decimalPart = parts[1].substring(0, 2);
+        formattedValue += ',' + decimalPart;
+      }
+    }
+  
+    params.value = formattedValue;
+  });
+}
+
+formatt(inputValor);
+formatt(inputValorPromo);
+
+// valor checkbox 
+const checkbox = document.getElementById('meuCheckbox');
+
+checkbox.addEventListener('change', () => {
+  const isChecked = checkbox.checked;
+  console.log(isChecked);
+});
+
+// INSERT
+function cadastrarProduto() {
+  const descricao = document.getElementById('descricao').value;
+  const valor = document.getElementById('input-valor').value;
+  const marca = document.getElementById('marca').value;
+  const embalagem = document.getElementById('embalagem').value;
+  const valorPromo = document.getElementById('input-valorPromo').value;
+  const promocao = document.getElementById('meuCheckbox').checked;
+
+  const data = {
+    descricao: descricao,
+    valor: valor,
+    marca: marca,
+    embalagem: embalagem,
+    valorPromo: valorPromo,
+    promocao: promocao
+  };
+
+  const documento = {
+    "Descrição": data.descricao,
+    "Valor": data.valor,
+    "Marca": data.marca,
+    "Embalagem": data.embalagem,
+    "Valor promocional": data.valorPromo,
+    "Promoção": data.promocao
+  };
+
+  console.log(documento);
+
+  fetch('http://localhost:3000/cadastrar', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(documento)
+  })
+  .then(response => {
+    if (response.ok) {
+      console.log('Produto cadastrado com sucesso');
+      // Faça algo com a resposta, se necessário
+    } else {
+      console.error('Erro ao cadastrar o produto');
+      // Trate o erro, se necessário
+    }
+  })
+  .catch(error => {
+    console.error('Erro ao cadastrar o produto:', error);
+    // Trate o erro, se necessário
+  });
+}

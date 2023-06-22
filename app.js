@@ -9,6 +9,7 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 
 app.use(cors());
 
+//select collection
 app.get('/produtos', async (req, res) => {
   try {
     await client.connect();
@@ -25,6 +26,27 @@ app.get('/produtos', async (req, res) => {
     await client.close();
   }
 });
+
+//insert data
+app.post('/cadastrar', async (req, res) => {
+  try {
+    const data = req.body;
+
+    await client.connect();
+
+    const database = client.db('LINEUP');
+    const collection = database.collection('Produtos');
+    const result = await collection.insertOne(data);
+
+    res.status(201).send('Produto cadastrado com sucesso');
+  } catch (err) {
+    console.log(err);
+    res.status(500).send('Erro ao cadastrar o produto');
+  } finally {
+    await client.close();
+  }
+});
+
 
 app.listen(3000, () => {
   console.log('Servidor em execução na porta 3000');
