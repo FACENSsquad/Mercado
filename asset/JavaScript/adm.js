@@ -116,24 +116,31 @@ function cadastrarProduto() {
   const embalagem = document.getElementById('embalagem').value;
   const valorPromo = document.getElementById('input-valorPromo').value;
   const promocao = document.getElementById('meuCheckbox').checked;
+  const imagem = document.getElementById('input-imagem').files[0];
 
-  const documento = {
-    "Descrição": descricao,
-    "Valor": valor,
-    "Marca": marca,
-    "Embalagem": embalagem,
-    "Valor promocional": valorPromo,
-    "Promoção": promocao
-  };
+  if ( //Ao chamar trim() em uma string, todos os espaços em branco iniciais e finais são removidos, resultando em uma nova string sem esses espaços em branco adicionais
+    descricao.trim() === '' ||
+    valor.trim() === '' ||
+    marca.trim() === '' ||
+    embalagem.trim() === '' ||
+    valorPromo.trim() === ''
+  ) {
+    alert('Por favor, preencha todos os campos, obrigado!!!');
+    return; // Impede o envio do formulário
+  }
 
-  console.log(documento);
+  const formData = new FormData();
+  formData.append('Descrição', descricao);
+  formData.append('Valor', valor);
+  formData.append('Marca', marca);
+  formData.append('Embalagem', embalagem);
+  formData.append('Valor promocional', valorPromo);
+  formData.append('Promoção', promocao);
+  formData.append('imagem', imagem);
 
   fetch('http://localhost:3000/cadastrar', {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(documento)
+    body: formData
   })
   .then(response => {
     if (response.ok) {
@@ -149,3 +156,6 @@ function cadastrarProduto() {
     // Trate o erro, se necessário
   });
 }
+
+
+

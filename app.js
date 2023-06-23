@@ -28,16 +28,34 @@ app.get('/produtos', async (req, res) => {
   }
 });
 
-//insert data
-app.post('/cadastrar', async (req, res) => {
+// ------------------------- insert data -------------------------
+// </IMAGEM>
+const multer = require('multer');
+
+// Configuração do multer para salvar os arquivos na pasta 'uploads'
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'asset/img/prod/');
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.originalname);
+  }
+});
+
+const upload = multer({ storage: storage });
+// </IMAGEM>
+
+//rota cafastro
+app.post('/cadastrar', upload.single('imagem'),async (req, res) => {
   try {
     const data = req.body;
+    const imagemPath = req.file.path; // Caminho da imagem salva no servidor
 
     await client.connect();
 
     const database = client.db('LINEUP');
     const collection = database.collection('Produtos');
-    const result = await collection.insertOne(data);
+    const result = await collection.insertOne({ ...data, imagem: imagemPath });
 
     res.status(201).send('Produto cadastrado com sucesso');
   } catch (err) {
