@@ -16,8 +16,22 @@ function carregarConteudo(url, element) {
     xhr.open('GET', url, true);
     xhr.onreadystatechange = function() {
     if (xhr.readyState === 4 && xhr.status === 200) {
-        document.querySelector('.container--conteudo').innerHTML = xhr.responseText;
-        getProdutos();
+      document.querySelector('.container--conteudo').innerHTML = xhr.responseText;
+      getProdutos();
+
+      // INSERT
+      const imagem2 = document.querySelector('input[type="file"]');
+      const btnImgBack = document.querySelector('.form--img div');
+      imagem2.addEventListener('change', function(event) {
+      const arquivo = event.target.files[0];
+      if(arquivo != 0){
+          const span = document.querySelector('.span--selecionar');
+          span.textContent = "selecionado";
+          span.style.color = "#fff";
+          btnImgBack.style.background = '#2db61b';
+      }
+      console.log(arquivo);
+      });
     }
     };
     xhr.send();
@@ -30,12 +44,9 @@ async function getProdutos() {
       const response = await fetch('http://localhost:3000/produtos');
       const produtos = await response.json();
       
-      // console.log(produtos.length)
-      
       const produtosList = document.querySelector('table tbody');
       let produtos_pesq_qtd = document.querySelector('.produtos--pesq--qtd span');
       produtos_pesq_qtd.textContent = produtos.length;
-      console.log(produtos)
       
       produtos.forEach(produto => {
         const row = document.createElement('tr');
@@ -110,18 +121,6 @@ checkbox.addEventListener('change', () => {
   console.log(isChecked);
 });
 
-
-
-// INSERT
-const imagem2 = document.querySelector('input[type="file"]');
-imagem2.addEventListener('change', function(event) {
-  const arquivo = event.target.files[0];
-  if(arquivo != 0){
-      const span = document.querySelector('.span--selecionar');
-      span.textContent = "selecionado";
-  }
-  console.log(arquivo);
-});
 
 function cadastrarProduto() {
   const descricao = document.getElementById('descricao').value;

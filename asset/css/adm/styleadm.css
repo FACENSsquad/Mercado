@@ -63,6 +63,19 @@ section #container .container--conteudo {
   align-items: center;
   justify-content: center;
   padding: 0.5rem 0;
+  position: relative;
+}
+section #container .container--conteudo .home--container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: #0083FF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #container--produtos {
@@ -143,7 +156,34 @@ section #container .container--conteudo {
 }
 #cadastro--container .cadastro--main .nav--cadastro {
   height: 3rem;
-  border-bottom: 1px solid #0083FF;
+}
+#cadastro--container .cadastro--main .nav--cadastro .nav--cad--descri {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  align-items: center;
+  padding: 0 1rem;
+  border-radius: 10px;
+  background: #1d1d1d;
+}
+#cadastro--container .cadastro--main .nav--cadastro .nav--cad--descri .descri--h1 {
+  color: #f3f3f3;
+  height: 2rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+  border-radius: 20px;
+}
+#cadastro--container .cadastro--main .nav--cadastro .nav--cad--descri .descri--h1 h1 {
+  font-size: 13px;
+  text-transform: uppercase;
+}
+#cadastro--container .cadastro--main .nav--cadastro .nav--cad--descri .descri--info i {
+  color: #f3f3f3;
+  padding: 0 10px;
+  cursor: pointer;
 }
 #cadastro--container .cadastro--main .main--cadastro {
   height: 100%;
@@ -166,7 +206,6 @@ section #container .container--conteudo {
   background: #f3f3f3;
 }
 #cadastro--container .cadastro--main .main--cadastro form input[type=file] {
-  background: #0083FF;
   height: 100%;
 }
 #cadastro--container .cadastro--main .main--cadastro form .form--img {
