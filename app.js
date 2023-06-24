@@ -32,7 +32,7 @@ app.get('/produtos', async (req, res) => {
 // </IMAGEM>
 const multer = require('multer');
 
-// Configuração do multer para salvar os arquivos na pasta 'uploads'
+// Configuração do multer para salvar os arquivos na pasta 'prod'
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, 'asset/img/prod/');

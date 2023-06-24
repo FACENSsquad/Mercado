@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/asset/css/adm/styleadm.css">
+
     <title>Cadastro</title>
 </head>
 <body>
@@ -10,30 +13,45 @@
     <div id="cadastro--container">
         <div class="cadastro--main">
             <div class="nav--cadastro">
-
+                cadastro
             </div>
             <div class="main--cadastro">
                 <form action="">
-                    <label for="">Descrição</label>
-                    <input type="text" id="descricao">
+                    <div class="form--div">
+                        <label for="">Descrição</label><br>
+                        <input type="text" id="descricao" placeholder="Descrição do item...">
+                    </div>
+                    <div class="form--div">
+                        <label for="">Valor</label><br>
+                        <input type="text" name="valor" id="input-valor" placeholder="Digite o valor">
+                    </div>
+                    <div class="form--div">
+                        <label for="">Marca</label><br>
+                        <input type="text" id="marca" placeholder="Marca do produto...">
+                    </div>
+                    <div class="form--div">
+                        <label for="embalagem">Embalagem</label><br>
+                        <input type="text" maxlength="6" id="embalagem" placeholder="EX: 1L, 500Ml, 7Kg, 500G... ">
+                    </div>
 
-                    <label for="">Valor</label>
-                    <input type="text" name="valor" id="input-valor" placeholder="Digite o valor">
                     
-                    <label for="">Marca</label>
-                    <input type="text" id="marca">
+                    <div class="form--div">
+                        <label for="valorPromo">Valor Promocional</label><br>
+                        <input type="text" name="valorPromo" id="input-valorPromo" placeholder="Digite o valor">
+                    </div>
 
-                    <label for="embalagem">Embalagem</label>
-                    <input type="text" maxlength="6" id="embalagem">
+                    <div class="form--div form--img">
+                        <label for="imagem">Imagem</label><br>
+                        <div>
+                            <span class="span--selecionar">selecionar</span>
+                            <input type="file" name="imagem" id="input-imagem">
+                        </div>
+                    </div>
 
-                    <label for="imagem">Imagem</label>
-                    <input type="file" name="imagem" id="input-imagem">
-
-                    <label for="valorPromo">Valor Promocional</label>
-                    <input type="text" name="valorPromo" id="input-valorPromo" placeholder="Digite o valor">
-
-                    <label for="promocao">Promoção</label>
-                    <input type="checkbox" name="opcao" id="meuCheckbox" value="valor" >
+                    <div class="form--div div--checkbox">
+                        <label for="promocao">Promoção</label><br>
+                        <input type="checkbox" name="opcao" id="meuCheckbox" value="valor" >
+                    </div>
 
                     <div class="enviar" onclick="cadastrarProduto()">
                         <span>Enviar</span>

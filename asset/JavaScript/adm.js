@@ -1,3 +1,5 @@
+
+
 function carregarConteudo(url, element) {
 
     // Remove a classe 'active' de todos os links
@@ -108,7 +110,19 @@ checkbox.addEventListener('change', () => {
   console.log(isChecked);
 });
 
+
+
 // INSERT
+const imagem2 = document.querySelector('input[type="file"]');
+imagem2.addEventListener('change', function(event) {
+  const arquivo = event.target.files[0];
+  if(arquivo != 0){
+      const span = document.querySelector('.span--selecionar');
+      span.textContent = "selecionado";
+  }
+  console.log(arquivo);
+});
+
 function cadastrarProduto() {
   const descricao = document.getElementById('descricao').value;
   const valor = document.getElementById('input-valor').value;
@@ -117,7 +131,6 @@ function cadastrarProduto() {
   const valorPromo = document.getElementById('input-valorPromo').value;
   const promocao = document.getElementById('meuCheckbox').checked;
   const imagem = document.getElementById('input-imagem').files[0];
-
   if ( //Ao chamar trim() em uma string, todos os espaços em branco iniciais e finais são removidos, resultando em uma nova string sem esses espaços em branco adicionais
     descricao.trim() === '' ||
     valor.trim() === '' ||
@@ -130,13 +143,18 @@ function cadastrarProduto() {
   }
 
   const formData = new FormData();
-  formData.append('Descrição', descricao);
+  formData.append('Descricao', descricao);
   formData.append('Valor', valor);
   formData.append('Marca', marca);
   formData.append('Embalagem', embalagem);
-  formData.append('Valor promocional', valorPromo);
-  formData.append('Promoção', promocao);
+  formData.append('Valor promocional',valorPromo);
+  formData.append('Promocao', promocao);
   formData.append('imagem', imagem);
+  formData.append('Economia', 0);
+  const dataAtual = new Date();
+  const dataFormatada = `${dataAtual.getDate()}-${dataAtual.getMonth() + 1}-${dataAtual.getFullYear()}`;
+
+  formData.append('Data de Cadastro', dataFormatada);
 
   fetch('http://localhost:3000/cadastrar', {
     method: 'POST',
@@ -145,6 +163,7 @@ function cadastrarProduto() {
   .then(response => {
     if (response.ok) {
       console.log('Produto cadastrado com sucesso');
+      alert("CADASTRO EFETUADO COM SUCESSO");
       // Faça algo com a resposta, se necessário
     } else {
       console.error('Erro ao cadastrar o produto');

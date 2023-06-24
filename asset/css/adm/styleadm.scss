@@ -1,5 +1,7 @@
+:root{
+    --cor-btnDest:#0083FF;
 
-
+}
 *{
     margin: 0;
     box-sizing: border-box;
@@ -149,8 +151,102 @@ section{
         }
     }
 }
-
 // __________________ </PRODUTOS> __________________
+
+
+// __________________ <CADASTRO> __________________
+#cadastro--container{
+    width: 100%;
+    height: 100vh;
+    padding: 1rem;
+
+    .cadastro--main{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        .nav--cadastro{
+            height: 3rem;
+            border-bottom: 1px solid#0083FF;
+        }
+
+        .main--cadastro{
+            height: 100%;
+            padding-top: 1rem;
+            form{
+                width: 100%;
+                position: relative;
+                gap: 3rem;
+                flex-wrap: wrap;
+                display: flex;
+                align-content: flex-start;
+                height: 100%;
+
+                input[type="text"]{
+                    height: 2rem;
+                    width: 250px;
+                    margin-top: 5px;
+                    border-radius: 5px;
+                    background: #f3f3f3;
+                }
+                input[type="file"]{
+                    background: #0083FF;
+                    height: 100%;
+                }
+                .form--img{
+                    width: 150px;
+                    div{
+                        margin-top: 5px;
+                        position: relative;
+                        background: #979797;
+                        height: 100%;
+                        width: 100%;
+                        display: flex;
+                        text-align: center;
+                        align-items: center;
+                        text-transform: uppercase;
+                        border-radius: 5px;
+                        &:hover{
+                            box-shadow: 0px 0px 4px #3a3939;
+                        }
+                        span{
+                            width: 100%;
+                            
+                        }
+                        input{
+                            cursor: pointer;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            bottom: 0;
+                            width: 100%;
+                            opacity: 0;
+                        }
+                    }
+                }
+                .div--checkbox{
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                }
+                
+                .enviar{
+                    position: absolute;
+                    bottom: 4rem;
+                    right: 2rem;
+                    cursor: pointer;
+                    background: var(--cor-btnDest);
+                    padding: 1rem 3rem;
+                    border-radius: 5px;
+                    &:hover{
+                        box-shadow: 0px 0px 4px #3a3939;
+                    }
+                }
+            }
+        }
+    }
+}
+// __________________ </CADASTRO> __________________
 
 .menu--list a.active {
     border-radius: 5px 0 0 5px ;
