@@ -238,6 +238,18 @@ section #container .container--conteudo .home--container {
   width: 100%;
   opacity: 0;
 }
+#cadastro--container .cadastro--main .main--cadastro form .form--img div p {
+  position: absolute;
+  bottom: -2rem;
+  background: #979797;
+  width: 100%;
+  height: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+  text-transform: lowercase;
+}
 #cadastro--container .cadastro--main .main--cadastro form .div--checkbox {
   display: flex;
   align-items: center;

@@ -22,15 +22,18 @@ function carregarConteudo(url, element) {
       // INSERT
       const imagem2 = document.querySelector('input[type="file"]');
       const btnImgBack = document.querySelector('.form--img div');
+      const infoArquivo = document.createElement('p');
       imagem2.addEventListener('change', function(event) {
-      const arquivo = event.target.files[0];
-      if(arquivo != 0){
+        const arquivo = event.target.files[0];
+        if(arquivo != 0){
           const span = document.querySelector('.span--selecionar');
           span.textContent = "selecionado";
           span.style.color = "#fff";
           btnImgBack.style.background = '#2db61b';
+          btnImgBack.appendChild(infoArquivo);
+          infoArquivo.textContent = arquivo.name;
       }
-      console.log(arquivo);
+      console.log(arquivo.name);
       });
     }
     };
