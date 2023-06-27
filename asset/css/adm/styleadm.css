@@ -1,5 +1,6 @@
 :root {
   --cor-btnDest:#0083FF;
+  --nav-top:#1d1d1d;
 }
 
 * {
@@ -15,6 +16,7 @@ section {
   height: 100vh;
   background: hsl(100, 0%, 14%);
   padding: 1rem;
+  display: flex;
 }
 section #container {
   width: 100%;
@@ -60,9 +62,8 @@ section #container .container--conteudo {
   background: #fff;
   border-radius: 25px;
   overflow: hidden;
-  align-items: center;
-  justify-content: center;
   padding: 0.5rem 0;
+  width: 100%;
   position: relative;
 }
 section #container .container--conteudo .home--container {
@@ -164,7 +165,7 @@ section #container .container--conteudo .home--container {
   align-items: center;
   padding: 0 1rem;
   border-radius: 10px;
-  background: #1d1d1d;
+  background: var(--nav-top);
 }
 #cadastro--container .cadastro--main .nav--cadastro .nav--cad--descri .descri--h1 {
   color: #f3f3f3;
@@ -173,7 +174,6 @@ section #container .container--conteudo .home--container {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 10px;
   border-radius: 20px;
 }
 #cadastro--container .cadastro--main .nav--cadastro .nav--cad--descri .descri--h1 h1 {
@@ -182,7 +182,6 @@ section #container .container--conteudo .home--container {
 }
 #cadastro--container .cadastro--main .nav--cadastro .nav--cad--descri .descri--info i {
   color: #f3f3f3;
-  padding: 0 10px;
   cursor: pointer;
 }
 #cadastro--container .cadastro--main .main--cadastro {
@@ -266,6 +265,81 @@ section #container .container--conteudo .home--container {
 }
 #cadastro--container .cadastro--main .main--cadastro form .enviar:hover {
   box-shadow: 0px 0px 4px #3a3939;
+}
+
+#banner--container {
+  width: 100%;
+  height: 100vh;
+  padding: 1rem;
+}
+#banner--container .banner-main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+#banner--container .banner-main .banner--nav {
+  height: 3rem;
+  width: 100%;
+}
+#banner--container .banner-main .banner--nav .banner--nav--cont {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  align-items: center;
+  padding: 0 1rem;
+  border-radius: 10px;
+  background: var(--nav-top);
+  color: #f3f3f3;
+}
+#banner--container .banner-main .banner--section {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 2fr 4fr;
+  padding-top: 1rem;
+}
+#banner--container .banner-main .banner--section .banner--slides {
+  border: #979797 1px solid;
+}
+#banner--container .banner-main .banner--section .banner--slides table {
+  width: 100%;
+  height: 100%;
+}
+#banner--container .banner-main .banner--section .banner--slides table thead {
+  background: #cfcfcf;
+  height: 2.5rem;
+}
+#banner--container .banner-main .banner--section .banner--slides table thead tr th span {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.5rem;
+  text-transform: capitalize;
+}
+#banner--container .banner-main .banner--section .banner--slides table thead tr th span i {
+  font-size: 25px;
+}
+#banner--container .banner-main .banner--section .banner--slides table tbody {
+  overflow-y: auto;
+  height: 100%;
+}
+#banner--container .banner-main .banner--section .banner--slides table tbody tr td {
+  padding: 0.5rem 0;
+}
+#banner--container .banner-main .banner--section .banner--slides table tbody tr td span {
+  padding: 0 0.5rem;
+}
+#banner--container .banner-main .banner--section .banner--visual {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  padding: 2rem;
+}
+#banner--container .banner-main .banner--section .banner--visual .banner--slide {
+  background: #cfcfcf;
+  width: 25%;
 }
 
 .menu--list a.active {
