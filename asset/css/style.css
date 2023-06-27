@@ -385,21 +385,28 @@ section .section--banner .banner .banner--slides .slides--container {
   -o-object-fit: cover;
      object-fit: cover;
   position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 section .section--banner .banner .banner--slides .slides--container .slides {
+  padding-right: 2rem;
   width: 100%;
-  height: 100%;
+  height: 90%;
   display: flex;
   overflow: hidden;
-  border: 1px solid #cfcfcf;
+  border: 1px solid #ffffff;
   border-radius: 0px 10px 10px 0px;
 }
 section .section--banner .banner .banner--slides .slides--container .slides .slide {
   min-width: 100%;
   height: 100%;
   position: relative;
+  overflow: hidden;
+  padding-right: 1rem;
 }
 section .section--banner .banner .banner--slides .slides--container .slides .slide img {
+  border-radius: 10px;
   width: 100%;
   height: 100%;
 }
