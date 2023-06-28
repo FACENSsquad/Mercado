@@ -374,8 +374,38 @@ section{
                 gap: 1rem;
                 padding: 2rem;
                 .banner--slide{
-                    background: #cfcfcf;
+                    display: flex;
+                    background: var(--nav-top);
                     width: 25%;
+                    padding: 0.5rem;
+                    border-radius: 10px;
+                    .banner--slide--main{
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        overflow: hidden;
+                        .img{
+                            width: 100%;
+                            overflow: hidden;
+                            img{
+                                width: 100%;
+                                object-fit: cover;
+                            }
+                        }
+                        .informacao{
+                            color: #fff;
+                            .codigo{
+                                display: flex;
+                                text-align: end;
+                                width: 100%;
+                                background: #0083FF;
+                            }
+                            span{
+                            }
+                        }
+
+
+                    }
                 }
             }
         }

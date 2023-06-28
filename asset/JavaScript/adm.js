@@ -18,6 +18,7 @@ function carregarConteudo(url, element) {
     if (xhr.readyState === 4 && xhr.status === 200) {
       document.querySelector('.container--conteudo').innerHTML = xhr.responseText;
       getProdutos();
+      getBanners()
 
       // INSERT
       const imagem2 = document.querySelector('input[type="file"]');
@@ -47,8 +48,9 @@ async function getProdutos() {
       const response = await fetch('http://localhost:3000/produtos');
       const produtos = await response.json();
       
-      const produtosList = document.querySelector('table tbody');
+      const produtosList = document.querySelector('#section--produtos table tbody');
       let produtos_pesq_qtd = document.querySelector('.produtos--pesq--qtd span');
+      console.log(produtos);
       produtos_pesq_qtd.textContent = produtos.length;
       
       produtos.forEach(produto => {
@@ -86,6 +88,91 @@ async function getProdutos() {
   }
 
   getProdutos();
+// MONGO ABAIXO -------------------- BANNER -------------------- 
+
+async function getBanners() {
+  try {
+    const response = await fetch('http://localhost:3000/banner');
+    const banners = await response.json();
+    
+    const bannerList = document.querySelector('.banner--slides table tbody');
+    const bannerSlide = document.querySelector('.banner--visual');
+
+    console.log(banners);
+    // console.log(banners.codigo);
+    console.log(bannerSlide);
+
+    banners.forEach(slide =>{
+      const banner_slide = document.createElement('div');
+      const banner_slide_main = document.createElement('div');
+      const img = document.createElement('div');
+      const informacao = document.createElement('div');
+      const codigo = document.createElement('div');
+      const descricao = document.createElement('div');
+      const marca = document.createElement('div');
+      const imagem = document.createElement('img');
+      const span = document.createElement('span');
+      imagem.src = slide.imagem;
+
+      banner_slide.classList.add('banner--slide');
+      banner_slide_main.classList.add('banner--slide--main');
+      banner_slide.appendChild(banner_slide_main);
+      img.classList.add('img');
+      img.appendChild(imagem);
+      banner_slide_main.appendChild(img);
+      informacao.classList.add('informacao');
+
+      codigo.classList.add('codigo');
+      codigo.textContent = 'Codigo:';
+      span.textContent = slide.codigo;
+      codigo.appendChild(span);
+      informacao.appendChild(codigo);
+
+      descricao.classList.add('descricao');
+      descricao.textContent = `Descrição: ${slide.Descrição}`;
+      informacao.appendChild(descricao);
+      
+
+      marca.classList.add('marca');
+      marca.textContent = `Marca: ${slide.Marca}`;
+      informacao.appendChild(marca);
+
+      banner_slide_main.appendChild(informacao);
+
+
+      bannerSlide.appendChild(banner_slide);
+    })
+
+    banners.forEach(banner =>{
+      const row = document.createElement('tr');
+
+      const tdcodigo = document.createElement('td');
+      const Idcodigo = document.createElement('span');
+      Idcodigo.textContent = banner.codigo;
+      tdcodigo.appendChild(Idcodigo);
+      row.appendChild(tdcodigo);
+
+      const tddescricao = document.createElement('td');
+      const Iddescricao = document.createElement('span');
+      Iddescricao.textContent = banner.Descrição;
+      tddescricao.appendChild(Iddescricao);
+      row.appendChild(tddescricao);
+
+      const tdmarca = document.createElement('td');
+      const Idmarca = document.createElement('span');
+      Idmarca.textContent = banner.Marca;
+      tdmarca.appendChild(Idmarca);
+      row.appendChild(tdmarca);
+
+      bannerList.appendChild(row);
+
+    })   
+    
+  } catch (err) {
+    console.log(err);
+  }
+}
+getBanners();
 
 // -------------------- CADASTRO --------------------
 const inputValor = document.getElementById('input-valor');
@@ -179,4 +266,5 @@ function cadastrarProduto() {
 }
 
 
-
+// ----------------------------------------- BANNER -----------------------------------------
+// API DOLAR

@@ -10,7 +10,7 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 app.use(cors());
 app.use(express.json());//configurar o middleware express.json()
 
-//select collection
+//select collection PRODUTOS
 app.get('/produtos', async (req, res) => {
   try {
     await client.connect();
@@ -28,6 +28,23 @@ app.get('/produtos', async (req, res) => {
   }
 });
 
+//select collection BANNER
+app.get('/banner', async (req, res) => {
+  try {
+    await client.connect();
+
+    const database = client.db('LINEUP');
+    const collection = database.collection('banner');
+    const documents = await collection.find().toArray();
+
+    res.json(documents);
+  } catch (err) {
+    console.log(err);
+    res.status(500).send('Erro ao recuperar os dados');
+  } finally {
+    await client.close();
+  }
+});
 // ------------------------- insert data -------------------------
 // </IMAGEM>
 const multer = require('multer');
