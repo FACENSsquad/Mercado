@@ -110,6 +110,8 @@ async function getBanners() {
       const codigo = document.createElement('div');
       const descricao = document.createElement('div');
       const marca = document.createElement('div');
+      const title = document.createElement('div');
+      const info = document.createElement('div');
       const imagem = document.createElement('img');
       const span = document.createElement('span');
       imagem.src = slide.imagem;
@@ -122,22 +124,30 @@ async function getBanners() {
       banner_slide_main.appendChild(img);
       informacao.classList.add('informacao');
 
+      banner_slide_main.appendChild(title);
+      title.classList.add('title');
+      title.textContent = 'Informativo';
+
       codigo.classList.add('codigo');
       codigo.textContent = 'Codigo:';
       span.textContent = slide.codigo;
       codigo.appendChild(span);
       informacao.appendChild(codigo);
 
+      marca.classList.add('marca');
+      marca.textContent = `Marca: ${slide.Marca}`;
+      informacao.appendChild(marca);
+
       descricao.classList.add('descricao');
       descricao.textContent = `Descrição: ${slide.Descrição}`;
       informacao.appendChild(descricao);
       
 
-      marca.classList.add('marca');
-      marca.textContent = `Marca: ${slide.Marca}`;
-      informacao.appendChild(marca);
-
       banner_slide_main.appendChild(informacao);
+      
+      banner_slide_main.appendChild(info);
+      info.classList.add('info');
+      info.textContent = 'Cada card representa seu slide no inicio da loja virtual, tomar cuidado na hora de atualizar pois vai sabir para produção';
 
 
       bannerSlide.appendChild(banner_slide);
@@ -152,17 +162,18 @@ async function getBanners() {
       tdcodigo.appendChild(Idcodigo);
       row.appendChild(tdcodigo);
 
-      const tddescricao = document.createElement('td');
-      const Iddescricao = document.createElement('span');
-      Iddescricao.textContent = banner.Descrição;
-      tddescricao.appendChild(Iddescricao);
-      row.appendChild(tddescricao);
-
+      
       const tdmarca = document.createElement('td');
       const Idmarca = document.createElement('span');
       Idmarca.textContent = banner.Marca;
       tdmarca.appendChild(Idmarca);
       row.appendChild(tdmarca);
+      
+      const tddescricao = document.createElement('td');
+      const Iddescricao = document.createElement('span');
+      Iddescricao.textContent = banner.Descrição;
+      tddescricao.appendChild(Iddescricao);
+      row.appendChild(tddescricao);
 
       bannerList.appendChild(row);
 
