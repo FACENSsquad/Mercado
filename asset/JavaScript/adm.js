@@ -88,6 +88,7 @@ async function getProdutos() {
   }
 
   getProdutos();
+
 // MONGO ABAIXO -------------------- BANNER -------------------- 
 
 async function getBanners() {
@@ -97,9 +98,6 @@ async function getBanners() {
     
     const bannerList = document.querySelector('.banner--slides table tbody');
     const bannerSlide = document.querySelector('.banner--visual');
-
-    console.log(banners);
-    // console.log(banners.codigo);
     console.log(bannerSlide);
 
     banners.forEach(slide =>{

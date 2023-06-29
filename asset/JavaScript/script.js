@@ -62,68 +62,165 @@ window.addEventListener("scroll", function(){
   nav.classList.toggle("sticky", window.scrollY > 30);
 })
 
+// -------------------- ITENS TELA INICIAL -------------------- 
+async function getProdutos() {
+    try {
+      const response = await fetch('http://localhost:3000/produtos');
+      const produtos = await response.json();
+      console.log(produtos);
 
-// adicionar item
-const produtos = document.querySelectorAll('.produto');
+      
+      produtos.forEach(produtoo => {
 
-// Percorra cada div de produto
-produtos.forEach((produto, index) => {
-    // Obtenha o input de quantidade do produto atual
-    const quantidadeInput = produto.querySelector('input[type="number"]');
+        const mainProduto = document.querySelector('.main--produto');
+        const produto = document.createElement('div');
+        produto.classList.add('produto');
+        //subs produto
+        const produtoImg = document.createElement('div');
+        produtoImg.className = 'produto--img';
+          const imgTop = document.createElement('div');
+          imgTop.className = 'img--top';
+            const emoDtq = document.createElement('div');
+            emoDtq.className = 'emo--qtd';
+              const favorit = document.createElement('div');
+              favorit.className = 'favorit prd--icon--padrao';
+                const favoritImg = document.createElement('img');
+                favoritImg.src = '../../asset/img/coracao.png';
+                favorit.appendChild(favoritImg);
+              const produtoQtd = document.createElement('div');
+              produtoQtd.className = 'produto--qtd prd--icon--padrao';
+              emoDtq.append(favorit, produtoQtd);
+            const embalagem = document.createElement('div');
+            embalagem.className = 'embalagem';
+              const prdIconPadrao = document.createElement('span');
+              prdIconPadrao.textContent = produtoo.Embalagem;
+              prdIconPadrao.className = 'prd--icon--padrao';
+              embalagem.append(prdIconPadrao);
+            imgTop.append(emoDtq, embalagem);
+            const imagem = document.createElement('div');
+            imagem.className = 'imagem';
+            const imagemImg = document.createElement('img');
+            imagemImg.src = produtoo.imagem;
+            imagem.appendChild(imagemImg);
 
-    // Obtenha a div produto--qtd do produto atual
-    const produtoQtd = produto.querySelector('.produto--qtd');
+          const valor = document.createElement('div');
+          valor.className = 'valor';
+            const valorAnt = document.createElement('div');
+            valorAnt.className = 'valor--ant';
+            valorAnt.textContent = produtoo['Valor promocional'];
+            const valorReal = document.createElement('div');
+            valorReal.className = 'valor--real';
+            valorReal.textContent = produtoo.Valor;
+            valor.append(valorAnt, valorReal);
+          produtoImg.append(imgTop, imagem, valor);
 
-    // Adicione um ouvinte de evento de mudança ao input de quantidade
-    quantidadeInput.addEventListener('change', () => {
-        const quantidade = quantidadeInput.value;
-        produtoQtd.textContent = quantidade > 0 ? quantidade : '';
-    });
-});
+        const economia = document.createElement('div');
+        economia.className = 'economia';
+          const ecoDescricao = document.createElement('div');
+          ecoDescricao.textContent = 'Economia ';
+          ecoDescricao.className = 'eco--descricao';
+          const ecoDescricaoSpan = document.createElement('span');
+          ecoDescricaoSpan.textContent = produtoo.Economia;
+          ecoDescricao.appendChild(ecoDescricaoSpan);
+          economia.append(ecoDescricao);
 
+        const produtoDescricao = document.createElement('div');
+        produtoDescricao.className = 'produto--descricao';
+          const informativo = document.createElement('div');
+          informativo.className = 'informativo';
+          informativo.textContent = ' n maxima por cliente';
+          const informativoSpan = document.createElement('span');
+          informativoSpan.textContent = '5';
+          informativo.appendChild(informativoSpan);
+          const descriProd = document.createElement('div');
+          descriProd.className = 'descri--prod';
+          descriProd.textContent = produtoo.Descricao;
+            const marca = document.createElement('span');
+            marca.className = 'marca';
+            marca.textContent = produtoo.Marca;
+            descriProd.appendChild(marca);
+          produtoDescricao.append(informativo, descriProd);
 
-// ----------------------------------------- MODAL -----------------------------------------
-// chave
-const options = {
-method: 'GET',
-headers: {
-    accept: 'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1N2Q0ZThjNjJmMmMzZDUyOTM4YmNhYjM4NDUwZmVjNCIsInN1YiI6IjY0OGE0ZjUzN2ViNWYyMDBhZTZhYWNlZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.kZ6bJ25v6Rda7BlfQ2kcT5Yz0F5bg7Xfin_GrJTteRw'
-}
-};
+        const comprar = document.createElement('div');
+        comprar.className = 'comprar';
+          const comprarBtn = document.createElement('div');
+          comprarBtn.className = 'comprar--btn';
+            const comprarBtnInput = document.createElement('input');
+            comprarBtnInput.type = 'button';
+            comprarBtnInput.value = 'adicionar';
+            comprarBtn.append(comprarBtnInput);
+            const comprarQtd = document.createElement('div');
+            comprarQtd.className = 'comprar--qtd';
+            const comprarQtdInput = document.createElement('input');
+            comprarQtd.append(comprarQtdInput);
+            comprarQtdInput.type = 'number';
+            comprarQtdInput.min = '0';
+            comprarQtdInput.max = '10';
+        comprar.append(comprarBtn, comprarQtd);
+        const infoPreco = document.createElement('div');
+        infoPreco.className = 'info--preco';
+        infoPreco.textContent = 'preço exclusivo na loja online';
+        produto.append(produtoImg, economia, produtoDescricao, comprar, infoPreco);
+        mainProduto.appendChild(produto);
 
-// Função para carregar as informações da API
-function carregarInformacoesAPI(divId) {
-// Chame a API usando o divId ou qualquer outra informação relacionada
-// Exemplo de chamada da API usando o fetch:
-fetch('https://api.themoviedb.org/3/tv/197588/images', options)
-    .then(response => response.json())
-    .then(response => {
-    // Exiba as informações no modal
-    const modalContent = document.getElementById('modal-content');
-    modalContent.textContent = JSON.stringify(response); // Apenas para fins de exemplo, você pode exibir as informações de acordo com a estrutura do objeto retornado pela API
+        console.log(mainProduto);
+        
+        //  ---------------------------- adicionar item ----------------------------
+        const produtooos = document.querySelectorAll('.produto');
 
-    // Abra o modal
-    const modal = document.getElementById('modal');
-    modal.style.display = 'block';
-    })
-    .catch(err => console.error(err));
-}
+        // Percorra cada div de produto
+        produtooos.forEach((produto, index) => {
+            // Obtenha o input de quantidade do produto atual
+            const quantidadeInput = produto.querySelector('input[type="number"]');
+        
+            // Obtenha a div produto--qtd do produto atual
+            const produtoQtd = produto.querySelector('.produto--qtd');
+        
+            // Adicione um ouvinte de evento de mudança ao input de quantidade
+            quantidadeInput.addEventListener('change', () => {
+                const quantidade = quantidadeInput.value;
+                produtoQtd.textContent = quantidade > 0 ? quantidade : '';
+            });
+        });
 
-// Adicione o evento de clique a cada div clicável
-const divsClicaveis = document.getElementsByClassName('imagem');
-for (let i = 0; i < divsClicaveis.length; i++) {
-divsClicaveis[i].addEventListener('click', function() {
-    const divId = this.id;
-    carregarInformacoesAPI(divId);
-});
-}
+        // ----------------------------------------- MODAL -----------------------------------------
+        // chave
 
-// Feche o modal ao clicar fora dele ou no botão de fechamento
-const modal = document.getElementById('modal');
-const modalCloseButton = document.getElementById('modal-close');
-modal.addEventListener('click', function(event) {
-if (event.target === modal || event.target === modalCloseButton) {
-    modal.style.display = 'none';
-}
-});
+          function carregarInformacoesAPI(divId) {
+              // Exiba as informações no modal
+              const modalContent = document.getElementById('modal-content');
+              modalContent.textContent = JSON.stringify(produtoo); // Apenas para fins de exemplo, você pode exibir as informações de acordo com a estrutura do objeto retornado pela API
+          
+              // Abra o modal
+              const modal = document.getElementById('modal');
+              modal.style.display = 'block';
+          }
+          
+          
+          // Adicione o evento de clique a cada div clicável
+          const divsClicaveis = document.getElementsByClassName('imagem');
+          for (let i = 0; i < divsClicaveis.length; i++) {
+            divsClicaveis[i].addEventListener('click', function() {
+              const divId = this.id;
+              const produtoClicado = produtos.find(produto => produto.id === divId);
+              carregarInformacoesAPI(produtoClicado);
+            });
+          }
+          
+          // Feche o modal ao clicar fora dele ou no botão de fechamento
+          const modal = document.getElementById('modal');
+          const modalCloseButton = document.getElementById('modal-close');
+          modal.addEventListener('click', function(event) {
+          if (event.target === modal || event.target === modalCloseButton) {
+              modal.style.display = 'none';
+          }
+          });
+        });
+        
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  getProdutos();
+
