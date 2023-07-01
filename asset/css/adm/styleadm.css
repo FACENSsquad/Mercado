@@ -133,9 +133,8 @@ section #container .container--conteudo .home--container {
 #container--produtos #section--produtos table thead tr th span i {
   font-size: 25px;
 }
-#container--produtos #section--produtos table tbody {
-  overflow-y: auto;
-  height: 100%;
+#container--produtos #section--produtos table tbody tr {
+  height: 2rem;
 }
 #container--produtos #section--produtos table tbody tr td {
   padding: 0.5rem 0;

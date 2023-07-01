@@ -68,7 +68,6 @@ async function getProdutos() {
       const response = await fetch('http://localhost:3000/produtos');
       const produtos = await response.json();
       console.log(produtos);
-
       
       produtos.forEach(produtoo => {
 
@@ -100,7 +99,7 @@ async function getProdutos() {
             const imagem = document.createElement('div');
             imagem.className = 'imagem';
             const imagemImg = document.createElement('img');
-            imagemImg.src = produtoo.imagem;
+            imagemImg.src = '../../'+produtoo.imagem;
             imagem.appendChild(imagemImg);
 
           const valor = document.createElement('div');
@@ -128,7 +127,7 @@ async function getProdutos() {
         produtoDescricao.className = 'produto--descricao';
           const informativo = document.createElement('div');
           informativo.className = 'informativo';
-          informativo.textContent = ' n maxima por cliente';
+          informativo.textContent = ' Un maxima por cliente';
           const informativoSpan = document.createElement('span');
           informativoSpan.textContent = '5';
           informativo.appendChild(informativoSpan);
@@ -162,8 +161,6 @@ async function getProdutos() {
         infoPreco.textContent = 'preço exclusivo na loja online';
         produto.append(produtoImg, economia, produtoDescricao, comprar, infoPreco);
         mainProduto.appendChild(produto);
-
-        console.log(mainProduto);
         
         //  ---------------------------- adicionar item ----------------------------
         const produtooos = document.querySelectorAll('.produto');
@@ -202,7 +199,7 @@ async function getProdutos() {
           for (let i = 0; i < divsClicaveis.length; i++) {
             divsClicaveis[i].addEventListener('click', function() {
               const divId = this.id;
-              const produtoClicado = produtos.find(produto => produto.id === divId);
+              const produtoClicado = divId;
               carregarInformacoesAPI(produtoClicado);
             });
           }
@@ -216,7 +213,9 @@ async function getProdutos() {
           }
           });
         });
-        
+      
+      
+      console.log(mainProduto);
     } catch (err) {
       console.log(err);
     }

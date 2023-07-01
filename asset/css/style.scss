@@ -589,6 +589,7 @@ main{
                 padding: 1rem;
                 background: #fff;
                 overflow: hidden;
+                height: 450px;
                 //generico
                 .prd--icon--padrao{
                     padding: var(--gap-p-imgprod);
@@ -721,9 +722,21 @@ main{
                 .produto--descricao{
                     .informativo{
                         font-size: 13px;
+                        display: flex;
+                        flex-direction: row-reverse;
+                        justify-content:start;
+                        span{
+                            padding-right: 5px;
+                        }
                     }
                     .descri--prod{
                         padding: 5px 0;
+                        display: flex;
+                        flex-direction: column;
+                        text-transform: capitalize;
+                        .marca{
+                            color: #8f8f8f;
+                        }
                     }
                 }
             }

@@ -570,6 +570,7 @@ main #produtos--container .main--produto .produto {
   padding: 1rem;
   background: #fff;
   overflow: hidden;
+  height: 450px;
 }
 main #produtos--container .main--produto .produto .prd--icon--padrao {
   padding: var(--gap-p-imgprod);
@@ -684,9 +685,21 @@ main #produtos--container .main--produto .produto .info--preco {
 }
 main #produtos--container .main--produto .produto .produto--descricao .informativo {
   font-size: 13px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: start;
+}
+main #produtos--container .main--produto .produto .produto--descricao .informativo span {
+  padding-right: 5px;
 }
 main #produtos--container .main--produto .produto .produto--descricao .descri--prod {
   padding: 5px 0;
+  display: flex;
+  flex-direction: column;
+  text-transform: capitalize;
+}
+main #produtos--container .main--produto .produto .produto--descricao .descri--prod .marca {
+  color: #8f8f8f;
 }
 
 #modal {
