@@ -83,6 +83,27 @@ app.post('/cadastrar', upload.single('imagem'),async (req, res) => {
   }
 });
 
+//rota pedidos
+app.post('/pedidos', async (req, res) => {
+  try {
+    const data = req.body;
+
+    const client = new MongoClient('mongodb://localhost:27017');
+    await client.connect();
+
+    const database = client.db('LINEUP');
+    const collection = database.collection('Pedidos');
+    const result = await collection.insertOne(data);
+
+    client.close();
+
+    res.status(201).send('Produto cadastrado com sucesso');
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Erro ao cadastrar o produto');
+  }
+});
+
 
 app.listen(3000, () => {
   console.log('Servidor em execução na porta 3000');

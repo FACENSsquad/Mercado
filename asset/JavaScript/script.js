@@ -2,9 +2,6 @@
 const hoje = new Date();
 const diaSemana = hoje.getDay();
 
-console.log(hoje);
-console.log(diaSemana);
-
 if(diaSemana == 6){ //sabado
     let span = document.querySelector(".nav--menu span").innerHTML = "07:00 as 21:00"
 }else if(diaSemana == 7){//domingo
@@ -223,3 +220,33 @@ async function getProdutos() {
 
   getProdutos();
 
+// -------------------- POST PEDIDOS -------------------- 
+function PedidoVenda() {
+  const dados = {
+    "nome": "João da Silva",
+    "email": "joao@example.com",
+    "endereco": "Rua A, 123",
+    "pedidos": [
+      {
+        "produtos": [
+          {
+            "nome": "Produto 1",
+            "quantidade": 2,
+            "preco": 10.99
+          },
+          {
+            "nome": "Produto 2",
+            "quantidade": 1,
+            "preco": 19.99
+          }
+        ],
+        "status": "Pendente",
+        "data": "2023-06-30T12:00:00Z"
+      }
+    ]
+  };
+  
+  console.log(dados);
+  
+}
+PedidoVenda();
