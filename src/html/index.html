@@ -45,10 +45,10 @@
                     <span>07:00 as 22:00</span>
                 </div>
                 <div class="menu--icon">
-                    <a href="">
+                    <a href="login.html" target="_blank">
                         <i class="uil uil-user-circle"></i>
                     </a>
-                    <a href="">
+                    <a href="" class="carrinhoOP" onclick="carregarCar()">
                         <i class="uil uil-shopping-cart"></i>
                     </a>
                 </div>
@@ -63,176 +63,178 @@
             </a>
         </div>
     </nav>
+    <div id="main">
 
-    <section>
-        <div class="section--banner">
-            <div class="categoria--info">
-                <div class="categoria">
-                    <div class="categoria--menu">
-                        <i class="uil uil-sort-amount-down"></i>
+        <section>
+            <div class="section--banner">
+                <div class="categoria--info">
+                    <div class="categoria">
+                        <div class="categoria--menu">
+                            <i class="uil uil-sort-amount-down"></i>
+                        </div>
+                        <input type="button" value="Categorias">
                     </div>
-                    <input type="button" value="Categorias">
+                    <div class="info">
+                        <li class="first">Pedido minimo: <span> 20,00</span></li>
+                        <li>Endereço: <span>Rod Roque Pantojo</span></li>
+                        <li>texto: <span>Alternativo</span></li>
+                    </div>
                 </div>
-                <div class="info">
-                    <li class="first">Pedido minimo: <span> 20,00</span></li>
-                    <li>Endereço: <span>Rod Roque Pantojo</span></li>
-                    <li>texto: <span>Alternativo</span></li>
-                </div>
-            </div>
-            
-            <div class="banner">
-                <div class="banner--slides">
-                    <div class="banner--cat">
-                        
-                        <div class="banner--categoria">
-                            <div class="cat--todosP">
-                                <a href=""><i class="uil uil-angle-right"></i>Todos produtos</a>
-                            </div>
-
-                            <a href=""><i class="uil uil-angle-right"></i> Limpeza</a>
-                            <a href=""><i class="uil uil-angle-right"></i> Carro</a>
-                            <a href=""><i class="uil uil-angle-right"></i> Carnes</a>
-                            <a href=""><i class="uil uil-angle-right"></i> Sobremesa</a>
-                            <a href=""><i class="uil uil-angle-right"></i> Comidas</a>
-                            <a href=""><i class="uil uil-angle-right"></i> Sobremesa</a>
-                            <a href=""><i class="uil uil-angle-right"></i> Sobremesa</a>
+                
+                <div class="banner">
+                    <div class="banner--slides">
+                        <div class="banner--cat">
                             
-                        </div>
-
-                        <div class="banner--cat--inf">
-                            <span>info</span>
-                            As categorias é baseada conforme lista de compras dos clientes 
-                        </div>
-                    </div>
-
-                    <div class="slides--container">
-                        <div>carregar</div>
-                        <!-- Slides -->
-                        <div class="slides">
-                            <!-- Slides IMG -->
-                            <div class="slide btn--1">
-                                <img src="/asset/img/heineken-banner-1_Edited.jpg" alt="">
-                                <div class="sl--title">
-                                    <div class="sl--text">
-                                        <span>heineken</span>
-                                        <p>o melhor para voce</p>
-                                    </div>
+                            <div class="banner--categoria">
+                                <div class="cat--todosP">
+                                    <a href=""><i class="uil uil-angle-right"></i>Todos produtos</a>
                                 </div>
-                            </div>
-                            <div class="slide btn--2">
-                                <img src="/asset/img/bannerAçucar.jpg" alt="">
-                                <div class="sl--title">
-                                    <div class="sl--text">
-                                        <span>heineken</span>
-                                        <p>o melhor para voce</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="slide btn--3">
-                                <img src="/asset/img/bannerDiaEconomia.jpg" alt="">
-                                <div class="sl--title">
-                                    <div class="sl--text">
-                                        <span>heineken</span>
-                                        <p>o melhor para voce</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="slide btn--4">
-                                <img src="/asset/img/bannerSaoJoao.jpg" alt="">
-                                <div class="sl--title">
-                                    <div class="sl--text">
-                                        <span>heineken</span>
-                                        <p>o melhor para voce</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div>carregar</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <main>
-        <div class="atalhos--container">
-            <div class="atalho--sub">
-
-                <div class="atalhos--descricao">
-                    <span>Para você</span>
-                </div>
     
-                <div class="atalhos--slides">
-                    <div class="slides">
-                        <div class="slide">
-                            <div class="slide--descricao">
-                               <span>Meus pedidos</span>  
-                                <p>Visualize todas suas compras efetuadas</p>
+                                <a href=""><i class="uil uil-angle-right"></i> Limpeza</a>
+                                <a href=""><i class="uil uil-angle-right"></i> Carro</a>
+                                <a href=""><i class="uil uil-angle-right"></i> Carnes</a>
+                                <a href=""><i class="uil uil-angle-right"></i> Sobremesa</a>
+                                <a href=""><i class="uil uil-angle-right"></i> Comidas</a>
+                                <a href=""><i class="uil uil-angle-right"></i> Sobremesa</a>
+                                <a href=""><i class="uil uil-angle-right"></i> Sobremesa</a>
+                                
                             </div>
-                            <div class="slide-img">
-                                <i class="uil uil-list-ul icon"></i>
-                            </div>
-
-                        </div>
-                        <div class="slide">
-                            <div class="slide--descricao">
-                                <span>Meus Favorito</span>
-                                <p>Visualiize todos os produtos que voce curtiu</p>
-                            </div>
-                            <div class="slide-img">
-                                <i class="uil uil-favorite icon"></i>
+    
+                            <div class="banner--cat--inf">
+                                <span>info</span>
+                                As categorias é baseada conforme lista de compras dos clientes 
                             </div>
                         </div>
-                        <div class="slide">
-                            <div class="slide--descricao">
-                                <span>Promoções</span>
-                                <p>Verifique todos as promoções disponiveis nessa loja</p>
+    
+                        <div class="slides--container">
+                            <div>carregar</div>
+                            <!-- Slides -->
+                            <div class="slides">
+                                <!-- Slides IMG -->
+                                <div class="slide btn--1">
+                                    <img src="/asset/img/heineken-banner-1_Edited.jpg" alt="">
+                                    <div class="sl--title">
+                                        <div class="sl--text">
+                                            <span>heineken</span>
+                                            <p>o melhor para voce</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slide btn--2">
+                                    <img src="/asset/img/bannerAçucar.jpg" alt="">
+                                    <div class="sl--title">
+                                        <div class="sl--text">
+                                            <span>heineken</span>
+                                            <p>o melhor para voce</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slide btn--3">
+                                    <img src="/asset/img/bannerDiaEconomia.jpg" alt="">
+                                    <div class="sl--title">
+                                        <div class="sl--text">
+                                            <span>heineken</span>
+                                            <p>o melhor para voce</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slide btn--4">
+                                    <img src="/asset/img/bannerSaoJoao.jpg" alt="">
+                                    <div class="sl--title">
+                                        <div class="sl--text">
+                                            <span>heineken</span>
+                                            <p>o melhor para voce</p>
+                                        </div>
+                                    </div>
+                                </div>
+    
                             </div>
-                            <div class="slide-img">
-                                <i class="uil uil-money-bill-slash icon"></i>
-                            </div>
+                            <div>carregar</div>
                         </div>
-                        <div class="slide">
-                            <div class="slide--descricao">
-                                <span>Atendimento ao cliente</span>
-                                <p>esta com alguma duvida?</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <main>
+            <div class="atalhos--container">
+                <div class="atalho--sub">
+    
+                    <div class="atalhos--descricao">
+                        <span>Para você</span>
+                    </div>
+        
+                    <div class="atalhos--slides">
+                        <div class="slides">
+                            <div class="slide">
+                                <div class="slide--descricao">
+                                   <span>Meus pedidos</span>  
+                                    <p>Visualize todas suas compras efetuadas</p>
+                                </div>
+                                <div class="slide-img">
+                                    <i class="uil uil-list-ul icon"></i>
+                                </div>
+    
                             </div>
-                            <div class="slide-img">
-                                <i class="uil uil-comment-question icon"></i>
+                            <div class="slide">
+                                <div class="slide--descricao">
+                                    <span>Meus Favorito</span>
+                                    <p>Visualiize todos os produtos que voce curtiu</p>
+                                </div>
+                                <div class="slide-img">
+                                    <i class="uil uil-favorite icon"></i>
+                                </div>
                             </div>
-                        </div>
-                        <div class="slide">
-                            <div class="slide--descricao">
-                                <span>Quem nos somos!</span>
-                                <p>conheça um pouco mais sobre nós</p>
+                            <div class="slide">
+                                <div class="slide--descricao">
+                                    <span>Promoções</span>
+                                    <p>Verifique todos as promoções disponiveis nessa loja</p>
+                                </div>
+                                <div class="slide-img">
+                                    <i class="uil uil-money-bill-slash icon"></i>
+                                </div>
                             </div>
-                            <div class="slide-img">
-                                <i class="uil uil-award icon"></i>
+                            <div class="slide">
+                                <div class="slide--descricao">
+                                    <span>Atendimento ao cliente</span>
+                                    <p>esta com alguma duvida?</p>
+                                </div>
+                                <div class="slide-img">
+                                    <i class="uil uil-comment-question icon"></i>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <div class="slide--descricao">
+                                    <span>Quem nos somos!</span>
+                                    <p>conheça um pouco mais sobre nós</p>
+                                </div>
+                                <div class="slide-img">
+                                    <i class="uil uil-award icon"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div id="produtos--container">
-            <div class="main--produto">
-
+    
+            <div id="produtos--container">
+                <div class="main--produto">
+    
+                </div>
             </div>
-        </div>
-    </main>
-
-    <!-- modal -->
-    <div id="modal">
-        <div class="modal--main">
-            <button id="modal-close"><i class="uil uil-times iicon"></i></button>
-            
-            <div class="modal--nav">
-                <h1>nav</h1>
+        </main>
+    
+        <!-- modal -->
+        <div id="modal">
+            <div class="modal--main">
+                <button id="modal-close"><i class="uil uil-times iicon"></i></button>
+                
+                <div class="modal--nav">
+                    <h1>nav</h1>
+                </div>
+                <div id="modal-content"></div>
+    
             </div>
-            <div id="modal-content"></div>
-
         </div>
     </div>
 
@@ -297,7 +299,6 @@
         </div>
     </footer>
 
-    </main>
 </body>
 
 <script src="/asset/JavaScript/script.js"></script>

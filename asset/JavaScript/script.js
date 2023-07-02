@@ -233,11 +233,6 @@ function PedidoVenda() {
             "nome": "Produto 1",
             "quantidade": 2,
             "preco": 10.99
-          },
-          {
-            "nome": "Produto 2",
-            "quantidade": 1,
-            "preco": 19.99
           }
         ],
         "status": "Pendente",

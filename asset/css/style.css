@@ -40,6 +40,10 @@ body {
   align-items: center;
 }
 
+#main {
+  width: 100%;
+}
+
 .pada {
   width: 100px;
   height: 100px;
@@ -58,6 +62,8 @@ nav {
   position: fixed;
   z-index: 10;
   transform: 0.6s;
+  border-bottom: #ccc9c9 solid 1px;
+  padding-bottom: 1rem;
 }
 nav .nav {
   width: 1280px;
