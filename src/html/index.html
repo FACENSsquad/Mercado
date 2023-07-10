@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Style -->
     <link rel="stylesheet" href="/asset/css/style.css">
 
@@ -19,7 +20,7 @@
     <nav>
         <div class="nav">
 
-            <div class="nav--logo">
+            <div class="nav--logo" id="valta">
                 <img src="/asset/img/logoLineUp.png" alt="">
             </div>
     
@@ -48,13 +49,13 @@
                     <a href="login.html" target="_blank">
                         <i class="uil uil-user-circle"></i>
                     </a>
-                    <a href="" class="carrinhoOP" onclick="carregarCar()">
+                    <a href="" id="carrinhoOP">
                         <i class="uil uil-shopping-cart"></i>
                     </a>
                 </div>
             </div>
 
-        </div>
+        </div>  
 
         <div class="pesquisa">
             <input type="search" id="pesquisa" name="pesquisa" placeholder="Pesquisar...">
