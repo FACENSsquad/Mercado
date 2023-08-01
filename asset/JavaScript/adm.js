@@ -42,7 +42,6 @@ function carregarConteudo(url, element) {
 }
 
 // MONGO ABAIXO -------------------- PRODUTOS -------------------- 
-
 async function getProdutos() {
     try {
       const response = await fetch('http://localhost:3000/produtos');
@@ -85,12 +84,9 @@ async function getProdutos() {
     } catch (err) {
       console.log(err);
     }
-  }
-
-  getProdutos();
+}getProdutos();
 
 // MONGO ABAIXO -------------------- BANNER -------------------- 
-
 async function getBanners() {
   try {
     const response = await fetch('http://localhost:3000/banner');
@@ -180,13 +176,11 @@ async function getBanners() {
   } catch (err) {
     console.log(err);
   }
-}
-getBanners();
+}getBanners();
 
 // -------------------- CADASTRO --------------------
 const inputValor = document.getElementById('input-valor');
 const inputValorPromo = document.getElementById('input-valorPromo');
-
 
 function formatt(params) {
   params.addEventListener('input', () => {
@@ -219,7 +213,6 @@ checkbox.addEventListener('change', () => {
   const isChecked = checkbox.checked;
   console.log(isChecked);
 });
-
 
 function cadastrarProduto() {
   const descricao = document.getElementById('descricao').value;
