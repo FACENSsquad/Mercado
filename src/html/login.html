@@ -3,29 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/asset/css/style.css">
     <title>Login</title>
 </head>
 <body>
     <div id="container--login">
-        <div class="main--login">
-            <h2>Login</h2>
-            <form action="/login" method="POST">
-                <div>
-                <label for="username">Nome de usuário:</label>
-                <input type="text" id="username" name="username" required>
+        <div class="main--login"> 
+            <div class="nav--login">
+                <div class="nav--login--logo">Logo</div>
+                <div class="nav--login--chama">descrição</div>
+            </div>
+            <div class="login--real">
+                <div class="login--real--cadastro">
+                    <div class="login--real--title">
+                        <h2>Login</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, earum quia unde voluptatum aliquid facilis! Laboriosam magnam illo commodi, facilis placeat quia fugit nulla officia exercitationem dolore optio eum facere?</p>
+                    </div>
+                    <form action="/login" method="POST">
+                        <div>
+                        <input class="cadast--box" type="text" id="username" name="username" required placeholder="Nome de usuário">
+                        </div>
+                        <div>
+                        <input class="cadast--box" type="password" id="password" name="password" required placeholder="Senha">
+                        </div>
+                        <div>
+                        <input type="submit" value="Aperte aqui p/ entrar">
+                        </div>
+                    </form>
+        
+                    <div class="login--cadastrar">
+                        Não tem cadastro ainda?
+                        <a href="cadastro.html">Cadastrar</a>
+                    </div>
                 </div>
-                <div>
-                <label for="password">Senha:</label>
-                <input type="password" id="password" name="password" required>
-                </div>
-                <div>
-                <input type="submit" value="Entrar">
-                </div>
-            </form>
 
-            <div class="login--cadastrar">
-                Não tem cadastro ainda?
-                <a href="cadastro.html">Cadastrar</a>
+                <div class="login--main--comentarios">
+                    <img src="/asset/img/person-shopping-online-removebg.png" alt="">
+                    <div class="comentario--flout">
+                        <div>div 1</div>
+                        <div>div 2</div>
+                        <div>div 3</div>
+                        <div>div 4</div>
+                    </div>
+                </div>
+            </div>
+            <div class="login--rodape">
+                rodapé
             </div>
         </div>
     </div>

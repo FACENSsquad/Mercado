@@ -756,6 +756,11 @@ main #produtos--container .main--produto .produto .produto--descricao .descri--p
   top: 1rem;
 }
 
+#carrinho--container {
+  width: 100%;
+  height: 300px;
+}
+
 footer {
   display: flex;
   flex-direction: column;
@@ -796,4 +801,82 @@ footer .footer .footer--client {
 }
 footer .footer .footer--client .ul li {
   padding: 10px 0;
+}
+
+#container--login {
+  background: #1c1c1c;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+#container--login .main--login {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 2rem 1fr 2rem;
+}
+#container--login .main--login .nav--login {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+}
+#container--login .main--login .login--real {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+#container--login .main--login .login--real .login--real--cadastro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+#container--login .main--login .login--real .login--real--cadastro .login--real--title {
+  color: #fff;
+}
+#container--login .main--login .login--real .login--real--cadastro .cadast--box {
+  width: 300px;
+  line-height: 3rem;
+  background: rgba(240, 240, 240, 0.0901960784);
+  border-radius: 5px;
+  margin-bottom: 10px;
+  border: none;
+}
+#container--login .main--login .login--real .login--real--cadastro input[type=submit] {
+  width: 300px;
+  line-height: 2rem;
+  background: rgb(62, 148, 171);
+  background: linear-gradient(36deg, rgb(62, 148, 171) 2%, rgb(0, 138, 247) 69%, rgb(75, 148, 235) 79%, rgb(52, 116, 222) 88%);
+  border-radius: 5px;
+  margin-bottom: 10px;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+#container--login .main--login .login--real .login--real--cadastro input::-moz-placeholder {
+  color: #9a9898;
+}
+#container--login .main--login .login--real .login--real--cadastro input::placeholder {
+  color: #9a9898;
+}
+#container--login .main--login .login--real .login--main--comentarios {
+  position: relative;
+}
+#container--login .main--login .login--real .login--main--comentarios img {
+  max-width: 800px;
+}
+#container--login .main--login .login--real .login--main--comentarios .comentario--flout {
+  background: #0083FF;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 500px;
+  height: 200px;
+  z-index: 1;
 }/*# sourceMappingURL=style.css.map */
