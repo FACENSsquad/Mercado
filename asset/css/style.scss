@@ -856,22 +856,26 @@ footer{
 // login
 
 #container--login{
-    background: #1c1c1c;
+    background: #282727;
     width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1rem;
     .main--login{
         width: 100%;
         height: 100%;
         display: grid;
-        grid-template-rows: 2rem 1fr 2rem;
+        grid-template-rows: 3rem 1fr 3rem;
+        .color--tb{
+            background: #1d1d1d;
+        }
         .nav--login{
             width: 100%;
             display: flex;
             justify-content: space-between;
+            align-items: center;
+            padding:0 1rem;
             color: #fff;
         }
         .login--real{
@@ -886,7 +890,15 @@ footer{
                 align-items: center;
                 gap: 10px   ;
                 .login--real--title{
+                    width: 350px;
                     color: #fff;
+                    text-align: center;
+                    h2{
+                        margin-bottom: 1rem;
+                    }
+                    p{
+                        padding: 1rem;
+                    }
                 }
                 .cadast--box{
                     width: 300px;
@@ -895,6 +907,7 @@ footer{
                     border-radius: 5px;
                     margin-bottom: 10px;
                     border: none;
+                    padding-left: 1rem;
                 }
                 input[type="submit"]{
                     width: 300px;
@@ -913,17 +926,29 @@ footer{
             }
             .login--main--comentarios{
                 position: relative;
+
                 img{
-                    max-width: 800px;
+                    max-width: 100%;
                 }
                 .comentario--flout{
-                    background: #0083FF;
                     position: absolute;
                     top:0;
                     right: 0;
                     width: 500px;
                     height: 200px;
                     z-index: 1;
+                    display: flex;
+                    gap: 10px;
+                    scroll-snap-type: x mandatory;
+                    scroll-padding: 2px;
+                    .comentari--1{
+                        min-width: 230px;
+                        height: 100%;
+                        background: #000;
+                        border-radius: 10px;
+                        scroll-snap-align: start;
+                        cursor : pointer;
+                    }
                 }
             }
         }

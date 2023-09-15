@@ -804,24 +804,28 @@ footer .footer .footer--client .ul li {
 }
 
 #container--login {
-  background: #1c1c1c;
+  background: #282727;
   width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem;
 }
 #container--login .main--login {
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-rows: 2rem 1fr 2rem;
+  grid-template-rows: 3rem 1fr 3rem;
+}
+#container--login .main--login .color--tb {
+  background: #1d1d1d;
 }
 #container--login .main--login .nav--login {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
   color: #fff;
 }
 #container--login .main--login .login--real {
@@ -838,7 +842,15 @@ footer .footer .footer--client .ul li {
   gap: 10px;
 }
 #container--login .main--login .login--real .login--real--cadastro .login--real--title {
+  width: 350px;
   color: #fff;
+  text-align: center;
+}
+#container--login .main--login .login--real .login--real--cadastro .login--real--title h2 {
+  margin-bottom: 1rem;
+}
+#container--login .main--login .login--real .login--real--cadastro .login--real--title p {
+  padding: 1rem;
 }
 #container--login .main--login .login--real .login--real--cadastro .cadast--box {
   width: 300px;
@@ -847,6 +859,7 @@ footer .footer .footer--client .ul li {
   border-radius: 5px;
   margin-bottom: 10px;
   border: none;
+  padding-left: 1rem;
 }
 #container--login .main--login .login--real .login--real--cadastro input[type=submit] {
   width: 300px;
@@ -869,14 +882,25 @@ footer .footer .footer--client .ul li {
   position: relative;
 }
 #container--login .main--login .login--real .login--main--comentarios img {
-  max-width: 800px;
+  max-width: 100%;
 }
 #container--login .main--login .login--real .login--main--comentarios .comentario--flout {
-  background: #0083FF;
   position: absolute;
   top: 0;
   right: 0;
   width: 500px;
   height: 200px;
   z-index: 1;
+  display: flex;
+  gap: 10px;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 2px;
+}
+#container--login .main--login .login--real .login--main--comentarios .comentario--flout .comentari--1 {
+  min-width: 230px;
+  height: 100%;
+  background: #000;
+  border-radius: 10px;
+  scroll-snap-align: start;
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */
