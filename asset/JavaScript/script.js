@@ -250,22 +250,6 @@ window.addEventListener("scroll", function(){
 })
 
 
-$(document).ready(function() {
-  $("#carrinhoOP").click(function() {
-    fetch("/src/html/carrinho.html")
-      .then(response => response.text())
-      .then(data => {
-        $("#main").html(data);
-      })
-      .catch(error => {
-        console.error("Erro ao carregar o conteúdo do carrinho:", error);
-      });
-  });
-
-  $("#volta").click(function() {
-    $("#main").html("");
-  });
-});
 
 
 

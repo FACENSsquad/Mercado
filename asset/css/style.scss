@@ -954,3 +954,23 @@ footer{
         }
     }
 }
+
+// Carrinho
+
+#carrinho--container {
+    min-height: 100vh;
+    width: 100%;
+    .carrinhp--top{
+        height: 4rem;
+        width: 100%;
+        background: #0083FF;
+    }
+    .carrinhp--main{
+        width: 100%;
+        background: #416e98;
+    }
+    .carrinhp--footer{
+        width: 100%;
+        background: #0b1825;
+    }
+}
