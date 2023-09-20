@@ -970,22 +970,58 @@ footer{
         gap: 10px;
         padding: 1rem;
         .carrinho--produtos{
-            background: #000;
             height: 100%;
             padding: 1rem;
             .pedido-produtos{
                 background: #fff;
                 height: 100%;
+                .seuCarrinho--top{
+
+                }
+                .seuCarrinho--produtos{
+                    padding: 1rem 0;
+                    .seuProduto{
+                        display: flex;
+                        justify-content: space-between;
+                        border: #f2f2f2 solid 1px;
+                        border-radius: 5px;
+                    }
+                }
             }
         }
         .carrinho--comprar{
-            background: #0083FF;
             height: 100%;
             padding: 1rem;
+            position: relative;
             .comprar--valor{
+                position: sticky;
+                top: 0;
                 width:100%;
                 min-height: 200px;
-                background: #fff;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                padding: 1rem;
+                background: #f2f2f2;
+                border-radius: 5px;
+                .comprarBtn{
+                    width: 100%;
+                    height: 2.5rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    span{
+                        width: 80%;
+                        height: 100%;
+                        color: #fff;
+                        background: #0083FF;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 5px;
+                        cursor: pointer;
+                    }
+                }
             }
         }
     }
