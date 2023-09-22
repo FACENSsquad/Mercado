@@ -71,6 +71,7 @@ async function getProdutos() {
         const mainProduto = document.querySelector('.main--produto');
         const produto = document.createElement('div');
         produto.classList.add('produto');
+        produto.id = produtoo._id;
         //subs produto
         const produtoImg = document.createElement('div');
         produtoImg.className = 'produto--img';
@@ -212,44 +213,77 @@ async function getProdutos() {
         });
       
         
-        console.log(mainProduto);
-      } catch (err) {
-        console.log(err);
-      }
+      // -------------------- PEDIDO localStorage -------------------- 
+        const ComprarBtn = document.querySelectorAll('.comprar--btn');
+        const produto = document.querySelectorAll('.produto');
+      
+        ComprarBtn.forEach(function (elemento, index) {
+          elemento.addEventListener("click", () => {
+            let produtoId = produto[index];
+            
+            const produtoooo = {
+              id: produtoId.id,
+              nome: "Joao",
+              preco: 19.99,
+              estoque: 50
+            }
+            // Converta o objeto em uma string  JSON
+            const produtoJSON = JSON.stringify(produtoooo);
+
+            localStorage.setItem("produto"+ produtoId.id,produtoJSON);
+          });
+        });
+
+        
+      console.log(mainProduto);
+    } catch (err) {
+      console.log(err);
+    }
+
+
     }getProdutos();
     
+
+
 // -------------------- POST PEDIDOS -------------------- 
-function PedidoVenda() {
-      const dados = {
-        "nome": "João da Silva",
-        "email": "joao@example.com",
-        "endereco": "Rua A, 123",
-        "pedidos": [
-          {
-            "produtos": [
-              {
-                "nome": "Produto 1",
-                "quantidade": 2,
-            "preco": 10.99
-          }
-        ],
-        "status": "Pendente",
-        "data": "2023-06-30T12:00:00Z"
-      }
-    ]
-  };
-  
-  console.log(dados);
-  
-}PedidoVenda();
+function pedidos() {
+
+  const formData = new FormData();
+  formData.append('Descricao', descricao);
+  formData.append('Valor', valor);
+  formData.append('Marca', marca);
+  formData.append('Embalagem', embalagem);
+  formData.append('Valor promocional',valorPromo);
+  formData.append('Promocao', promocao);
+  formData.append('imagem', imagem);
+  formData.append('Economia', 0);
+  const dataAtual = new Date();
+  const dataFormatada = `${dataAtual.getDate()}-${dataAtual.getMonth() + 1}-${dataAtual.getFullYear()}`;
+
+  formData.append('Data de Cadastro', dataFormatada);
+
+  fetch('http://localhost:3000/pedidos', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => {
+    if (response.ok) {
+      console.log('Produto cadastrado com sucesso');
+      alert("CADASTRO EFETUADO COM SUCESSO");
+      // Faça algo com a resposta, se necessário
+    } else {
+      console.error('Erro ao cadastrar o produto');
+      // Trate o erro, se necessário
+    }
+  })
+  .catch(error => {
+    console.error('Erro ao cadastrar o produto:', error);
+    // Trate o erro, se necessário
+  });
+}
 
 // Sticky 
 window.addEventListener("scroll", function(){
   let nav = document.querySelector('nav');
   nav.classList.toggle("sticky", window.scrollY > 30);
 })
-
-
-
-
-
