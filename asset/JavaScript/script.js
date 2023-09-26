@@ -150,6 +150,7 @@ async function getProdutos() {
         comprarQtd.className = 'comprar--qtd';
         const comprarQtdInput = document.createElement('input');
         comprarQtd.append(comprarQtdInput);
+        comprarQtdInput.className = 'quantidadeCpr'
         comprarQtdInput.type = 'number';
         comprarQtdInput.min = '0';
         comprarQtdInput.max = '10';
@@ -216,16 +217,30 @@ async function getProdutos() {
       // -------------------- PEDIDO localStorage -------------------- 
         const ComprarBtn = document.querySelectorAll('.comprar--btn');
         const produto = document.querySelectorAll('.produto');
-      
+        const comprarQtd = document.querySelectorAll('.quantidadeCpr')
+        const descriProd = document.querySelectorAll('.descri--prod')
+        const marca = document.querySelectorAll('.marca')
+        const prdIconPadrao = document.querySelectorAll('.prd--icon--padrao')
+        const valorReal = document.querySelectorAll('.valor--real')
+
         ComprarBtn.forEach(function (elemento, index) {
+          
           elemento.addEventListener("click", () => {
             let produtoId = produto[index];
+            let produtoQtdd = comprarQtd[index]
+            let descriProdd = descriProd[index]
+            let marcaa = marca[index];
+            let prdIconPadraoo = prdIconPadrao[index]
+            let valorReall = valorReal[index]
             
             const produtoooo = {
               id: produtoId.id,
-              nome: "Joao",
-              preco: 19.99,
-              estoque: 50
+              nome: descriProdd.textContent,
+              nomeMarca: marcaa.textContent,
+              nomeEmbalagem: prdIconPadraoo.textContent,
+              precoUnitario: valorReall.textContent,
+              quantidade: produtoQtdd.value,
+              precoTotal: produtoQtdd.textContent*precoUnitario
             }
             // Converta o objeto em uma string  JSON
             const produtoJSON = JSON.stringify(produtoooo);
