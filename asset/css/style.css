@@ -169,6 +169,22 @@ nav .nav .nav--menu .menu--icon::after {
   position: absolute;
   left: 50%;
 }
+nav .nav .nav--menu .menu--icon #carrinhoOP {
+  position: relative;
+}
+nav .nav .nav--menu .menu--icon #carrinhoOP .quantidadeitens {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background: #0083FF;
+  top: -50%;
+  left: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: #fff;
+}
 nav .pesquisa {
   width: 1280px;
   border: solid var(--cor-border) 1px;

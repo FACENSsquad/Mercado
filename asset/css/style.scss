@@ -145,6 +145,22 @@ nav{
                     position: absolute;
                     left: 50%;
                 }
+                #carrinhoOP{
+                    position: relative;
+                    .quantidadeitens{
+                        position: absolute;
+                        width: 25px;
+                        height: 25px;
+                        background: #0083FF;
+                        top: -50%;
+                        left: 80%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 50%;
+                        color: #fff;
+                    }
+                }
             }
         }
     }

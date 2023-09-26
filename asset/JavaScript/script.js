@@ -224,29 +224,37 @@ async function getProdutos() {
         const valorReal = document.querySelectorAll('.valor--real')
 
         ComprarBtn.forEach(function (elemento, index) {
-          
           elemento.addEventListener("click", () => {
+            
             let produtoId = produto[index];
-            let produtoQtdd = comprarQtd[index]
             let descriProdd = descriProd[index]
             let marcaa = marca[index];
             let prdIconPadraoo = prdIconPadrao[index]
             let valorReall = valorReal[index]
-            
+            let produtoQtdd = comprarQtd[index]
+            let somaQtd = parseFloat(produtoQtdd.value)*parseFloat(valorReall.textContent);
+          
             const produtoooo = {
               id: produtoId.id,
               nome: descriProdd.textContent,
               nomeMarca: marcaa.textContent,
               nomeEmbalagem: prdIconPadraoo.textContent,
-              precoUnitario: valorReall.textContent,
-              quantidade: produtoQtdd.value,
-              precoTotal: produtoQtdd.textContent*precoUnitario
+              precoUnitario: parseFloat(valorReall.textContent),
+              quantidade: parseFloat(produtoQtdd.value),
+              precoTotal:somaQtd
             }
+            console.log(produtoooo);
             // Converta o objeto em uma string  JSON
             const produtoJSON = JSON.stringify(produtoooo);
-
             localStorage.setItem("produto"+ produtoId.id,produtoJSON);
+
+            
           });
+          // -------------------- POST PEDIDOS -------------------- 
+          let qtdHost = localStorage.length;
+          const quantidadeitens = document.querySelector('.quantidadeitens');
+          quantidadeitens.innerHTML = qtdHost;
+          
         });
 
         
@@ -260,42 +268,18 @@ async function getProdutos() {
     
 
 
+
 // -------------------- POST PEDIDOS -------------------- 
 function pedidos() {
-
-  const formData = new FormData();
-  formData.append('Descricao', descricao);
-  formData.append('Valor', valor);
-  formData.append('Marca', marca);
-  formData.append('Embalagem', embalagem);
-  formData.append('Valor promocional',valorPromo);
-  formData.append('Promocao', promocao);
-  formData.append('imagem', imagem);
-  formData.append('Economia', 0);
-  const dataAtual = new Date();
-  const dataFormatada = `${dataAtual.getDate()}-${dataAtual.getMonth() + 1}-${dataAtual.getFullYear()}`;
-
-  formData.append('Data de Cadastro', dataFormatada);
-
-  fetch('http://localhost:3000/pedidos', {
-    method: 'POST',
-    body: formData
+  
+  
+  let localS = localStorage; 
+  localS.forEach(itemPe, index => {
+    console.log(itemPe.key(index));	
+    
   })
-  .then(response => {
-    if (response.ok) {
-      console.log('Produto cadastrado com sucesso');
-      alert("CADASTRO EFETUADO COM SUCESSO");
-      // Faça algo com a resposta, se necessário
-    } else {
-      console.error('Erro ao cadastrar o produto');
-      // Trate o erro, se necessário
-    }
-  })
-  .catch(error => {
-    console.error('Erro ao cadastrar o produto:', error);
-    // Trate o erro, se necessário
-  });
-}
+
+}pedidos();
 
 // Sticky 
 window.addEventListener("scroll", function(){
