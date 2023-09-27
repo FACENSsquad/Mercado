@@ -943,25 +943,41 @@ footer .footer .footer--client .ul li {
   height: 100%;
   padding: 1rem;
 }
-#carrinho--container .carrinho--main .carrinho--produtos .pedido-produtos {
+#carrinho--container .carrinho--main .carrinho--produtos .pedido--produtos {
   background: #fff;
   height: 100%;
 }
-#carrinho--container .carrinho--main .carrinho--produtos .pedido-produtos .seuCarrinho--produtos {
+#carrinho--container .carrinho--main .carrinho--produtos .pedido--produtos .seuCarrinhoo--produtos {
   padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
-#carrinho--container .carrinho--main .carrinho--produtos .pedido-produtos .seuCarrinho--produtos .seuProduto {
+#carrinho--container .carrinho--main .carrinho--produtos .pedido--produtos .seuCarrinhoo--produtos .seuProduto {
+  height: 150px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   border: #f2f2f2 solid 1px;
   border-radius: 5px;
 }
-#carrinho--container .carrinho--main .carrinho--produtos .pedido-produtos .seuCarrinho--produtos .seuProduto .imgProduto {
+#carrinho--container .carrinho--main .carrinho--produtos .pedido--produtos .seuCarrinhoo--produtos .seuProduto .imgProduto {
   width: 10px;
+  display: flex;
 }
-#carrinho--container .carrinho--main .carrinho--produtos .pedido-produtos .seuCarrinho--produtos .seuProduto .imgProduto img {
-  width: 25px;
-  height: 25px;
+#carrinho--container .carrinho--main .carrinho--produtos .pedido--produtos .seuCarrinhoo--produtos .seuProduto .imgProduto img {
+  width: 100px;
+  height: 100px;
+}
+#carrinho--container .carrinho--main .carrinho--produtos .pedido--produtos .seuCarrinhoo--produtos .seuProduto .valorProduto--un::before {
+  content: "Valor Un R$";
+  color: #777777;
+  font-size: 13px;
+}
+#carrinho--container .carrinho--main .carrinho--produtos .pedido--produtos .seuCarrinhoo--produtos .seuProduto .valorProduto--total::before {
+  content: "Total R$";
+  color: #777777;
+  font-size: 13px;
 }
 #carrinho--container .carrinho--main .carrinho--comprar {
   height: 100%;
