@@ -97,6 +97,7 @@ async function getProdutos() {
               const imagem = document.createElement('div');
               imagem.className = 'imagem';
               const imagemImg = document.createElement('img');
+              imagemImg.className = 'imag';
               imagemImg.src = '../../'+produtoo.imagem;
               imagem.appendChild(imagemImg);
               
@@ -211,31 +212,45 @@ async function getProdutos() {
             modal.style.display = 'none';
           }
         });
-        });
-      
+        // -------------------- POST PEDIDOS -------------------- 
         
+      });
+      
+      
       // -------------------- PEDIDO localStorage -------------------- 
-        const ComprarBtn = document.querySelectorAll('.comprar--btn');
-        const produto = document.querySelectorAll('.produto');
-        const comprarQtd = document.querySelectorAll('.quantidadeCpr')
-        const descriProd = document.querySelectorAll('.descri--prod')
-        const marca = document.querySelectorAll('.marca')
-        const prdIconPadrao = document.querySelectorAll('.prd--icon--padrao')
-        const valorReal = document.querySelectorAll('.valor--real')
+      const ComprarBtn = document.querySelectorAll('.comprar--btn');
+      const produto = document.querySelectorAll('.produto');
+      const comprarQtd = document.querySelectorAll('.quantidadeCpr')
+      const descriProd = document.querySelectorAll('.descri--prod')
+      const marca = document.querySelectorAll('.marca')
+      const prdIconPadrao = document.querySelectorAll('.prd--icon--padrao')
+      const valorReal = document.querySelectorAll('.valor--real')
+      const img = document.querySelectorAll('.imag');
+      console.log(valorReal);
+        
+        function atualizaQtd() {
+          let qtdHost = localStorage.length;
+          const quantidadeitens = document.querySelector('.quantidadeitens');
+          quantidadeitens.innerHTML = qtdHost;
+        }
 
         ComprarBtn.forEach(function (elemento, index) {
           elemento.addEventListener("click", () => {
             
             let produtoId = produto[index];
+            let imgg = img[index];
             let descriProdd = descriProd[index]
             let marcaa = marca[index];
             let prdIconPadraoo = prdIconPadrao[index]
             let valorReall = valorReal[index]
             let produtoQtdd = comprarQtd[index]
             let somaQtd = parseFloat(produtoQtdd.value)*parseFloat(valorReall.textContent);
-          
+            
+
+            
             const produtoooo = {
               id: produtoId.id,
+              img: imgg.src,
               nome: descriProdd.textContent,
               nomeMarca: marcaa.textContent,
               nomeEmbalagem: prdIconPadraoo.textContent,
@@ -243,20 +258,18 @@ async function getProdutos() {
               quantidade: parseFloat(produtoQtdd.value),
               precoTotal:somaQtd
             }
-            console.log(produtoooo);
+            console.log(produtoooo.img);
             // Converta o objeto em uma string  JSON
             const produtoJSON = JSON.stringify(produtoooo);
             localStorage.setItem("produto"+ produtoId.id,produtoJSON);
-
             
+            atualizaQtd();
           });
-          // -------------------- POST PEDIDOS -------------------- 
-          let qtdHost = localStorage.length;
-          const quantidadeitens = document.querySelector('.quantidadeitens');
-          quantidadeitens.innerHTML = qtdHost;
+          
           
         });
 
+        atualizaQtd();
         
       console.log(mainProduto);
     } catch (err) {
@@ -267,19 +280,6 @@ async function getProdutos() {
     }getProdutos();
     
 
-
-
-// -------------------- POST PEDIDOS -------------------- 
-function pedidos() {
-  
-  
-  let localS = localStorage; 
-  localS.forEach(itemPe, index => {
-    console.log(itemPe.key(index));	
-    
-  })
-
-}pedidos();
 
 // Sticky 
 window.addEventListener("scroll", function(){
