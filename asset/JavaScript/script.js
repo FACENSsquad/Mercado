@@ -246,22 +246,26 @@ async function getProdutos() {
             let produtoQtdd = comprarQtd[index]
             let somaQtd = parseFloat(produtoQtdd.value)*parseFloat(valorReall.textContent);
             
+            console.log(produtoQtdd.value);
+            const opcoesDeL = {
+              style:'decimal',
+              minimumFractionDigits:2,
+              maximumFractionDigits:2
+            };
 
-            
             const produtoooo = {
               id: produtoId.id,
               img: imgg.src,
               nome: descriProdd.textContent,
               nomeMarca: marcaa.textContent,
               nomeEmbalagem: prdIconPadraoo.textContent,
-              precoUnitario: parseFloat(valorReall.textContent),
-              quantidade: parseFloat(produtoQtdd.value),
-              precoTotal:somaQtd
+              quantidade: produtoQtdd.value,
+              precoUnitario: parseFloat(valorReall.textContent).toLocaleString('pt-BR', opcoesDeL),
+              precoTotal:somaQtd.toLocaleString('pt-BR', opcoesDeL)
             }
-            console.log(produtoooo.img);
             // Converta o objeto em uma string  JSON
             const produtoJSON = JSON.stringify(produtoooo);
-            localStorage.setItem("produto"+ produtoId.id,produtoJSON);
+            localStorage.setItem(produtoId.id,produtoJSON);
             
             atualizaQtd();
           });

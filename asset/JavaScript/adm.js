@@ -54,6 +54,7 @@ async function getProdutos() {
       
       produtos.forEach(produto => {
         const row = document.createElement('tr');
+        row.classList.add('row')
 
         const tdIdProduto = document.createElement('td');
         const IdProduto = document.createElement('span');
@@ -63,7 +64,7 @@ async function getProdutos() {
 
         const tddescricao = document.createElement('td');
         const descricao = document.createElement('span');
-        descricao.textContent = produto.Descrição;
+        descricao.textContent = produto.Descricao;
         tddescricao.appendChild(descricao);
         row.appendChild(tddescricao);
 

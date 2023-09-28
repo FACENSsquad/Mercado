@@ -1003,7 +1003,8 @@ footer{
                     gap: 10px;
                     .seuProduto{
                         height: 150px;
-                        display: flex;
+                        display: grid;
+                        grid-template-columns: 2fr repeat(4, 1fr);
                         justify-content: space-between;
                         align-items: center;
                         border: #f2f2f2 solid 1px;
@@ -1015,19 +1016,41 @@ footer{
                                 width: 100px;
                                 height: 100px;
                             }
+                            .produtoDescricao{
+                                display: flex;
+                                align-items: left;
+                                flex-direction: column;
+                                justify-content: center;
+                                span{
+                                    margin-top: 5px;
+                                    font-weight: 500;
+                                }
+                            }
                         }
                         .valorProduto--un{
                             &::before{
-                                content: 'Valor Un R$';
+                                content: 'Valor Un R$ ';
                                 color: #777777;
                                 font-size: 13px;
                             }
                         }
                         .valorProduto--total{
                             &::before{
-                                content: 'Total R$';
+                                content: 'Total R$ ';
                                 color: #777777;
                                 font-size: 13px;
+                            }
+                        }
+                        .deliteProduto{
+                            display: flex;
+                            justify-content: center;
+                            input[type='button']{
+                                width: 2.5rem;
+                                height: 2.5rem;
+                                border: 1px solid #f2f2f2;
+                                background: transparent;
+                                border-radius: 5px;
+                                cursor: pointer;
                             }
                         }
                     }

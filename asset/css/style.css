@@ -955,7 +955,8 @@ footer .footer .footer--client .ul li {
 }
 #carrinho--container .carrinho--main .carrinho--produtos .pedido--produtos .seuCarrinhoo--produtos .seuProduto {
   height: 150px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 2fr repeat(4, 1fr);
   justify-content: space-between;
   align-items: center;
   border: #f2f2f2 solid 1px;
@@ -969,15 +970,37 @@ footer .footer .footer--client .ul li {
   width: 100px;
   height: 100px;
 }
+#carrinho--container .carrinho--main .carrinho--produtos .pedido--produtos .seuCarrinhoo--produtos .seuProduto .imgProduto .produtoDescricao {
+  display: flex;
+  align-items: left;
+  flex-direction: column;
+  justify-content: center;
+}
+#carrinho--container .carrinho--main .carrinho--produtos .pedido--produtos .seuCarrinhoo--produtos .seuProduto .imgProduto .produtoDescricao span {
+  margin-top: 5px;
+  font-weight: 500;
+}
 #carrinho--container .carrinho--main .carrinho--produtos .pedido--produtos .seuCarrinhoo--produtos .seuProduto .valorProduto--un::before {
-  content: "Valor Un R$";
+  content: "Valor Un R$ ";
   color: #777777;
   font-size: 13px;
 }
 #carrinho--container .carrinho--main .carrinho--produtos .pedido--produtos .seuCarrinhoo--produtos .seuProduto .valorProduto--total::before {
-  content: "Total R$";
+  content: "Total R$ ";
   color: #777777;
   font-size: 13px;
+}
+#carrinho--container .carrinho--main .carrinho--produtos .pedido--produtos .seuCarrinhoo--produtos .seuProduto .deliteProduto {
+  display: flex;
+  justify-content: center;
+}
+#carrinho--container .carrinho--main .carrinho--produtos .pedido--produtos .seuCarrinhoo--produtos .seuProduto .deliteProduto input[type=button] {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid #f2f2f2;
+  background: transparent;
+  border-radius: 5px;
+  cursor: pointer;
 }
 #carrinho--container .carrinho--main .carrinho--comprar {
   height: 100%;
