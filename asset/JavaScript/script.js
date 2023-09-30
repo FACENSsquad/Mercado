@@ -91,7 +91,8 @@ async function getProdutos() {
             embalagem.className = 'embalagem';
               const prdIconPadrao = document.createElement('span');
               prdIconPadrao.textContent = produtoo.Embalagem;
-              prdIconPadrao.className = 'prd--icon--padrao';
+              prdIconPadrao.className = 'prd--icon--padrao embalagemValor';
+              prdIconPadrao.style.textTransform = 'uppercase';
               embalagem.append(prdIconPadrao);
               imgTop.append(emoDtq, embalagem);
               const imagem = document.createElement('div');
@@ -105,10 +106,10 @@ async function getProdutos() {
               valor.className = 'valor';
               const valorAnt = document.createElement('div');
               valorAnt.className = 'valor--ant';
-              valorAnt.textContent = produtoo['Valor promocional'];
+              valorAnt.textContent = produtoo.Valor ;
               const valorReal = document.createElement('div');
               valorReal.className = 'valor--real';
-              valorReal.textContent = produtoo.Valor;
+              valorReal.textContent = produtoo['Valor promocional'];
               valor.append(valorAnt, valorReal);
               produtoImg.append(imgTop, imagem, valor);
               
@@ -116,9 +117,11 @@ async function getProdutos() {
               economia.className = 'economia';
               const ecoDescricao = document.createElement('div');
           ecoDescricao.textContent = 'Economia ';
+          somaEco = produtoo.Valor-produtoo['Valor promocional'];
+          console.log(somaEco);
           ecoDescricao.className = 'eco--descricao';
           const ecoDescricaoSpan = document.createElement('span');
-          ecoDescricaoSpan.textContent = produtoo.Economia;
+          ecoDescricaoSpan.textContent = somaEco;
           ecoDescricao.appendChild(ecoDescricaoSpan);
           economia.append(ecoDescricao);
           
@@ -132,11 +135,13 @@ async function getProdutos() {
           informativo.appendChild(informativoSpan);
           const descriProd = document.createElement('div');
           descriProd.className = 'descri--prod';
-          descriProd.textContent = produtoo.Descricao;
+          const descriProdP = document.createElement('div');
+          descriProdP.classList.add('descri--prodP');
+          descriProdP.textContent = produtoo.Descricao;
           const marca = document.createElement('span');
           marca.className = 'marca';
           marca.textContent = produtoo.Marca;
-          descriProd.appendChild(marca);
+          descriProd.append(descriProdP, marca);
           produtoDescricao.append(informativo, descriProd);
           
           const comprar = document.createElement('div');
@@ -220,13 +225,13 @@ async function getProdutos() {
       // -------------------- PEDIDO localStorage -------------------- 
       const ComprarBtn = document.querySelectorAll('.comprar--btn');
       const produto = document.querySelectorAll('.produto');
-      const comprarQtd = document.querySelectorAll('.quantidadeCpr')
-      const descriProd = document.querySelectorAll('.descri--prod')
-      const marca = document.querySelectorAll('.marca')
-      const prdIconPadrao = document.querySelectorAll('.prd--icon--padrao')
-      const valorReal = document.querySelectorAll('.valor--real')
+      const comprarQtd = document.querySelectorAll('.quantidadeCpr');
+      const descriProd = document.querySelectorAll('.descri--prodP');
+      const marca = document.querySelectorAll('.marca');
+      const prdIconPadrao = document.querySelectorAll('.embalagemValor');
+      const valorReal = document.querySelectorAll('.valor--real');
       const img = document.querySelectorAll('.imag');
-      console.log(valorReal);
+      console.log(prdIconPadrao);
         
         function atualizaQtd() {
           let qtdHost = localStorage.length;
@@ -234,6 +239,11 @@ async function getProdutos() {
           quantidadeitens.innerHTML = qtdHost;
         }
 
+        opcoesDeL = {
+          style:'decimal',
+          minimumFractionDigits:2,
+          maximumFractionDigits:2
+        };
         ComprarBtn.forEach(function (elemento, index) {
           elemento.addEventListener("click", () => {
             
@@ -246,13 +256,6 @@ async function getProdutos() {
             let produtoQtdd = comprarQtd[index]
             let somaQtd = parseFloat(produtoQtdd.value)*parseFloat(valorReall.textContent);
             
-            console.log(produtoQtdd.value);
-            const opcoesDeL = {
-              style:'decimal',
-              minimumFractionDigits:2,
-              maximumFractionDigits:2
-            };
-
             const produtoooo = {
               id: produtoId.id,
               img: imgg.src,

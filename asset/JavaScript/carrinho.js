@@ -1,4 +1,13 @@
+function valorDecimal(opcoesDeL) {              
+    opcoesDeL = {
+      style:'decimal',
+      minimumFractionDigits:2,
+      maximumFractionDigits:2
+    };
+  }
+
 // -------------------- POST PEDIDOS -------------------- 
+
 function pedidos() {
     document.addEventListener('DOMContentLoaded', function () {
 
@@ -28,6 +37,7 @@ function pedidos() {
             p.textContent = item.nome;
             const span = document.createElement('span');
             span.textContent = item.nomeEmbalagem;
+            span.style.textTransform= 'uppercase';
 
             const imgProduto = document.createElement('div');
             imgProduto.classList.add('imgProduto');
@@ -61,6 +71,29 @@ function pedidos() {
             seuProdutos.append(imgProduto, qtdProduto, valorProdutoUn, valorProdutoTotal, deliteProduto);
         })
 
+        function qunatidadeCompra() {
+            const compraObservacoes = document.querySelectorAll('.seuProduto');
+            const quantidadeProd = document.querySelector('.quantidadeProd');
+            quantidadeProd.innerHTML = compraObservacoes.length;
+
+
+            const valorProdutoTotal = document.querySelectorAll('.valorProduto--total'); 
+            const valorTotal = document.querySelector('.valorTotal')
+            let soma = 0;
+            valorProdutoTotal.forEach(elemento => {
+                const valorTexto = elemento.textContent;
+                const valorNumerico = parseFloat(valorTexto);                 
+                
+                if (!isNaN(valorNumerico)) {
+                    soma += valorNumerico;
+                }
+                valorTotal.innerHTML = soma;
+            });
+            
+
+        }qunatidadeCompra();
+
+
         function deletarItem() {
             const itemD = document.querySelectorAll('.deliteProduto');
             itemD.forEach(function (button) {
@@ -75,6 +108,5 @@ function pedidos() {
 
     })
 } pedidos();
-
 
 

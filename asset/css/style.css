@@ -50,6 +50,11 @@ body {
   padding: 1rem;
 }
 
+.iconPd {
+  font-size: 25px;
+  color: var(--cor-footer);
+}
+
 .icn {
   color: #000000;
 }
@@ -156,10 +161,6 @@ nav .nav .nav--menu .menu--icon {
   justify-content: space-between;
   align-items: center;
   position: relative;
-}
-nav .nav .nav--menu .menu--icon a i {
-  font-size: 25px;
-  color: var(--cor-footer);
 }
 nav .nav .nav--menu .menu--icon::after {
   content: "";
@@ -928,7 +929,26 @@ footer .footer .footer--client .ul li {
 #carrinho--container .carrinho--top {
   height: 4rem;
   width: 100%;
-  background: #0083FF;
+  background: #22252C;
+  color: #fff;
+}
+#carrinho--container .carrinho--top .top--main--carrinho {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+#carrinho--container .carrinho--top .top--main--carrinho .top--destaque p {
+  font-size: 17px;
+}
+#carrinho--container .carrinho--top .top--main--carrinho .topLink {
+  font-size: 14px;
+  color: #cfcfcf;
+}
+#carrinho--container .carrinho--top .top--main--carrinho .top--menu a {
+  padding: 0 1rem;
 }
 #carrinho--container .carrinho--main {
   width: 100%;
@@ -946,6 +966,12 @@ footer .footer .footer--client .ul li {
 #carrinho--container .carrinho--main .carrinho--produtos .pedido--produtos {
   background: #fff;
   height: 100%;
+}
+#carrinho--container .carrinho--main .carrinho--produtos .pedido--produtos .seuCarrinho--top {
+  border-bottom: 2px solid #f2f2f2;
+}
+#carrinho--container .carrinho--main .carrinho--produtos .pedido--produtos .seuCarrinho--top h3 {
+  font-family: "Inclusive Sans", sans-serif;
 }
 #carrinho--container .carrinho--main .carrinho--produtos .pedido--produtos .seuCarrinhoo--produtos {
   padding: 1rem 0;
@@ -965,6 +991,7 @@ footer .footer .footer--client .ul li {
 #carrinho--container .carrinho--main .carrinho--produtos .pedido--produtos .seuCarrinhoo--produtos .seuProduto .imgProduto {
   width: 10px;
   display: flex;
+  gap: 10px;
 }
 #carrinho--container .carrinho--main .carrinho--produtos .pedido--produtos .seuCarrinhoo--produtos .seuProduto .imgProduto img {
   width: 100px;
@@ -975,10 +1002,23 @@ footer .footer .footer--client .ul li {
   align-items: left;
   flex-direction: column;
   justify-content: center;
+  font-family: "Inclusive Sans", sans-serif;
+  font-weight: 400;
 }
 #carrinho--container .carrinho--main .carrinho--produtos .pedido--produtos .seuCarrinhoo--produtos .seuProduto .imgProduto .produtoDescricao span {
   margin-top: 5px;
   font-weight: 500;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  background: #b8b7b7;
+  display: block;
+  width: 4rem;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  border: #686868 1px solid;
 }
 #carrinho--container .carrinho--main .carrinho--produtos .pedido--produtos .seuCarrinhoo--produtos .seuProduto .valorProduto--un::before {
   content: "Valor Un R$ ";
@@ -1008,6 +1048,7 @@ footer .footer .footer--client .ul li {
   position: relative;
 }
 #carrinho--container .carrinho--main .carrinho--comprar .comprar--valor {
+  margin-top: 1.5rem;
   position: sticky;
   top: 0;
   width: 100%;
@@ -1018,6 +1059,25 @@ footer .footer .footer--client .ul li {
   padding: 1rem;
   background: #f2f2f2;
   border-radius: 5px;
+}
+#carrinho--container .carrinho--main .carrinho--comprar .comprar--valor .comprarTitle h3 {
+  font-family: "Inclusive Sans", sans-serif;
+}
+#carrinho--container .carrinho--main .carrinho--comprar .comprar--valor .tipopagamento {
+  padding: 1rem 0;
+}
+#carrinho--container .carrinho--main .carrinho--comprar .comprar--valor .tipopagamento .SpanInf {
+  display: block;
+  margin-bottom: 0.7rem;
+}
+#carrinho--container .carrinho--main .carrinho--comprar .comprar--valor .compraObservacoes {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 0;
+}
+#carrinho--container .carrinho--main .carrinho--comprar .comprar--valor .compraObservacoes .compraObservacoesF {
+  display: flex;
+  justify-content: space-between;
 }
 #carrinho--container .carrinho--main .carrinho--comprar .comprar--valor .comprarBtn {
   width: 100%;
