@@ -1,11 +1,3 @@
-function valorDecimal(opcoesDeL) {              
-    opcoesDeL = {
-      style:'decimal',
-      minimumFractionDigits:2,
-      maximumFractionDigits:2
-    };
-  }
-
 // -------------------- POST PEDIDOS -------------------- 
 
 function pedidos() {
