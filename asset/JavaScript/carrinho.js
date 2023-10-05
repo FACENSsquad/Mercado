@@ -98,7 +98,44 @@ function pedidos() {
 
         } deletarItem();
 
+        
+
+
     })
 } pedidos();
 
+const btnComprar = document.querySelector('.comprarBtn');
+btnComprar.addEventListener('click', async function () {
+  try {
+    const pedidosObj = {};
+    console.log(pedidosObj);
+    Object.keys(localStorage).forEach(function (chave) {
+        const itemJSON = localStorage.getItem(chave);
+        const itemObj = JSON.parse(itemJSON);
+        pedidosObj[chave] = itemObj;
+    });
 
+    const pedidosArray = Object.values(pedidosObj);
+    // Faça uma solicitação para a rota da API do Stripe
+    const response = await fetch('/processarPagamento', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ "pedido":{
+        "name": "joão teste",
+        "amount": 100
+      } }), // Envie o pedido no corpo da solicitação
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      // Redirecione o usuário para a página de pagamento do Stripe com data.sessionId
+      window.location.href = data.sessionId;
+    } else {
+      console.error('Erro ao processar pagamento');
+    }
+  } catch (error) {
+    console.error('Erro ao processar pagamento:', error);
+  }
+});

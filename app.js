@@ -71,7 +71,7 @@ app.post('/cadastrar', upload.single('imagem'),async (req, res) => {
     await client.connect();
 
     const database = client.db('LINEUP');
-    const collection = database.collection('Produtos');
+    const colslection = database.collection('Produtos');
     const result = await collection.insertOne({ ...data, imagem: imagemPath });
 
     res.status(201).send('Produto cadastrado com sucesso');
@@ -103,6 +103,52 @@ app.post('/pedidos', async (req, res) => {
     res.status(500).send('Erro ao cadastrar o produto');
   }
 });
+
+
+const stripe = require('stripe')('sk_test_51NxdPaEXjLJ1bWfNYaaM7fN84hfGZfFQ9lO0ImqkXQ4Nnay7NlaJ7fuuSjhLjVemsU2PW1NOLVq0CIPpstuHy2I500yy9XAASy');
+app.post('/processarPagamento', async (req, res) => {
+  try {
+    const { pedido } = req.body;
+    const session = await stripe.checkout.sessions.create({
+      payment_method_types: ['card'],
+      line_items: [
+        {
+          price_data:{
+            currency: "usd",
+            product_data: {
+              name: pedido.name
+            },
+            unit_amount: pedido.amount*100
+          }
+        }
+      ],
+      mode: 'payment',
+    });
+
+    res.json({ sessionId: session.id }); // Envie o ID da sessão de checkout de volta para o cliente
+  } catch (error) {
+    console.error('Erro ao processar pagamento:', error);
+    res.status(500).json({ error: 'Erro ao processar pagamento' });
+  }
+});
+
+
+// stripe.products.create({
+//   name: 'Starter Subscription',
+//   description: '$12/Month subscription',
+// }).then(product => {
+//   stripe.prices.create({
+//     unit_amount: 758,
+//     currency: 'usd',
+//     recurring: {
+//       interval: 'month',
+//     },
+//     product: product.id,
+//   }).then(price => {
+//     console.log('Success! Here is your starter subscription product id: ' + product.id);
+//     console.log('Success! Here is your premium subscription price id: ' + price.id);
+//   });
+// });
 
 
 app.listen(3000, () => {
