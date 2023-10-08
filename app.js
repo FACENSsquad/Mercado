@@ -4,13 +4,13 @@ const app = express();
 const { MongoClient } = require('mongodb');
 const cors = require('cors');
 
+
 const uri = 'mongodb://127.0.0.1:27017/LINEUP';
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 app.use(cors());
 app.use(express.json());//configurar o middleware express.json()
 
-//select collection PRODUTOS
 app.get('/produtos', async (req, res) => {
   try {
     await client.connect();
@@ -28,7 +28,6 @@ app.get('/produtos', async (req, res) => {
   }
 });
 
-//select collection BANNER
 app.get('/banner', async (req, res) => {
   try {
     await client.connect();
@@ -45,11 +44,8 @@ app.get('/banner', async (req, res) => {
     await client.close();
   }
 });
-// ------------------------- insert data -------------------------
-// </IMAGEM>
 const multer = require('multer');
 
-// Configuração do multer para salvar os arquivos na pasta 'prod'
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, 'asset/img/prod/');
@@ -58,11 +54,8 @@ const storage = multer.diskStorage({
     cb(null, file.originalname);
   }
 });
-
 const upload = multer({ storage: storage });
-// </IMAGEM>
 
-//rota cafastro
 app.post('/cadastrar', upload.single('imagem'),async (req, res) => {
   try {
     const data = req.body;
@@ -83,7 +76,6 @@ app.post('/cadastrar', upload.single('imagem'),async (req, res) => {
   }
 });
 
-//rota pedidos
 app.post('/pedidos', async (req, res) => {
   try {
     const data = req.body;
@@ -106,6 +98,7 @@ app.post('/pedidos', async (req, res) => {
 
 
 const stripe = require('stripe')('sk_test_51NxdPaEXjLJ1bWfNYaaM7fN84hfGZfFQ9lO0ImqkXQ4Nnay7NlaJ7fuuSjhLjVemsU2PW1NOLVq0CIPpstuHy2I500yy9XAASy');
+
 app.post('/processarPagamento', async (req, res) => {
   try {
     const { pedido } = req.body;
@@ -119,36 +112,22 @@ app.post('/processarPagamento', async (req, res) => {
               name: pedido.name
             },
             unit_amount: pedido.amount*100
-          }
+          },
+          quantity: 11,
         }
       ],
       mode: 'payment',
+      success_url: `http://localhost:3000/success.html`,
+      cancel_url: `http://127.0.0.1:5500/src/html/carrinho.html`,
     });
 
-    res.json({ sessionId: session.id }); // Envie o ID da sessão de checkout de volta para o cliente
-  } catch (error) {
-    console.error('Erro ao processar pagamento:', error);
-    res.status(500).json({ error: 'Erro ao processar pagamento' });
+    res.json({ url: session.url });
+  } 
+  catch (e) {
+    res.status(500).json({ error: e.message });
   }
 });
 
-
-// stripe.products.create({
-//   name: 'Starter Subscription',
-//   description: '$12/Month subscription',
-// }).then(product => {
-//   stripe.prices.create({
-//     unit_amount: 758,
-//     currency: 'usd',
-//     recurring: {
-//       interval: 'month',
-//     },
-//     product: product.id,
-//   }).then(price => {
-//     console.log('Success! Here is your starter subscription product id: ' + product.id);
-//     console.log('Success! Here is your premium subscription price id: ' + price.id);
-//   });
-// });
 
 
 app.listen(3000, () => {
