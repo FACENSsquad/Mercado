@@ -37,18 +37,19 @@ nav{
     position: fixed;
     z-index: 10;    
     transform: 0.6s;
-    border-bottom: #ccc9c9 solid 1px;
+    border-bottom: #ccc9c9 solid 3px;
     padding-bottom: 1rem ;
     .nav{
         @include container__desktop;
         @include flex--row;
         
-        height: 140px;
+        height: 100px;
         align-items: center;
 
         .nav--logo{
             @include border-5px;
-            @include WH-100;
+            width: 70px;
+            height: 70px;
 
             overflow: hidden;
             
@@ -58,7 +59,7 @@ nav{
         }
 
         .nav--cupons{
-            height: 100px;;
+            height: 70px;;
             flex-grow: 1;
             margin: 0 1rem;
             @include border-5px;
@@ -122,10 +123,10 @@ nav{
             .menu--date{
                 font-family: Arial, Helvetica, sans-serif;
                 font-size: 12px;
-                background:var(--cor-footer);
-                padding: 8px;
+                background:var(--cor-logo1);
+                padding: 5px;
                 border-radius: 5px;
-                color: #ffffff;
+                color: #000;
             }
             .menu--icon{
                 width: 100%;
@@ -150,7 +151,7 @@ nav{
                         height: 25px;
                         background: #0083FF;
                         top: -50%;
-                        left: 80%;
+                        left: 84%;
                         display: flex;
                         justify-content: center;
                         align-items: center;
@@ -167,6 +168,7 @@ nav{
         margin: 0 2rem;
         display: flex;
         align-items: center;
+        background: var(--cor-logo1);
         a{
             padding: 0 0.5rem;
             img{
@@ -191,7 +193,6 @@ nav{
     .nav{
         @include container__desktop;
         @include flex--row;
-        
         height: 70px !important;
         align-items: center;
     
@@ -284,7 +285,7 @@ nav{
 
 
 section{
-    margin-top: 180px;
+    margin-top: 140px;
     width: 100%;
     padding: 2rem 0;
     @include container--centro;
@@ -348,7 +349,7 @@ section{
         .banner{
             @include border-10px;
             padding: var(--padd-P);
-
+            box-shadow: 0px 0px 5px #a0a0a0;
             .banner--slides{
                 border-radius: var(--border-5);
                 display: grid;
@@ -502,7 +503,7 @@ main{
     width: 100%;
 
     .atalhos--container{
-        height: 200px;
+        height: 250px;
         width: 100%;
         @include container--centro;
 
@@ -530,7 +531,7 @@ main{
                 height: 100%;
                 display: flex;
                 justify-content: center;
-                padding: var(--padd-P);
+                padding: 2rem;
 
                 .slides{
                     @include container__desktop;
@@ -590,7 +591,7 @@ main{
         width: 100%;
         min-height: 100vh;
         background: var(--cor-padrao-prod);
-        padding: var(--padd-P);
+        padding: 2rem;
         display: flex;
         justify-content: center;
 
@@ -606,6 +607,11 @@ main{
                 background: #fff;
                 overflow: hidden;
                 height: 450px;
+                border-radius: 5px;
+                border: 1px solid #e0e0e0;
+                &:hover{
+                    box-shadow: 0px 0px 5px #444444;
+                }
                 //generico
                 .prd--icon--padrao{
                     padding: var(--gap-p-imgprod);
@@ -840,7 +846,7 @@ footer{
             align-items: center;
             
             .lineup--link{
-                background: #000000;
+                background: #0083FF;
                 padding: 0.5rem 4rem;
                 border-radius: 10px;
                 a{
