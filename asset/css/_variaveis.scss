@@ -7,7 +7,7 @@
     --px-p: 14px;
 
     // __________________ CORES __________________
-    --set-cor-principal:80;
+    --set-cor-principal:59;
 
     --cor-logo1: hsl(var(--set-cor-principal),100%,45%);
     --cor-logo2: hsl(var(--set-cor-principal),80%,30%);
@@ -65,7 +65,7 @@
 }
 
 @mixin border-5px{
-    border: solid var(--cor-border) 1px;
+    border: solid var(--cor-borderP) 1px;
     border-radius: var(--border-5);
 }
 @mixin border-10px{
