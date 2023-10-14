@@ -320,7 +320,9 @@ async function getProdutos() {
         infoPreco.textContent = 'preço exclusivo na loja online';
         produto.append(produtoImg, economia, produtoDescricao, comprar, infoPreco);
         mainMaisVendidos.appendChild(produto);
+
       });
+      // slide
 
       // -------------------- PEDIDO localStorage -------------------- 
       const ComprarBtn = document.querySelectorAll('.comprar--btn');
@@ -393,3 +395,4 @@ window.addEventListener("scroll", function(){
   let nav = document.querySelector('nav');
   nav.classList.toggle("sticky", window.scrollY > 30);
 })
+

@@ -10,9 +10,11 @@
 
     <!-- Style -->
     <link rel="stylesheet" href="/asset/css/style.css">
-
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
-
+    
+    <!-- Swiper - slides-->
+    <link
+      rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
 
     <title>Motion</title>
 
@@ -59,7 +61,7 @@
             </div>
 
         </div>  
-
+        <hr>
         <div class="pesquisa">
             <input type="search" id="pesquisa" name="pesquisa" placeholder="Pesquisar...">
             <a href="">
@@ -117,39 +119,17 @@
                                 <!-- Slides IMG -->
                                 <div class="slide btn--1">
                                     <img src="/asset/img/heineken-banner-1_Edited.jpg" alt="">
-                                    <div class="sl--title">
-                                        <div class="sl--text">
-                                            <span>heineken</span>
-                                            <p>o melhor para voce</p>
-                                        </div>
-                                    </div>
+
                                 </div>
                                 <div class="slide btn--2">
                                     <img src="/asset/img/bannerAçucar.jpg" alt="">
-                                    <div class="sl--title">
-                                        <div class="sl--text">
-                                            <span>heineken</span>
-                                            <p>o melhor para voce</p>
-                                        </div>
-                                    </div>
                                 </div>
                                 <div class="slide btn--3">
                                     <img src="/asset/img/bannerDiaEconomia.jpg" alt="">
-                                    <div class="sl--title">
-                                        <div class="sl--text">
-                                            <span>heineken</span>
-                                            <p>o melhor para voce</p>
-                                        </div>
-                                    </div>
+
                                 </div>
                                 <div class="slide btn--4">
                                     <img src="/asset/img/bannerSaoJoao.jpg" alt="">
-                                    <div class="sl--title">
-                                        <div class="sl--text">
-                                            <span>heineken</span>
-                                            <p>o melhor para voce</p>
-                                        </div>
-                                    </div>
                                 </div>
     
                             </div>
@@ -158,6 +138,12 @@
                     </div>
                 </div>
             </div>
+            <object class="objFundo" data="/asset/img/Polygon 2.svg" type=""></object>
+            <object class="objFundo" data="/asset/img/Polygon 2.svg" type=""></object>
+            <object class="objFundo" data="/asset/img/Polygon 2.svg" type=""></object>
+            <object class="objFundo" data="/asset/img/Polygon 2.svg" type=""></object>
+            <object class="objFundo" data="/asset/img/Polygon 2.svg" type=""></object>
+            <object class="objFundo" data="/asset/img/Polygon 2.svg" type=""></object>
         </section>
     
         <main>
@@ -230,7 +216,7 @@
     
                 </div>
                 <div class="verTodos verTspan">
-                    <span>Ver todos</span>
+                    <span>Ver todos <img src="/asset/img/angle-right-b.svg" alt=""></span>
                 </div>
             </div>
             
@@ -248,12 +234,24 @@
             </div>
 
             <div class="mais--vendidos--main">
-                <div class="title--vendidos verTspan">
+                <div class="title--vendidos ">
                     <span>Mais vendido</span>
                 </div>
                 <div class="main--maisVendidos">
                     
                 </div>
+                <div class="verTodos verTspan">
+                    <span>Ver todos <img src="/asset/img/angle-right-b.svg" alt=""></span>
+                </div>
+            </div>
+            <div class="swiper mySwiper">
+                <div class="your-class "style="width: 100px; height: 300px;">
+                    <div class="swiper-slide">1</div>
+                    <div class="swiper-slide"> 2</div>
+                    <div class="swiper-slide">3</div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
         </main>
     
@@ -331,6 +329,32 @@
     </footer>
 
 </body>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 3,
+        centeredSlides: false,
+        slidesPerGroupSkip: 0,
+        grabCursor: true,
+        keyboard: {
+        enabled: true
+    },
+    breakpoints: {
+    768: {
+        slidesPerView: 2,
+        slidesPerGroup: 1
+    }
+    },
+    navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev"
+    },
+    pagination: {
+    el: ".swiper-pagination",
+    clickable: true
+    }
+    });
+</script>
 
 <script src="/asset/JavaScript/script.js"></script>
 <script src="/asset/JavaScript/app.js"></script>
