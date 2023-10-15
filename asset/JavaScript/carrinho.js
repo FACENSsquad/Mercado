@@ -38,10 +38,29 @@ function pedidos() {
 
             const qtdProduto = document.createElement('div');
             qtdProduto.classList.add('qtdProduto');
-            qtdProduto.textContent = item.quantidade;
+            
+            const btnMM = document.createElement('div');
+            btnMM.classList.add('btn--mm');
+            const unCampo = document.createElement('div')
+            unCampo.textContent = item.quantidade;
             const span1 = document.createElement('span');
+            const btnMenos = document.createElement('div');
+            btnMenos.classList.add('btn--dtd', 'btnMenos');
+            btnMenos.setAttribute('data-chave', item.id);
+            const btnMenosIcon = document.createElement('i');
+            btnMenosIcon.classList.add('uil','uil-minus');
             span1.textContent = ' Un';
-            qtdProduto.append(span1);
+            const btnMais = document.createElement('div');
+            btnMais.classList.add('btn--dtd', 'btnMais');
+            btnMais.setAttribute('data-chave', item.id);
+            const btnMaisIcon = document.createElement('i');
+            btnMaisIcon.classList.add('uil','uil-plus');
+            btnMais.append(btnMaisIcon);
+            btnMenos.append(btnMenosIcon);
+            unCampo.append(span1);
+            btnMM.append( btnMenos, unCampo,btnMais);
+            qtdProduto.append( btnMM);
+
 
             const valorProdutoUn = document.createElement('div');
             valorProdutoUn.classList.add('valorProduto--un');
@@ -61,7 +80,7 @@ function pedidos() {
 
             seuCarrinhoProdutos.appendChild(seuProdutos);
             seuProdutos.append(imgProduto, qtdProduto, valorProdutoUn, valorProdutoTotal, deliteProduto);
-        })
+          })
 
         function qunatidadeCompra() {
             const compraObservacoes = document.querySelectorAll('.seuProduto');
@@ -98,9 +117,37 @@ function pedidos() {
 
         } deletarItem();
 
-        
+        function btnMais() {
+          const btnMa = document.querySelectorAll('.btnMais');
+          btnMa.forEach(function (button){
+            button.addEventListener('click', function () {
+              const chave = button.getAttribute('data-chave');
+              const dados = localStorage.getItem(chave);
+              const objMais = JSON.parse(dados);
+              objMais.quantidade++;
 
+              localStorage.setItem(chave, JSON.stringify(objMais));
+              location.reload();
+            })
+          })
+        }btnMais();
 
+        function btnMenos() {
+          const btnMa = document.querySelectorAll('.btnMenos');
+          btnMa.forEach(function (button){
+            button.addEventListener('click', function () {
+              const chave = button.getAttribute('data-chave');
+              const dados = localStorage.getItem(chave);
+              const objMais = JSON.parse(dados);
+              objMais.quantidade--;
+
+              objMais.precoTotal * 10;
+
+              localStorage.setItem(chave, JSON.stringify(objMais));
+              location.reload();
+            })
+          })
+        }btnMenos();
     })
 } pedidos();
 

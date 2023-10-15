@@ -1400,15 +1400,41 @@ footer{
                                     margin-top: 5px;
                                     //font 'Roleway'
                                     font-family: 'Roboto', sans-serif;
-                                    background: #b8b7b7;
+                                    background: #e0e0e0;
                                     display: block;
                                     width: 4rem;
                                     border-radius: 5px;
                                     display: flex;
                                     justify-content: center;
                                     align-items: center;
-                                    color: #313131;
-                                    border: #686868 1px solid;
+                                    color: #727272;
+                                    border: #727272 1px solid;
+                                }
+                            }
+                        }
+                        .qtdProduto{
+                            display: flex;
+                            justify-content: left;
+                            .btn--mm{
+                                display: flex;
+                                align-items: center;
+                                gap: 1rem;
+                                border: 1px solid #727272;
+                                border-radius: 5px;
+                                .btn--dtd{
+                                    height: 2rem;
+                                    width: 2rem;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    background: #e0e0e0;
+                                    cursor: pointer;
+                                    &:active{
+                                        transform: scale(0.80);
+                                    }
+                                }
+                                span{
+                                    color:#727272;
                                 }
                             }
                         }
