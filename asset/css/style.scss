@@ -564,9 +564,9 @@ main{
 
             .atalhos--descricao{
                 padding: 0.5rem 5rem;
-                background: var(--cor-footer);
+                background: #dddddd;
                 border-radius: 10px 10px 0 0 ;
-                box-shadow: 0px -2px 2px  #888888;
+                box-shadow: 0px -2px 2px  #c7c7c7;
                 z-index: 1;
                 span{
                     text-transform: uppercase;
@@ -578,8 +578,8 @@ main{
             }
             
             .atalhos--slides{
-                background: linear-gradient(0deg, var(--cor-padrao-prod), var(--cor-footer) 100%);
-                box-shadow: 0px -2px 2px  #888888;
+                background: linear-gradient(0deg, var(--cor-padrao-prod), #dddddd 100%);
+                box-shadow: 0px -2px 3px  #c7c7c7;
                 width: 100%;
                 height: 100%;
                 display: flex;
