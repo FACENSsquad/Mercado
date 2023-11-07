@@ -155,31 +155,49 @@ const btnComprar = document.querySelector('.comprarBtn');
 btnComprar.addEventListener('click', async function () {
   try {
 
-    const response = await fetch('http://localhost:3000/processarPagamento', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ 
-        "pedido":{
-          "name": "joão teste",
-          "amount": 100
-        } 
-      }), // Envie o pedido no corpo da solicitação
-    })
-    .then(res =>{
-      if (res.ok) return res.json()
-      return res.json().then(json => Promise.reject(json))
-    })
-    .then(({url}) => {
-      console.log(url)
-      window.location = url;
-    })
-    .catch(e =>{
-      console.log(e.error)
-    })
+
+    const pedidosObj = {};
+
+    Object.keys(localStorage).forEach(function (chave) {
+        const itemJSON = localStorage.getItem(chave);
+        const itemObj = JSON.parse(itemJSON);
+        pedidosObj[chave] = itemObj;
+    });
+
+    // Transformar os valores do objeto pedidosObj em um array
+    const pedidosArray = Object.values(pedidosObj);
+    console.log(pedidosArray);
+    console.log(pedidosArray[1].nome);
     
+    if(pedidosArray.length > 4){
+
+      const response = await fetch('http://localhost:3000/processarPagamento', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ 
+          "pedido":{
+            // "name": "joão teste",
+            // "amount": 100
+            "name": pedidoss.nome
+          } 
+        }), // Envie o pedido no corpo da solicitação
+      })
+      .then(res =>{
+        if (res.ok) return res.json()
+        return res.json().then(json => Promise.reject(json))
+      })
+      .then(({url}) => {
+        console.log(url)
+        window.location = url;
+      })
+      .catch(e =>{
+        console.log(e.error)
+      })
     }
+    
+  }
   
     catch (error) {
       console.error('Erro ao processar pagamento:', error);
