@@ -101,21 +101,24 @@ const stripe = require('stripe')('sk_test_51NxdPaEXjLJ1bWfNYaaM7fN84hfGZfFQ9lO0I
 
 app.post('/processarPagamento', async (req, res) => {
   try {
-    const { pedido } = req.body;
+    const { items } = req.body;
+    
+    const lineItems = items.map(item => {
+      return {
+        price_data: {
+          currency: item.currency,
+          product_data: {
+            name: item.name,
+          },
+          unit_amount: item.amount,
+        },
+        quantity: item.quantity,
+      };
+    });
+
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
-      line_items: [
-        {
-          price_data:{
-            currency: "usd",
-            product_data: {
-              name: pedido.name
-            },
-            unit_amount: pedido.amount*100
-          },
-          quantity: 11,
-        }
-      ],
+      line_items: lineItems, // Corrigindo a atribuição de line_items
       mode: 'payment',
       success_url: `http://localhost:3000/success.html`,
       cancel_url: `http://127.0.0.1:5500/src/html/carrinho.html`,

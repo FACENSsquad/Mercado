@@ -155,49 +155,45 @@ const btnComprar = document.querySelector('.comprarBtn');
 btnComprar.addEventListener('click', async function () {
   try {
 
-
-    const pedidosObj = {};
-
-    Object.keys(localStorage).forEach(function (chave) {
-        const itemJSON = localStorage.getItem(chave);
-        const itemObj = JSON.parse(itemJSON);
-        pedidosObj[chave] = itemObj;
+    const localStorageItems = Object.keys(localStorage).map(key => {
+      return JSON.parse(localStorage.getItem(key));
+    });
+    
+    console.log(localStorageItems);
+    const itemsForStripe = localStorageItems.map(item => {
+      console.log(item.nome)
+      return {
+        name: item.nome,
+        amount: parseFloat(item.precoTotal.replace(',', '.')) * 100,
+        currency: 'usd',
+        quantity: parseInt(item.quantidade),
+      };
     });
 
-    // Transformar os valores do objeto pedidosObj em um array
-    const pedidosArray = Object.values(pedidosObj);
-    console.log(pedidosArray);
-    console.log(pedidosArray[1].nome);
+    if(localStorageItems.length > 0){
+              
+        const response = await fetch('http://localhost:3000/processarPagamento', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ items: itemsForStripe }), // Envie o pedido no corpo da solicitação
+        })
+        .then(res =>{
+          if (res.ok) return res.json()
+          return res.json().then(json => Promise.reject(json))
+        })
+        .then(({url}) => {
+          console.log(url)
+          window.location = url;
+        })
+        .catch(e =>{
+          console.log(e.error)
+        })
+      }
     
-    if(pedidosArray.length > 4){
-
-      const response = await fetch('http://localhost:3000/processarPagamento', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ 
-          "pedido":{
-            // "name": "joão teste",
-            // "amount": 100
-            "name": pedidoss.nome
-          } 
-        }), // Envie o pedido no corpo da solicitação
-      })
-      .then(res =>{
-        if (res.ok) return res.json()
-        return res.json().then(json => Promise.reject(json))
-      })
-      .then(({url}) => {
-        console.log(url)
-        window.location = url;
-      })
-      .catch(e =>{
-        console.log(e.error)
-      })
+    
     }
-    
-  }
   
     catch (error) {
       console.error('Erro ao processar pagamento:', error);
