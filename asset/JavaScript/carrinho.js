@@ -155,11 +155,17 @@ const btnComprar = document.querySelector('.comprarBtn');
 btnComprar.addEventListener('click', async function () {
   try {
 
+    //array 
     const localStorageItems = Object.keys(localStorage).map(key => {
       return JSON.parse(localStorage.getItem(key));
     });
     
-    console.log(localStorageItems);
+    //objeto
+    const localStoragepedidoDB = Object.keys(localStorage).reduce((acc, key) => {
+      acc[key] = JSON.parse(localStorage.getItem(key));
+      return acc;
+    }, {});
+
     const itemsForStripe = localStorageItems.map(item => {
       console.log(item.nome)
       return {
@@ -169,9 +175,9 @@ btnComprar.addEventListener('click', async function () {
         quantity: parseInt(item.quantidade),
       };
     });
-
+          
     if(localStorageItems.length > 0){
-              
+
         const response = await fetch('http://localhost:3000/processarPagamento', {
           method: 'POST',
           headers: {
@@ -182,10 +188,23 @@ btnComprar.addEventListener('click', async function () {
         .then(res =>{
           if (res.ok) return res.json()
           return res.json().then(json => Promise.reject(json))
-        })
-        .then(({url}) => {
-          console.log(url)
-          window.location = url;
+      })
+      .then(({url}) => {
+        console.log(url)
+        console.log(localStoragepedidoDB)
+        // window.location = url;
+        console.log("ooiii")
+          fetch('http://localhost:3000/pedidos',{
+            method: 'POST',
+            body: JSON.stringify(localStoragepedidoDB),
+          })
+          .then(response =>{
+            if(response.ok){
+              console.log("Pedido cadastrado");
+            }else{
+              console.log("Erro ao cadastrar o pedido");
+            }
+          })
         })
         .catch(e =>{
           console.log(e.error)

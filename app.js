@@ -64,7 +64,7 @@ app.post('/cadastrar', upload.single('imagem'),async (req, res) => {
     await client.connect();
 
     const database = client.db('LINEUP');
-    const colslection = database.collection('Produtos');
+    const collection = database.collection('Produtos');
     const result = await collection.insertOne({ ...data, imagem: imagemPath });
 
     res.status(201).send('Produto cadastrado com sucesso');
@@ -80,7 +80,6 @@ app.post('/pedidos', async (req, res) => {
   try {
     const data = req.body;
 
-    const client = new MongoClient('mongodb://localhost:27017');
     await client.connect();
 
     const database = client.db('LINEUP');
