@@ -248,7 +248,6 @@ function cadastrarProduto() {
 
   formData.append('Data de Cadastro', dataFormatada);
 
-  console.log(formData);
   fetch('http://localhost:3000/cadastrar', {
     method: 'POST',
     body: formData
