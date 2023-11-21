@@ -141,6 +141,68 @@ section #container .container--conteudo .home--container {
   padding: 0 0.5rem;
 }
 
+#container--pedidos {
+  width: 100%;
+  height: 100vh;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+}
+#container--pedidos #nav--pedidos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+}
+#container--pedidos #nav--pedidos .pedidos--pesq {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+#container--pedidos #nav--pedidos .pedidos--pesq .pedidos--pesq--qtd {
+  background: #cfcfcf;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+#container--pedidos #nav--pedidos .pedidos--pesq input {
+  width: 50%;
+  line-height: 2rem;
+  border-radius: 5px;
+}
+#container--pedidos #section--pedidos {
+  padding: 0.5rem 0;
+  height: 100%;
+}
+#container--pedidos #section--pedidos table {
+  width: 100%;
+}
+#container--pedidos #section--pedidos table thead {
+  background: #cfcfcf;
+  height: 2.5rem;
+}
+#container--pedidos #section--pedidos table thead tr th span {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.5rem;
+  text-transform: capitalize;
+}
+#container--pedidos #section--pedidos table thead tr th span i {
+  font-size: 25px;
+}
+#container--pedidos #section--pedidos table tbody .row {
+  height: 50px;
+}
+#container--pedidos #section--pedidos table tbody tr td {
+  padding: 0.5rem 0;
+}
+#container--pedidos #section--pedidos table tbody tr td span {
+  padding: 0 0.5rem;
+}
+
 #cadastro--container {
   width: 100%;
   height: 100vh;

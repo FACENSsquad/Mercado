@@ -191,12 +191,12 @@ btnComprar.addEventListener('click', async function () {
       })
       .then(({url}) => {
         console.log(url)
-        console.log(localStoragepedidoDB)
+        console.log(localStorageItems)
         // window.location = url;
         console.log("ooiii")
           fetch('http://localhost:3000/pedidos',{
             method: 'POST',
-            body: localStoragepedidoDB
+            body: localStorageItems
           })
           .then(response =>{
             if(response.ok){
