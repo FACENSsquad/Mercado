@@ -9,36 +9,36 @@ async function getPedidos() {
       console.log(produtos);
       produtos_pesq_qtd.textContent = produtos.length;
       
-      produtos.forEach(produto => {
-        const row = document.createElement('tr');
-        row.classList.add('row')
+      // produtos.forEach(produto => {
+      //   const row = document.createElement('tr');
+      //   row.classList.add('row')
 
-        const tdIdProduto = document.createElement('td');
-        const IdProduto = document.createElement('span');
-        IdProduto.textContent = produto._id;
-        tdIdProduto.appendChild(IdProduto);
-        row.appendChild(tdIdProduto);
+      //   const tdIdProduto = document.createElement('td');
+      //   const IdProduto = document.createElement('span');
+      //   IdProduto.textContent = produto._id;
+      //   tdIdProduto.appendChild(IdProduto);
+      //   row.appendChild(tdIdProduto);
 
-        const tddescricao = document.createElement('td');
-        const descricao = document.createElement('span');
-        descricao.textContent = produto.Descricao;
-        tddescricao.appendChild(descricao);
-        row.appendChild(tddescricao);
+      //   const tddescricao = document.createElement('td');
+      //   const descricao = document.createElement('span');
+      //   descricao.textContent = produto.Descricao;
+      //   tddescricao.appendChild(descricao);
+      //   row.appendChild(tddescricao);
 
-        const valor = document.createElement('td');
-        valor.textContent = produto.Valor;
-        row.appendChild(valor);
+      //   const valor = document.createElement('td');
+      //   valor.textContent = produto.Valor;
+      //   row.appendChild(valor);
 
-        const marca = document.createElement('td');
-        marca.textContent = produto.Marca;
-        row.appendChild(marca);
+      //   const marca = document.createElement('td');
+      //   marca.textContent = produto.Marca;
+      //   row.appendChild(marca);
 
-        const valorPromo = document.createElement('td');
-        valorPromo.textContent = produto['Valor promocional'];
-        row.appendChild(valorPromo);
+      //   const valorPromo = document.createElement('td');
+      //   valorPromo.textContent = produto['Valor promocional'];
+      //   row.appendChild(valorPromo);
 
-        produtosList.appendChild(row);
-      });
+      //   produtosList.appendChild(row);
+      // });
     } catch (err) {
       console.log(err);
     }

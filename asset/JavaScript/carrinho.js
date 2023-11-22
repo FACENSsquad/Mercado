@@ -175,7 +175,16 @@ btnComprar.addEventListener('click', async function () {
         quantity: parseInt(item.quantidade),
       };
     });
-          
+
+    const dataAtual = new Date();
+    const dataCadastro = `${dataAtual.getDate()}-${dataAtual.getMonth() + 1}-${dataAtual.getFullYear()}`;
+    const pedidoo ={
+      cliente: 'Joao Vitor',
+      localStoragepedidoDB,
+      dataCadastro
+    }
+    console.log(pedidoo);
+
     if(localStorageItems.length > 0){
 
         const response = await fetch('http://localhost:3000/processarPagamento',{
@@ -191,16 +200,19 @@ btnComprar.addEventListener('click', async function () {
       })
       .then(({url}) => {
         console.log(url)
-        console.log(localStoragepedidoDB)
-        window.location = url;
+        console.log(pedidoo)
+        // window.location = url;
         console.log("ooiii")
           fetch('http://localhost:3000/pedidos',{
             method: 'POST',
-            body: localStoragepedidoDB
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(pedidoo)
           })
           .then(response =>{
             if(response.ok){
-              console.log("Pedido cadastradogit");
+              console.log("Pedido cadastrado");
             }else{
               console.log("Erro ao cadastrar o pedido");
             }
