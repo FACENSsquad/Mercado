@@ -178,10 +178,12 @@ btnComprar.addEventListener('click', async function () {
 
     const dataAtual = new Date();
     const dataCadastro = `${dataAtual.getDate()}-${dataAtual.getMonth() + 1}-${dataAtual.getFullYear()}`;
+    const quantidadeItens = localStorageItems.length; 
     const pedidoo ={
       cliente: 'Joao Vitor',
       localStoragepedidoDB,
-      dataCadastro
+      dataCadastro,
+      quantidadeItens
     }
     console.log(pedidoo);
 

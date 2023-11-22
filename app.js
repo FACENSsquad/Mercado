@@ -11,12 +11,30 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 app.use(cors());
 app.use(express.json());//configurar o middleware express.json()
 
+
 app.get('/produtos', async (req, res) => {
   try {
     await client.connect();
 
     const database = client.db('LINEUP');
     const collection = database.collection('Produtos');
+    const documents = await collection.find().toArray();
+
+    res.json(documents);
+  } catch (err) {
+    console.log(err);
+    res.status(500).send('Erro ao recuperar os dados');
+  } finally {
+    await client.close();
+  }
+});
+
+app.get('/pedidosAdm', async (req, res) => {
+  try {
+    await client.connect();
+
+    const database = client.db('LINEUP');
+    const collection = database.collection('Pedidos');
     const documents = await collection.find().toArray();
 
     res.json(documents);

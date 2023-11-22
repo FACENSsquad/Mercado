@@ -1,5 +1,4 @@
 
-
 function carregarConteudo(url, element) {
 
     // Remove a classe 'active' de todos os links
@@ -19,7 +18,8 @@ function carregarConteudo(url, element) {
       document.querySelector('.container--conteudo').innerHTML = xhr.responseText;
       getProdutos();
       getBanners()
-
+      window.getPedidosAdm()
+      
       // INSERT
       const imagem2 = document.querySelector('input[type="file"]');
       const btnImgBack = document.querySelector('.form--img div');
