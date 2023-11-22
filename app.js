@@ -28,23 +28,6 @@ app.get('/produtos', async (req, res) => {
   }
 });
 
-app.get('/pedidos', async (req, res) => {
-  try {
-    await client.connect();
-
-    const database = client.db('LINEUP');
-    const collection = database.collection('Pedido');
-    const documents = await collection.find().toArray();
-
-    res.json(documents);
-  } catch (err) {
-    console.log(err);
-    res.status(500).send('Erro ao recuperar os dados');
-  } finally {
-    await client.close();
-  }
-});
-
 app.get('/banner', async (req, res) => {
   try {
     await client.connect();
