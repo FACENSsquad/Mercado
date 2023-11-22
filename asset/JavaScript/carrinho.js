@@ -178,7 +178,7 @@ btnComprar.addEventListener('click', async function () {
           
     if(localStorageItems.length > 0){
 
-        const response = await fetch('http://localhost:3000/processarPagamento', {
+        const response = await fetch('http://localhost:3000/processarPagamento',{
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -192,15 +192,15 @@ btnComprar.addEventListener('click', async function () {
       .then(({url}) => {
         console.log(url)
         console.log(localStoragepedidoDB)
-        // window.location = url;
+        window.location = url;
         console.log("ooiii")
           fetch('http://localhost:3000/pedidos',{
             method: 'POST',
-            body: JSON.stringify(localStoragepedidoDB),
+            body: localStoragepedidoDB
           })
           .then(response =>{
             if(response.ok){
-              console.log("Pedido cadastrado");
+              console.log("Pedido cadastradogit");
             }else{
               console.log("Erro ao cadastrar o pedido");
             }

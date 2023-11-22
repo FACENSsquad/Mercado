@@ -163,6 +163,85 @@ section{
     }
 }// __________________ </PRODUTOS> __________________
 
+// __________________ <PRODUTOS> __________________
+#container--pedidos{
+    width: 100%;
+    height: 100vh;
+    padding: 0 1rem;
+
+    display: flex;
+    flex-direction: column;
+
+    #nav--pedidos{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5rem;
+        .pedidos--pesq{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 1rem;
+
+            
+            .pedidos--pesq--qtd{
+                background: #cfcfcf;
+                padding: 0.5rem;
+                border-radius: 5px;
+
+            }
+            input{
+                width: 50%;
+                line-height: 2rem;
+                border-radius: 5px;
+            }
+        }
+    }
+
+    #section--pedidos{
+        padding: 0.5rem 0;
+        height: 100%;
+        table{
+            width: 100%;
+            thead{
+                background: #cfcfcf;
+                height: 2.5rem;
+                tr{
+                    th{
+                        span{
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+                            align-items: center;
+                            padding: 0 0.5rem;
+                            text-transform:capitalize;
+                            i{
+                                font-size: 25px;
+                            }
+                        }
+                    }
+                }
+            }
+            tbody{
+                .row{
+                    height: 50px;
+                }
+                tr{
+                    td{
+                        padding: 0.5rem 0;
+                        span{
+                            padding: 0 0.5rem;
+                        }
+                    }
+                }
+            }
+        
+        }
+    }
+}// __________________ </PRODUTOS> __________________
+
+
 // __________________ <CADASTRO> __________________
 #cadastro--container{
     width: 100%;
