@@ -48,10 +48,11 @@ async function getProdutos() {
       const produtos = await response.json();
       
       const produtosList = document.querySelector('#section--produtos table tbody');
-      let produtos_pesq_qtd = document.querySelector('.produtos--pesq--qtd span');
-      console.log(produtos);
-      produtos_pesq_qtd.textContent = produtos.length;
+      // let produtos_pesq_qtd = document.querySelector('.produtos--pesq--qtd span');
+      // produtos_pesq_qtd.textContent = produtos.length;
       
+      console.log(produtos);
+
       produtos.forEach(produto => {
         const row = document.createElement('tr');
         row.classList.add('row')
@@ -86,6 +87,53 @@ async function getProdutos() {
       console.log(err);
     }
 }getProdutos();
+
+// MONGO ABAIXO -------------------- PEDIDOS -------------------- 
+async function getPedidos() {
+  try {
+    const response = await fetch('http://localhost:3000/pedidos');
+    const pedidos = await response.json();
+    console.log(pedidos);
+    
+    ///const pedidosList = document.querySelector('#section--pedidos table tbody');
+    // let pedidos_pesq_qtd = document.querySelector('.pedidos--pesq--qtd span');
+    // pedidos_pesq_qtd.textContent = pedidos.length;
+    
+    // pedidos.forEach(produto => {
+    //   const row = document.createElement('tr');
+    //   row.classList.add('row')
+
+    //   const tdIdProduto = document.createElement('td');
+    //   const IdProduto = document.createElement('span');
+    //   IdProduto.textContent = produto._id;
+    //   tdIdProduto.appendChild(IdProduto);
+    //   row.appendChild(tdIdProduto);
+
+    //   const tddescricao = document.createElement('td');
+    //   const descricao = document.createElement('span');
+    //   descricao.textContent = produto.Descricao;
+    //   tddescricao.appendChild(descricao);
+    //   row.appendChild(tddescricao);
+
+    //   const valor = document.createElement('td');
+    //   valor.textContent = produto.Valor;
+    //   row.appendChild(valor);
+
+    //   const marca = document.createElement('td');
+    //   marca.textContent = produto.Marca;
+    //   row.appendChild(marca);
+
+    //   const valorPromo = document.createElement('td');
+    //   valorPromo.textContent = produto['Valor promocional'];
+    //   row.appendChild(valorPromo);
+
+    //   produtosList.appendChild(row);
+    // });
+  } catch (err) {
+    console.log(err);
+  }
+}getPedidos();
+
 
 // MONGO ABAIXO -------------------- BANNER -------------------- 
 async function getBanners() {
@@ -180,40 +228,40 @@ async function getBanners() {
 }getBanners();
 
 // -------------------- CADASTRO --------------------
-const inputValor = document.getElementById('input-valor');
-const inputValorPromo = document.getElementById('input-valorPromo');
+// const inputValor = document.getElementById('input-valor');
+// const inputValorPromo = document.getElementById('input-valorPromo');
 
-function formatt(params) {
-  params.addEventListener('input', () => {
-    const value = params.value.replace(/[^\d,]/g, '');
-    const parts = value.split(',');
+// function formatt(params) {
+//   params.addEventListener('input', () => {
+//     const value = params.value.replace(/[^\d,]/g, '');
+//     const parts = value.split(',');
   
-    let formattedValue = '';
+//     let formattedValue = '';
   
-    if (parts.length > 0) {
-      const integerPart = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-      formattedValue = integerPart;
+//     if (parts.length > 0) {
+//       const integerPart = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+//       formattedValue = integerPart;
   
-      if (parts.length > 1) {
-        const decimalPart = parts[1].substring(0, 2);
-        formattedValue += ',' + decimalPart;
-      }
-    }
+//       if (parts.length > 1) {
+//         const decimalPart = parts[1].substring(0, 2);
+//         formattedValue += ',' + decimalPart;
+//       }
+//     }
   
-    params.value = formattedValue;
-  });
-}
+//     params.value = formattedValue;
+//   });
+// }
 
-formatt(inputValor);
-formatt(inputValorPromo);
+// formatt(inputValor);
+// formatt(inputValorPromo);
 
 // valor checkbox 
-const checkbox = document.getElementById('meuCheckbox');
+// const checkbox = document.getElementById('meuCheckbox');
 
-checkbox.addEventListener('change', () => {
-  const isChecked = checkbox.checked;
-  console.log(isChecked);
-});
+// checkbox.addEventListener('change', () => {
+//   const isChecked = checkbox.checked;
+//   console.log(isChecked);
+// });
 
 function cadastrarProduto() {
   const descricao = document.getElementById('descricao').value;
