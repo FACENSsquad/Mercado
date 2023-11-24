@@ -1563,3 +1563,141 @@ footer{
       transition: box-shadow 500ms;
     }
 }
+
+// MEUS PEDIDOS
+#meusPedidos--container {
+    min-height: 100vh;
+    width: 100%;    
+    display: flex;
+    flex-direction: column;
+    .carrinho--top{
+        height: 5rem;
+        width: 100%;
+        background: #22252C;
+        color: #fff;
+        .top--main--carrinho{
+            width: 100%;
+            height: 100%;
+            display:flex ;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+            
+            .top--destaque{
+                p{
+                    font-size: 17px;
+                }
+            }
+            .topLink{
+                font-size: 14px;
+                color: #cfcfcf;
+            }
+
+            .top--menu{
+                a{
+                    padding: 0 1rem;
+
+                }
+            }
+        }
+    }
+    .carrinho--main{
+        width: 100%;
+        height: auto;
+        flex: 1;
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        gap: 10px;
+        padding: 1rem;
+        .carrinho--produtos{
+            height: 100%;
+            padding: 1rem;
+            .pedido--produtos{
+                background: #fff;
+                height: 100%;
+
+                .seuCarrinho--top{
+                    border-bottom: 3px solid #ececec;
+                    display: flex;
+                    justify-content: space-between;
+                    h3{
+                        font-family: 'Poppins', sans-serif;
+                        font-weight:600;
+                        text-transform: uppercase;
+                        i{
+                            font-size: 30px;
+                        }
+                    }
+                    span{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 17px;
+                        
+                        &::before{
+                            content: 'Quantidade de pedidos: ';
+                            margin-right: 0.5rem;
+                            font-size: 14px;
+
+                        }
+                    }
+                }
+                .seuCarrinhoo--produtos{
+                    padding: 1rem 0;
+                    display: flex;
+                    flex-direction: column ;
+                    gap: 10px;
+                    .seuPedido{
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        height: 3rem;
+                        border: solid #ececec 1px;
+                        border-radius: 5px;
+                        padding: 0.5rem 1rem;
+                        .dtPedido{
+                            &::before{
+                                content: 'Data do pedido: ';
+                                margin-right: 0.5rem;
+                                font-size: 14px;
+    
+                            }
+                        }
+                        .dtItens{
+                            &::before{
+                                content: 'Quantidade de itens: ';
+                                margin-right: 0.5rem;
+                                font-size: 14px;
+    
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .carrinho--comprar{
+            height: 100%;
+            padding: 1rem;
+            position: relative;
+            .comprar--valor{
+                margin-top: 1.5rem;
+                position: sticky;
+                top: 0;
+                width:100%;
+                min-height: 200px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                padding: 1rem 1rem 2rem 1rem;
+                background: #ececec;
+                border-radius: 5px;
+                border: 1px solid #dddddd;
+                a{
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

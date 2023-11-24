@@ -17,8 +17,8 @@ function carregarConteudo(url, element) {
     if (xhr.readyState === 4 && xhr.status === 200) {
       document.querySelector('.container--conteudo').innerHTML = xhr.responseText;
       getProdutos();
-      getBanners()
-      window.getPedidosAdm()
+      getBanners();
+      
       
       // INSERT
       const imagem2 = document.querySelector('input[type="file"]');
@@ -26,7 +26,7 @@ function carregarConteudo(url, element) {
       const infoArquivo = document.createElement('p');
       imagem2.addEventListener('change', function(event) {
         const arquivo = event.target.files[0];
-        if(arquivo != 0){
+        if(arquivo){
           const span = document.querySelector('.span--selecionar');
           span.textContent = "selecionado";
           span.style.color = "#fff";
@@ -39,6 +39,7 @@ function carregarConteudo(url, element) {
     }
     };
     xhr.send();
+
 }
 
 // MONGO ABAIXO -------------------- PRODUTOS -------------------- 
@@ -85,6 +86,7 @@ async function getProdutos() {
     } catch (err) {
       console.log(err);
     }
+    getPedidosAdm();
 }getProdutos();
 
 // MONGO ABAIXO -------------------- BANNER -------------------- 
@@ -179,6 +181,53 @@ async function getBanners() {
   }
 }getBanners();
 
+// -------------------- PEDIDOS -------------------- 
+async function getPedidosAdm () {
+  try {
+    const response = await fetch('http://localhost:3000/pedidosAdm');
+    const pedidos = await response.json();
+
+    const pedidosList = document.querySelector('#section--pedidos table tbody');
+    let pedidos_pesq_qtd = document.querySelector('.pedidos--pesq--qtd span');
+    pedidos_pesq_qtd.textContent = pedidos.length;
+    
+
+    pedidos.forEach(pedido => {
+      const row = document.createElement('tr');
+      row.classList.add('row')
+
+      const tdIdPedidos = document.createElement('td');
+      const IdPedidos = document.createElement('span');
+      IdPedidos.textContent = pedido._id;
+      tdIdPedidos.appendChild(IdPedidos);
+      row.appendChild(tdIdPedidos);
+
+      const tddescricao = document.createElement('td');
+      const descricao = document.createElement('span');
+      descricao.textContent = pedido.quantidadeItens;;
+      tddescricao.appendChild(descricao);
+      row.appendChild(tddescricao);
+
+      const valor = document.createElement('td');
+      valor.textContent = pedido.quantidadeItens;
+      row.appendChild(valor);
+
+      const marca = document.createElement('td');
+      marca.textContent = pedido.cliente;
+      row.appendChild(marca);
+
+      const valorPromo = document.createElement('td');
+      valorPromo.textContent = pedido.dataCadastro;
+      row.appendChild(valorPromo);
+
+      pedidosList.appendChild(row);
+    });
+  } catch (err) {
+    console.log(err);
+  }
+}getPedidosAdm();
+
+
 // -------------------- CADASTRO --------------------
 const inputValor = document.getElementById('input-valor');
 const inputValorPromo = document.getElementById('input-valorPromo');
@@ -268,6 +317,3 @@ function cadastrarProduto() {
   });
 }
 
-
-// ----------------------------------------- BANNER -----------------------------------------
-// API DOLAR

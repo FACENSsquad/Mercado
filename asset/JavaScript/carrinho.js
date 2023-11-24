@@ -171,7 +171,7 @@ btnComprar.addEventListener('click', async function () {
       return {
         name: item.nome,
         amount: parseFloat(item.precoTotal.replace(',', '.')) * 100,
-        currency: 'usd',
+        currency: 'brl',
         quantity: parseInt(item.quantidade),
       };
     });
@@ -203,7 +203,7 @@ btnComprar.addEventListener('click', async function () {
       .then(({url}) => {
         console.log(url)
         console.log(pedidoo)
-        // window.location = url;
+        window.location = url;
         console.log("ooiii")
           fetch('http://localhost:3000/pedidos',{
             method: 'POST',

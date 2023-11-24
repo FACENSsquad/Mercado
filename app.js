@@ -137,7 +137,7 @@ app.post('/processarPagamento', async (req, res) => {
       payment_method_types: ['card'],
       line_items: lineItems, // Corrigindo a atribuição de line_items
       mode: 'payment',
-      success_url: `http://localhost:3000/success.html`,
+      success_url: `http://127.0.0.1:5500/src/html/meusPedidos.html`,
       cancel_url: `http://127.0.0.1:5500/src/html/carrinho.html`,
     });
 

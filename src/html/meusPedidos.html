@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,18 +8,10 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
     <link rel="icon" href="/asset/img/AnyConv.com__logoLineUp.ico" type="image/x-icon">
 
-    <!-- fontes -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inclusive+Sans&family=Raleway:ital,wght@0,400;1,300&display=swap" rel="stylesheet">
-
-    <script src="https://js.stripe.com/v3/"></script>
-
-    <title>Carrinho</title>
+    <title>Document</title>
 </head>
-
 <body>
-    <div id="carrinho--container">
+    <div id="meusPedidos--container">
 
         <div class="carrinho--top">
             <div class="top--main--carrinho">
@@ -29,26 +20,28 @@
                         Inicio
                     </a>
                 </div>
-
+    
                 <div class="top--destaque">
-                    <p>LineUP</p>
+                    <p>LineUp</p>
                 </div>
-
+    
                 <div class="top--menu">
-                    <a  class="topLink" href="meusPedidos.html">Minhas compras</a>
+                    <a  class="topLink" href="carrinho.html">Carrinho</a>
                     <a class="topLink" href="">
                         <i class="uil uil-user-circle iconPd"></i>
                     </a>
                 </div>
             </div>
-
+    
         </div>
+
 
         <div class="carrinho--main">
             <div class="carrinho--produtos">
                 <div class="pedido--produtos">
                     <div class="seuCarrinho--top">
-                        <h3><i class="uil uil-shopping-cart"></i> Seu carrinho</h3>
+                        <h3><i class="uil uil-shopping-cart"></i> Seus pedidos</h3>
+                        <span></span>
                     </div>
                     <div class="seuCarrinhoo--produtos">
                     </div>
@@ -57,46 +50,7 @@
 
             <div class="carrinho--comprar">
                 <div class="comprar--valor">
-                    <div class="comprarTitle">
-                        <h3>Informe o Pagamento</h3>
-                    </div>
-                    <div class="tipopagamento">
-                        <span class="SpanInf">Tipo pagamento</span>
-                        <div class="comprarTipopagamento">
-                            <label>
-                                <input type="checkbox">
-                                <span>Pix</span>
-                            </label>
-                        </div>
-                        <div class="comprarTipopagamento">
-                            <label>
-                                <input type="checkbox">
-                                <span>Cartão de Credito</span>
-                            </label>
-                        </div>
-                        <div class="comprarTipopagamento">
-                            <label>
-                                <input type="checkbox">
-                                <span>Cartão de Debito</span>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="compraObservacoes">
-                        <div class="qdtProdutos compraObservacoesF">
-                            <li>Produtos:</li>
-                            <li class="quantidadeProd"></li>
-                        </div>
-                        <div class="frete compraObservacoesF">
-                            <li>Frete:</li>
-                            <li>Gratis</li>
-                        </div>
-                        <div class="totalCompra compraObservacoesF">
-                             <strong>Total:</strong><span class="valorTotal"></span>
-                        </div>
-                    </div>
-                    <div class="comprarBtn">
-                        <span>Comprar</span>
-                    </div>
+                    <a href=""><img src="/asset/img/seu carrinho.jpg" alt=""></a>
                 </div>
             </div>
         </div>
@@ -161,7 +115,7 @@
             </div>
         </div>
     </footer>
-</body>
-<script src="/asset/JavaScript/carrinho.js"></script>
 
+</body>
+<script src="/asset/JavaScript/seusPedidos.js"> </script>
 </html>
